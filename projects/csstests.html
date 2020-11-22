@@ -26,55 +26,59 @@
         <p>Useful to position elements side by side and automatically resize them when <code>width</code> changes. In this example, 5 columns become 3 and then 1 in smaller devices. Here's an example of this kind of container. Click the button to add another element to the palette. Resize the page to see how the elements adapt to the width of the page.</p>
         <button onclick="addColorToPalette()">Add another element to the grid</button>
         <button class="secondaryButton" onclick="removePalette()">Clear palette</button>
-        <div class="row" id="paletteContainer">
-            <div class="rowItem fifth"><canvas style="display: block; margin: auto; width: 100%" width="200" height="200"></canvas></div>
-            <div class="rowItem fifth"><canvas style="display: block; margin: auto; width: 100%" width="200" height="200"></canvas></div>
-            <div class="rowItem fifth"><canvas style="display: block; margin: auto; width: 100%" width="200" height="200"></canvas></div>
+        <div class="flexRow" id="paletteContainer">
+            <div class="fifth"><canvas style="display: block; width: 100%;" width="200" height="200"></canvas></div>
+            <div class="fifth"><canvas style="display: block; width: 100%;" width="200" height="200"></canvas></div>
+            <div class="fifth"><canvas style="display: block; width: 100%;" width="200" height="200"></canvas></div>
         </div>
 
-        <p>To do this we can:</p>
-        <pre><code>&lt;div class="rowItemContainer"><br>&#9;&lt;div class="rowItem fifth">1&lt;/div><br>&#9;&lt;div class="rowItem fifth">2&lt;/div><br>&#9;&lt;div class="rowItem fifth">3&lt;/div><br>&lt;/div></code></pre>
+        <p>To do this we can use a <code>flexRow</code> container with (for instance) five columns (that will become three and then 1 when the page is rescaled):</p>
+        <pre><code>&lt;div class="flexRow" id="paletteContainer"><br>&#9;&lt;div class="fifth">&lt;/div><br>&#9;&lt;div class="fifth">&lt;/div><br>&#9;&lt;div class="fifth">&lt;/div><br>&lt;/div></code></pre>
+        <p>Note that the <code>margin</code> of the parent is overriden to avoid the overflow and <code>margin-top</code> of the children elemets is set to 0 as well. The following CSS is used for this:</p>
+        <pre><code>.flexRow {<br>&#9;display: flex;<br>&#9;flex-wrap: wrap;<br>&#9;justify-content: space-between; <br>&#9;box-sizing: border-box;<br>}<br><br>.flexRow:after {<br>&#9;content: "";<br>&#9;flex: auto;<br>}<br><br>.fifth {<br>&#9;width: calc(100%/5);<br>}</code></pre>
 
-        <p>The simplest way I found to get this behaviour was using the following CSS:</p>
-        <pre><code>.rowItemContainer:after, .rowItemContainer:before {<br>&#9;content: "";<br>&#9;display: table;<br>&#9;clear: both;<br>}<br><br>.rowItem {<br>&#9;float: left;<br>&#9;box-sizing: border-box;<br>&#9;padding: var(--default-padding);<br>}<br><br>.fifth {<br>&#9;width: calc(100%/5);<br>}</code></pre>            
         <p>As you can probably imagine, I created very similar code for <code>.quarter</code> and <code>.third</code> so I can have different levels. And then, for the resizing purposes (adding some margin between the sibling elements):</p>
-        <pre><code>@media only screen and (min-width: 601px) and (max-width: 800px) {<br>&#9;.fifth {<br>&#9;&#9;width: calc(100%/3);<br>&#9;}<br>}<br><br>@media only screen and (max-width: 600px) {<br>&#9;.rowItem {<br>&#9;&#9;width: 100%;<br>&#9;}<br><br>&#9;.rowItem + .rowItem {<br>&#9;&#9;margin-top: var(--default-padding);&#9;&#9;<br>&#9;}<br>}</code></pre>
-
+        <pre><code>@media only screen and (min-width: 601px) and (max-width: 800px) {<br>&#9;.fifth {<br>&#9;&#9;width: calc(100%/3);<br>&#9;}<br>}<br><br>@media only screen and (max-width: 600px) {<br>&#9;.fifth {<br>&#9;&#9;width: 100%;<br>&#9;&#9;padding: 0;<br>&#9;}<br><br>&#9;.flexRow > * {<br>&#9;&#9;margin-top: var(--default-padding);&#9;&#9;<br>&#9;}<br>}</code></pre>
                     
-        <h2>Rows and columns</h2>
-        <div class="flexRow">
-            <div class="flexRowItem row2" style="background-color: var(--surface);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur quam accusamus eos, unde alias perferendis sunt delectus magni, eligendi, facere omnis atque ad? Qui, aperiam temporibus culpa repellendus omnis commodi!</div>
-            <div class="flexRowItem row2" style="background-color: var(--surface);">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae earum, pariatur exercitationem officia deleniti in eligendi ipsum vel doloribus ducimus dicta temporibus voluptates incidunt assumenda, hic aspernatur explicabo ipsa aperiam.</div>
+        <h2>Adaptive columns with margin</h2>
+        <p>Example with two columns. As you can see, it's the elements that are resized but the margin between them stays the same (not the same as using <code>space-between</code> in a <code>flex</code> container):</p>
+        <div class="flexRow flexRowMargins">
+            <div class="half"><div style="padding: var(--default-padding); background-color: var(--surface);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur quam accusamus eos, unde alias perferendis sunt delectus magni, eligendi, facere omnis atque ad? Qui, aperiam temporibus culpa repellendus omnis commodi!</div></div>
+            <div class="half"><div style="padding: var(--default-padding); background-color: var(--surface);">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae earum, pariatur exercitationem officia deleniti in eligendi ipsum vel doloribus ducimus dicta temporibus voluptates incidunt assumenda, hic aspernatur explicabo ipsa aperiam.</div></div>
         </div>
 
-        <p>HTML to create two columns (becomes 1 in smaller screens).</p>
-        <p>Remember that the size of these containers can't be manually changed. Don't add margin or padding.</p>
-        <pre><code>&lt;div class="flexRow"><br>&#9;&lt;div class="flexRowItem row2">Lorem ipsum.&lt;/div><br>&#9;&lt;div class="flexRowItem row2">Lorem ipsum.&lt;/div><br>&lt;/div></code></pre>
+        <p>HTML to create two columns (becomes 1 in smaller screens) with a separation equal to <code>var(--default-padding)</code>:</p>
+        <pre><code>&lt;div class="flexRow flexRowMargins"><br>&#9;&lt;div class="half">&lt;div>1&lt;/div>&lt;/div><br>&#9;&lt;div class="half">&lt;div>2&lt;/div>&lt;/div><br>&lt;/div></code></pre>
         <p>The CSS for this is:</p>
-        <pre><code>.flexRow {<br>&#9;display: flex;<br>&#9;justify-content: space-between;<br>}<br><br>.flexRowItem {<br>&#9;padding: var(--default-padding);<br>&#9;box-sizing: border-box;<br>}<br><br>.row2 {<br>&#9;width: calc(50% - var(--default-padding)/2);<br>&#9;display: inline-block;<br>}</code></pre>
-        <p>More columns in each row are also possible, here's an example:</p>
+        <pre><code>.flexRowMargins {<br>&#9;margin: calc(var(--default-padding) * -1) calc(var(--default-padding) * -0.5) 0 calc(var(--default-padding) * -0.5);<br>}<br><br>.flexRowMargins > * {<br>&#9;margin-top: var(--default-padding);<br>&#9;padding: 0 calc(var(--default-padding)*0.5);<br>&#9;box-sizing: border-box;<br>}<br><br>.half {<br>&#9;width: 50%;<br>}</code></pre>
+        <p>More columns in each row are also possible, here's an example using <code>third</code>:</p>
 
-        <div class="flexRow">
-            <div class="flexRowItem row3" style="background-color: var(--surface);">1</div>
-            <div class="flexRowItem row3" style="background-color: var(--surface);">2</div>
-            <div class="flexRowItem row3" style="background-color: var(--surface);">3</div>
+        <div class="flexRow flexRowMargins">
+            <div class="third"><div style="padding: var(--default-padding); background-color: var(--surface);">1</div></div>
+            <div class="third"><div style="padding: var(--default-padding); background-color: var(--surface);">2</div></div>
+            <div class="third"><div style="padding: var(--default-padding); background-color: var(--surface);">3</div></div>
         </div>
 
-        <p>We can do this for any number of columns:</p>
+        <p>And another example using <code>fifth</code> with margin (the colour palette example has no separation between elements):</p>
 
-        <div class="flexRow">
-            <div class="flexRowItem row5" style="background-color: var(--surface);">1</div>
-            <div class="flexRowItem row5" style="background-color: var(--surface);">2</div>
-            <div class="flexRowItem row5" style="background-color: var(--surface);">3</div>
-            <div class="flexRowItem row5" style="background-color: var(--surface);">4</div>
-            <div class="flexRowItem row5" style="background-color: var(--surface);">5</div>
+        <div class="flexRow flexRowMargins">
+            <div class="fifth"><div style="padding: var(--default-padding); background-color: var(--surface);">1</div></div>
+            <div class="fifth"><div style="padding: var(--default-padding); background-color: var(--surface);">2</div></div>
+            <div class="fifth"><div style="padding: var(--default-padding); background-color: var(--surface);">3</div></div>
+            <div class="fifth"><div style="padding: var(--default-padding); background-color: var(--surface);">4</div></div>
+            <div class="fifth"><div style="padding: var(--default-padding); background-color: var(--surface);">5</div></div>
         </div>
-
-        <p>For this, we create a <code>flexRow</code> container as before and then create <code>&lt;div></code> of the following classes. The pattern is easy to find, it's something like <code>w = 100%/n - p*(n-1)/n</code>. Check it out:</p>
-        <pre><code>.row3 {<br>&#9;width: calc(100% / 3 - var(--default-padding)*2/3);<br>&#9;display: inline-block;<br>}<br><br>.row4 {<br>&#9;width: calc(25% - var(--default-padding)*3/4);<br>&#9;display: inline-block;<br>}<br><br>.row5 {<br>&#9;width: calc(20% - var(--default-padding)*4/5);<br>&#9;display: inline-block;<br>}</code></pre>
+        <p>Comparison to a simple flex with <code>space-between</code> justified contents:</p>
+        <div style="display:flex; justify-content: space-between;">
+            <div style="width: calc(20% - var(--default-padding)); box-sizing: border-box; padding: var(--default-padding); background-color: var(--surface);">1</div>
+            <div style="width: calc(20% - var(--default-padding)); box-sizing: border-box; padding: var(--default-padding); background-color: var(--surface);">2</div>
+            <div style="width: calc(20% - var(--default-padding)); box-sizing: border-box; padding: var(--default-padding); background-color: var(--surface);">3</div>
+            <div style="width: calc(20% - var(--default-padding)); box-sizing: border-box; padding: var(--default-padding); background-color: var(--surface);">4</div>
+            <div style="width: calc(20% - var(--default-padding)); box-sizing: border-box; padding: var(--default-padding); background-color: var(--surface);">5</div>
+        </div>
 
         <p>Finally, to make it adapt to smaller screens (adding some margin between the sibling elements):</p>
-        <pre><code>@media only screen and (max-width: 600px) {<br>&#9;.flexRow {<br>&#9;&#9;display: block;<br>&#9;}<br><br>&#9;.flexRowItem {<br>&#9;&#9;width: calc(100%);<br>&#9;}<br>&#9;<br>&#9;.flexRowItem + .flexRowItem {<br>&#9;&#9;margin-top: var(--default-padding);&#9;&#9;<br>&#9;}<br>}</code></pre>
+        <pre><code>@media only screen and (max-width: 600px) {<br>&#9;.flexRow > * {<br>&#9;&#9;display: block;<br>&#9;&#9;margin: 0;<br>&#9;}<br><br>&#9;.flexRowMargins {<br>&#9;&#9;margin: calc(var(--default-padding)*-1) 0 0 0;<br>&#9;}<br>}</code></pre>
         <p>Disclaimer: I have no idea if this is the best way to do it. I just wanted to play around with CSS and do it myself, instead of using someone else's stylesheet.</p>
     </div>
 
@@ -102,7 +106,7 @@
 
         function addColorToPalette() {
             var palette = document.getElementById("paletteContainer");
-            palette.insertAdjacentHTML('beforeend', '<div class="rowItem fifth"><canvas style="display: block; margin: auto; width: 100%" width="200" height="200"></canvas></div>');
+            palette.insertAdjacentHTML('beforeend', '<div class="fifth"><canvas style="display: block; width: 100%;" width="200" height="200"></canvas></div>');
 
             var canvases = document.getElementsByTagName("canvas");
             fillCanvas(canvases[canvases.length-1]);
