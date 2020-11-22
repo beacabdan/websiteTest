@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cv.css">
+
+    <script type="text/javascript" src="../code/common.js"></script>
+    <title>Bea v3</title>
+</head>
+
+<body>
+    <!-- HEADER AND FOOTER -->
+    <div class="boundary no-print">
+        <div class="pagination-link go-left"><a href="../index.html">BEATRIZ CABRERO DANIEL</a></div>
+        <div class="pagination-link go-right"><a href="../cv/index.html">Résumé</a></div>
+        <div class="pagination-link go-right"><a href="../projects/index.html">Projects</a></div>
+        <div class="pagination-link go-right"><a href="../resources/index.html">Resources</a></div>
+        <div class="pagination-link go-right"><a href="../index.html">Home</a></div>
+    </div>
+    <!-- HEADER -->
+
+    <div class="container">
+        <img src="https://avatars0.githubusercontent.com/u/27675138?s=460&v=4" alt="A picture of Bea" id="cv-picture">
+
+        <h1>Beatriz Cabrero Daniel <a id="download-link" download="cv-beatrizcabrerodaniel"><i class="material-icons no-print">file_download</i></a></h1>
+
+        <p class="no-print">Using my programming skills, Artificial Intelligence knowledge, and experience in doing research to advance the field of Crowd Simulation.</p>
+
+        <div id="education">
+            <h3>Education</h3>
+            <p>2017 – pres. PhD in Information and Communication Technologies (Universitat Pompeu Fabra).</p>
+            <p>2016 – 2017. Master in Intelligent Interactive Systems (Universitat Pompeu Fabra).</p>
+            <p>2012 – 2016. Bachelor’s degree in Computer Science (Universitat Pompeu Fabra).</p>
+            <p>2010 – 2012. Bachibac Program. Double award Batxillerat – Baccalauréat (IES Vicenç Plantada).</p>
+        </div>
+
+        <div id="tech-skills" class="badges">
+            <h3>Skills</h3>
+            <p level="90">Python</p>
+            <p level="85">C++</p>
+            <p level="50">Java</p>
+            <p level="45">JS</p>
+            <p level="25">HTML + CSS</p>
+            <p level="20">GLSL</p>
+        </div>
+
+        <div id="teaching">
+            <h3>Teaching and talks</h3>
+            <p>Introduction to programming. Lab sessions in Python for first years (Computer Science + Multimedia, Mathematical, Biomedical Engineering).</p>
+            <p>Computer Graphics seminars. Theoretical sessions about advanced Computer Graphics topics.</p>
+            <p>Advanced Visualization. Practical course with a final OpenGL-based project to create an interactive 3D scene.</p>
+            <p>Videojocs amb Intel·ligència Artificial en Python. Introduction to videogame development, machine learning and programming for children (Campus Júnior).</p>
+            <p>Girls In Lab collaboration. Volunteer Workshop Instructor (UPF Campus Poblenou).</p>
+        </div>
+
+        <div id="previous-positions">
+            <h3>Previous positions</h3>
+            <p>Robotics instructor (American Spaces), January 2018 – June 2018.</p>
+            <p>Research assistant (Universitat Pompeu Fabra), December 2016 – September 2017.</p>
+            <p>Java Developer Intern (everis), April 2016 – September 2016.</p>
+            <p>Home tutor, January 2009 – August 2015.</p>
+            <p>Summer Intern (Teixidó SA), July 2012 – August 2012.</p>
+        </div>
+
+        <div id="workshops">
+            <h3>Workshops</h3>
+            <p>Blender. Game art with Blender for iOS and Android devices (Barcelona Growth Centre).</p>
+            <p>Power talk. Communicating with clarity, relevance and impact (Porta22).</p>
+            <p>Management of a high-performance team. Specialization seminar (Porta22).</p>
+            <p>Agile methodology. Summer university agilebcn (Ateneu de Fabricació de les Corts).</p>
+            <p>3D Printing. Practical introduction for professionals and ‘pimes’ (Parc Tecnològic).</p>
+        </div>
+
+        <div id="certificates">
+            <h3>Certifications</h3>
+            <p>Graphic Design Specialization. <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/RYZREMVHJ8SG">RYZREMVHJ8SG</a>
+            <p>Deep Learning Fundamentals with Keras (IBM). <a href="https://courses.edx.org/certificates/b66e377e8d4a496ca9e3890be53d5825">b66e377e8d4a496ca9e3890be53d5825</a>
+            <p>AWS Fundamentals: Going Cloud-Native. <a href="https://www.coursera.org/account/accomplishments/certificate/GRZR3MB9BQ2B">GRZR3MB9BQ2B</a>
+        </div>
+
+        <div id="languages">
+            <h3>Languages</h3>
+            <p>Catalan. Native or bilingual proficiency.</p>
+            <p>Spanish. Native or bilingual proficiency.</p>
+            <p>English. British Council, CEFR level C2.</p>
+            <p>French. Alliance Française, DELF niveau B2.</p>
+            <p>German. Escola Oficial d’Idiomes, CEFR A2.</p>
+        </div>
+
+        <div id="social">
+            <h3>Contact</h3>
+            <p>Visit my Linkedin page. <a href="https://www.linkedin.com/in/beatrizcabrerodaniel/">www.linkedin.com/in/beatrizcabrerodaniel/</a></p>
+            <p>Send me an email. <a href="mailto:beatriz.cabrero.daniel@gmail.com">beatriz.cabrero.daniel@gmail.com</a></p>
+            <!-- <p>Check out my YouTube Channel. <a href="https://www.youtube.com/user/badumtssss/">www.youtube.com/user/badumtssss/</a></p> -->
+        </div>
+    </div>
+
+    <script>
+        includeHTML(function () {
+            styleCV1();
+            document.getElementById("download-link").onclick = function () { window.print() };
+        });
+
+        function styleCV1() {
+        elem = document.getElementById("tech-skills");
+        var allPs = elem.querySelectorAll("p");
+        var text = null;
+        var level = null;
+        for (var i = 0; i < allPs.length; i++) {
+            text = allPs[i].innerHTML;
+            colorHex = primaryColour + rgbToHex(Math.floor(((1 - (i + 1) / (allPs.length + 4)) * 255)));
+            allPs[i].innerHTML = '<div class="cv-bar hide-small" style="width: ' + 0 + '%; background-color:' + colorHex + '; margin: 0 10px 0 0;">&nbsp;</div><div style="display: inline;">' + text + '</div>';
+            allPs[i].style.backgroundColor = colorHex;
+        }
+
+        setTimeout(() => {  
+            for (var i = 0; i < allPs.length; i++) {
+            level = allPs[i].getAttribute("level") * 0.9;
+            allPs[i].querySelector("div").style.width = level + "%";
+            } 
+        }, 1);
+        }
+    </script>
+</body>
+
+</html>

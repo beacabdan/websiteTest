@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../code/common.js"></script>
+    <title>Bea v3</title>
+</head>
+
+<body>
+    <!-- HEADER AND FOOTER -->
+    <div class="boundary no-print">
+        <div class="pagination-link go-left"><a href="../index.html">BEATRIZ CABRERO DANIEL</a></div>
+        <div class="pagination-link go-right"><a href="../cv/index.html">Résumé</a></div>
+        <div class="pagination-link go-right"><a href="../projects/index.html">Projects</a></div>
+        <div class="pagination-link go-right"><a href="../resources/index.html">Resources</a></div>
+        <div class="pagination-link go-right"><a href="../index.html">Home</a></div>
+    </div>
+    <!-- HEADER -->    
+
+    <div class="container">
+        <h1>Some ongoing projects</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>      
+        <div class="flexRow" id="projectContainer"></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati culpa ducimus aspernatur cupiditate recusandae magnam delectus, pariatur, rem eum reiciendis ad. Eum fugiat quos sit ut et corrupti reiciendis ex?</p>
+    </div>
+
+    <script>
+        // $.getJSON("projects.json", function (data) {
+        //     console.log(data);
+        // });
+        data = [
+            {
+                "title": "Playlist cover generator",
+                "image": "https://developer.spotify.com/images/home/tile-1-alt-bg.jpg",
+                "url": "https://beacabdan.github.io/portfolio/cover.html"
+            },
+            {
+                "title": "ChAOS",
+                "url": "https://project.inria.fr/crowdscience/project/ocsr/chaos/",
+                "image": "https://project.inria.fr/crowdscience/files/2020/04/RocketBox-1.png"
+            },
+            {
+                "title": "Georg Nees #inspo",
+                "url": "https://beacabdan.github.io/portfolio/nees.html",
+                "image": "https://www.researchgate.net/profile/Ian_Mcmanus/publication/4732061/figure/fig8/AS:668901159477255@1536489872531/Schotter-Gravel-stones-Computer-generated-image-by-Georg-Nees-1968-1971-The-work-is_W640.jpg"
+            },
+            {
+                "title": "Graphic design assignments",
+                "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-university-assets.s3.amazonaws.com/20/fd4872659d44f1b54d24778faa99e5/HEAD_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=1200",
+                "url": "https://beacabdan.github.io/portfolio/gdcalarts.html"
+            },
+            {
+                "title": "Minecraft cities",
+                "image": "https://www.minecraft.net/content/dam/minecraft/home/home-hero-1200x600.jpg",
+                "url": "https://beacabdan.github.io/content/underConstruction.html"
+            },
+            {
+                "title": "Tweet driven analytics",
+                "image": "https://about.twitter.com/content/dam/about-twitter/homepage/hero-tweet/covid19-blog-1608x1108.jpg.img.fullhd.medium.jpg",
+                "url": "https://beacabdan.github.io/content/underConstruction.html"
+            },
+            {
+                "title": "HTML and CSS tests",
+                "image": "../content/images/default-bg.jpg",
+                "url": "csstests.html"
+            },
+            {
+                "title": "EXTRA",
+                "url": "csstests.html"
+            }       
+        ]       
+
+        var prevCols = 0;
+        initProject();
+        
+        function initProject() {
+            var palette = document.getElementById("projectContainer");
+            for (var i = 0; i < data.length; i++) {
+                card = data[i];
+                if (data[i].image != undefined) {
+                    palette.insertAdjacentHTML('beforeend', '<div class="fifth"><a href="'+ data[i].url +'" style="color: white"><div class="square" style="background-color: var(--secondary); background-image: url('+ data[i].image +'); background-position: center; background-repeat: no-repeat; background-size: cover;"><div class="dark-overlay"></div><div class="centerSquare">'+ data[i].title +'</div></div></a></div>');
+                }
+                else palette.insertAdjacentHTML('beforeend', '<div class="fifth"><a href="'+ data[i].url +'" style="color: white"><div class="square" style="background-color: var(--secondary);"><div class="dark-overlay"></div><div class="centerSquare">'+ data[i].title +'</div></div></a></div>');
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+[
+    {
+        "title": "HTML and CSS tests",
+        "url": "csstests.html"
+    },
+    {
+        "title": "Playlist cover generator",
+        "url": "https://beacabdan.github.io/portfolio/cover.html"
+    },
+    {
+        "title": "Georg Nees #inspo",
+        "url": "https://beacabdan.github.io/portfolio/nees.html",
+        "image": "https://www.researchgate.net/profile/Ian_Mcmanus/publication/4732061/figure/fig8/AS:668901159477255@1536489872531/Schotter-Gravel-stones-Computer-generated-image-by-Georg-Nees-1968-1971-The-work-is_W640.jpg"
+    },
+    {
+        "title": "Graphic design assignments",
+        "url": "https://beacabdan.github.io/portfolio/gdcalarts.html"
+    },
+    {
+        "title": "Minecraft cities",
+        "url": "https://beacabdan.github.io/content/underConstruction.html"
+    },
+    {
+        "title": "Tweet driven analytics",
+        "url": "https://beacabdan.github.io/content/underConstruction.html"
+    }    
+]
