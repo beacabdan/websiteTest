@@ -1,3 +1,5 @@
+var parentUrl = "https://beacabdan.github.io/websiteTest"
+
 var primaryColour = getComputedStyle(document.documentElement).getPropertyValue('--primary');
 
 function includeHTML(_callback) {
@@ -37,16 +39,6 @@ function rgbToHex(rgb) {
   return hex;
 };
 
-// https://stackoverflow.com/questions/1484506/random-color-generator
-/*function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}*/
-
 function getRandomColor(r1=0, r2=255, g1=0, g2=255, b1=0, b2=255) {
   var letters = '0123456789ABCDEF';
   var color = '#';
@@ -57,10 +49,15 @@ function getRandomColor(r1=0, r2=255, g1=0, g2=255, b1=0, b2=255) {
   return color;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// CARD FUNCTIONS // CARD FUNCTIONS // CARD FUNCTIONS // CARD FUNCTIONS // CARD FUNCTIONS // CARD FUNCTIONS // CARD FUNCTIONS //
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-function resizeCards() {
-  
+function getColorPair() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  var color2 = '#';
+  var index;
+  for (var i = 0; i < 6; i++) {
+    index = Math.floor(Math.random() * 14);
+    color += letters[Math.min(index, 15)];
+    color2 += letters[Math.max(index-2, 0)];
+  }
+  return [color, color2];
 }

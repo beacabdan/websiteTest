@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <script type="text/javascript" src="../code/common.js"></script>
-    <title>Bea v3</title>
+    <title>CSS tests</title>
 </head>
 
 <body>
@@ -35,10 +35,10 @@
         <p>To do this we can use a <code>flexRow</code> container with (for instance) five columns (that will become three and then 1 when the page is rescaled):</p>
         <pre><code>&lt;div class="flexRow" id="paletteContainer"><br>&#9;&lt;div class="fifth">&lt;/div><br>&#9;&lt;div class="fifth">&lt;/div><br>&#9;&lt;div class="fifth">&lt;/div><br>&lt;/div></code></pre>
         <p>Note that the <code>margin</code> of the parent is overriden to avoid the overflow and <code>margin-top</code> of the children elemets is set to 0 as well. The following CSS is used for this:</p>
-        <pre><code>.flexRow {<br>&#9;display: flex;<br>&#9;flex-wrap: wrap;<br>&#9;justify-content: space-between; <br>&#9;box-sizing: border-box;<br>}<br><br>.flexRow:after {<br>&#9;content: "";<br>&#9;flex: auto;<br>}<br><br>.fifth {<br>&#9;width: calc(100%/5);<br>}</code></pre>
+        <pre><code>.flexRow {<br>&#9;display: flex;<br>&#9;flex-wrap: wrap;<br>&#9;justify-content: space-between; <br>&#9;box-sizing: border-box;<br>}<br><br>.flexRow:after {<br>&#9;content: "";<br>&#9;flex: auto;<br>}<br><br>.fifth {<br>&#9;width: 20%;<br>}</code></pre>
 
         <p>As you can probably imagine, I created very similar code for <code>.quarter</code> and <code>.third</code> so I can have different levels. And then, for the resizing purposes (adding some margin between the sibling elements):</p>
-        <pre><code>@media only screen and (min-width: 601px) and (max-width: 800px) {<br>&#9;.fifth {<br>&#9;&#9;width: calc(100%/3);<br>&#9;}<br>}<br><br>@media only screen and (max-width: 600px) {<br>&#9;.fifth {<br>&#9;&#9;width: 100%;<br>&#9;&#9;padding: 0;<br>&#9;}<br><br>&#9;.flexRow > * {<br>&#9;&#9;margin-top: var(--default-padding);&#9;&#9;<br>&#9;}<br>}</code></pre>
+        <pre><code>@media only screen and (max-width: 800px) {<br>&#9;.fifth {<br>&#9;&#9;width: calc(100%/3);<br>&#9;}<br>}<br><br>@media only screen and (max-width: 600px) {<br>&#9;.fifth {<br>&#9;&#9;width: 100%;<br>&#9;&#9;padding: 0;<br>&#9;}<br><br>&#9;.flexRow > * {<br>&#9;&#9;margin-top: var(--default-padding);&#9;&#9;<br>&#9;}<br>}</code></pre>
                     
         <h2>Adaptive columns with margin</h2>
         <p>Example with two columns. As you can see, it's the elements that are resized but the margin between them stays the same (not the same as using <code>space-between</code> in a <code>flex</code> container):</p>
