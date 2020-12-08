@@ -38,9 +38,9 @@
                 for (var i = 0; i < data.length; i++) {
                     card = data[i];
                     if (data[i].image != undefined) {
-                        palette.insertAdjacentHTML('beforeend', '<div class="sixth"><a href="'+ data[i].url +'" style="color: white"><div class="square" style="background-color: var(--secondary); background-image: url('+ data[i].image +'); background-position: center; background-repeat: no-repeat; background-size: cover;"><div class="dark-overlay"></div><div class="centerSquare">'+ data[i].title +'</div></div></a></div>');
+                        palette.insertAdjacentHTML('beforeend', '<div class="sixth"><a href="'+ data[i].url +'" style="color: white"><div class="square round" style="background-color: var(--secondary); background-image: url('+ data[i].image +'); background-position: center; background-repeat: no-repeat; background-size: cover;"><div class="dark-overlay"></div><div class="centerSquare">'+ data[i].title +'</div></div></a></div>');
                     }
-                    else palette.insertAdjacentHTML('beforeend', '<div class="sixth"><a href="'+ data[i].url +'" style="color: white"><div class="square" style="background-color: var(--secondary);"><div class="dark-overlay"></div><div class="centerSquare">'+ data[i].title +'</div></div></a></div>');
+                    else palette.insertAdjacentHTML('beforeend', '<div class="sixth"><a href="'+ data[i].url +'" style="color: white"><div class="square round" style="background-color: var(--secondary);"><div class="dark-overlay"></div><div class="centerSquare">'+ data[i].title +'</div></div></a></div>');
                 }
             });
         }
