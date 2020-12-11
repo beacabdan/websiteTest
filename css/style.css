@@ -20,8 +20,7 @@
   --button-round: 3px;
   --chip-round: 15px;
 
-  --content-width: 1500px;
-
+  --content-width: 900px;
   --font-size: 15px;
 }
 
@@ -48,8 +47,10 @@ html, body {
 .boundary {
   border: 1px solid var(--debug);
   overflow: auto;
-  margin: 0 calc(var(--default-padding)*4);
-  margin-top: var(--default-padding);
+  padding-left: max(calc(50% - var(--content-width)*0.55), calc(var(--default-padding)*2));
+  padding-right: max(calc(50% - var(--content-width)*0.55), calc(var(--default-padding)*2));
+  padding-top: var(--default-padding);
+  padding-bottom: var(--default-padding);
 }
 
 .pagination-link {
@@ -65,6 +66,7 @@ html, body {
 
 .go-left {
   float: left;
+  position: absolute;
 }
 
 /* CONTENTS */
@@ -167,7 +169,7 @@ pre {
   display: none;
 }
 
-.hide-big {
+.show-small {
   display: none;
 }
 
@@ -180,9 +182,6 @@ pre {
     display: inline-block;
   }
 
-  .boundary {
-    margin: 0;
-  }
 }
 
 @media only screen and (max-width: 500px), print {
@@ -191,12 +190,22 @@ pre {
     padding: var(--default-padding);
   }
 
+  .show-small {
+    display: inline-block;
+  }
+
   .hide-small {
     display: none;
   }
 
-  .hide-big {
-    display: inline-block;
+  .boundary {
+    padding-left: var(--default-padding);
+    padding-right: var(--default-padding);
+  }
+
+  .boundary > .pagination-link {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
