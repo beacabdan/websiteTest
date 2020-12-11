@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <script type="text/javascript" src="../code/common.js"></script>
     <title>Useful resources</title>
@@ -42,6 +43,8 @@
         <p>A playlist with demos of some of my undergraduate projects (Robotics, AI, IoT, Rendering).</p>        
 
         <h1>Other interesting resources</h1>
+        <div class="flexRow flexRowMargins" id="projectContainer"></div>
+
         <h3>Crowd Simulation</h3>
         <p>User experiment about trajectory quality perception <a href="https://webglstudio.org/users/bea/naive/">https://webglstudio.org/users/bea/naive/</a> (feel free to help me out!).</p>
         <p>WebGLStudio-based visualisation of trajectories <a href="https://webglstudio.org/demos/crowd/?simulation=https://webglstudio.org/demos/crowd/guest/projects/crowd/200agents_bea.bin">https://webglstudio.org/demos/crowd/?simulation</a> by (the one, the only) <a href="https://tamats.com/">Tamats</a>.</p>
@@ -72,6 +75,21 @@
     </div>
 
     <script>
+        var prevCols = 0;
+        initProject();
+        
+        function initProject() {
+            var palette = document.getElementById("projectContainer");
+            fetch(parentUrl+"/content/resources.json").then(response => response.json()).then(function(data){
+                for (var i = 0; i < data.length; i++) {
+                    card = data[i];
+                    if (data[i].image != undefined) {
+                        palette.insertAdjacentHTML('beforeend', '<div class="quarter"><a href="'+ data[i].url +'" style="color: white"><div class="square" style="bacground-color: var(--secondary); background-image: url('+ data[i].image +'); background-position: center; background-repeat: no-repeat; background-size: cover;"><div class="dark-overlay"></div><div class="centerSquare"><i class="material-icons no-print">link</i></div></div><p class="caption">'+data[i].title+'</p></a></div>');
+                    }
+                    else palette.insertAdjacentHTML('beforeend', '<div class="quarter"><a href="'+ data[i].url +'" style="color: white"><div class="square" style="background-color: var(--secondary);"><div class="dark-overlay"></div><div class="centerSquare"><i class="material-icons no-print">link</i></div></div><p class="caption">'+data[i].title+'</p></a></div>');
+                }
+            });
+        }
     </script>
 </body>
 

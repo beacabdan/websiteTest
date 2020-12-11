@@ -18,20 +18,5 @@
         "title": "Graphic design assignments",
         "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-university-assets.s3.amazonaws.com/20/fd4872659d44f1b54d24778faa99e5/HEAD_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=1200",
         "url": "https://beacabdan.github.io/portfolio/gdcalarts.html"
-    },
-    {
-        "title": "Minecraft cities",
-        "image": "https://www.minecraft.net/content/dam/minecraft/home/home-hero-1200x600.jpg",
-        "url": "../notworking.html"
-    },
-    {
-        "title": "Tweet driven analytics",
-        "image": "https://about.twitter.com/content/dam/about-twitter/homepage/hero-tweet/covid19-blog-1608x1108.jpg.img.fullhd.medium.jpg",
-        "url": "../notworking.html"
-    },
-    {
-        "title": "HTML and CSS tests",
-        "image": "../content/images/default-bg.jpg",
-        "url": "csstests.html"
-    }      
+    }  
 ]

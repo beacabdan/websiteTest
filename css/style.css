@@ -270,7 +270,7 @@ pre {
 }
 
 @media only screen and (max-width: 900px) {
-  .sixth, .fifth, .quarter {
+  .fifth, .quarter {
     width: calc(100%/3);
   }
 
@@ -280,8 +280,11 @@ pre {
 }
 
 @media only screen and (max-width: 700px) {
+  .sixth {
+    width: calc(100%/3);
+  }
 
-  .sixth, .fifth, .quarter, .third {
+  .fifth, .quarter, .third {
     width: 50%;
   }
 }
@@ -297,7 +300,7 @@ pre {
     margin: calc(var(--default-padding)*-1) 0 0 0;
   }
 
-  .sixth, .fifth, .quarter, .third, .half {
+  .fifth, .quarter, .third, .half {
     width: 100%;
     padding: 0;
   }
