@@ -14,7 +14,7 @@
   --onsurface: black;
   --onerror: white;
 
-  --debug: green;  /* green */
+  --debug: white;  /* green */
 
   --default-padding: 20px;
   --button-round: 3px;
@@ -37,8 +37,8 @@ html, body {
 
 .container {
   border: 1px solid var(--debug);
-  margin: calc(var(--default-padding)*2) auto;
-  width: 70%;
+  margin: 0 max(15%, calc(50% - var(--content-width)*0.5));
+  padding: calc(var(--default-padding)*2);
   max-width: var(--content-width);
 }
 
@@ -186,16 +186,8 @@ pre {
 
 @media only screen and (max-width: 500px), print {
   .container {
-    width: auto;
-    padding: var(--default-padding);
-  }
-
-  .show-small {
-    display: inline-block;
-  }
-
-  .hide-small {
-    display: none;
+    margin: 0;
+    padding: calc(var(--default-padding)*2) var(--default-padding);
   }
 
   .boundary {
@@ -206,6 +198,14 @@ pre {
   .boundary > .pagination-link {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .show-small {
+    display: inline-block;
+  }
+
+  .hide-small {
+    display: none;
   }
 }
 
@@ -313,6 +313,11 @@ pre {
   overflow: hidden;
 }
 
+.ratio169 {
+  position: relative;
+  overflow: hidden;
+}
+
 .round {
   border-radius: 50%;
 }
@@ -321,6 +326,12 @@ pre {
   content: "";
   display: block;
   padding-bottom: 100%;
+}
+
+.ratio169:after {
+  content: "";
+  display: block;
+  padding-bottom: 56%;
 }
 
 .centerSquare {  
@@ -333,7 +344,7 @@ pre {
   display: none;
 }
 
-.square:hover > .centerSquare {
+.square:hover > .centerSquare, .ratio169:hover > .centerSquare {
   display: initial;
 }
 
@@ -346,7 +357,7 @@ pre {
   opacity: 0.1;
 }
 
-.square:hover > .dark-overlay {    
+.square:hover > .dark-overlay, .ratio169:hover > .dark-overlay {    
   opacity: 0.3;
 }
 
