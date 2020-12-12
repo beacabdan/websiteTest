@@ -61,3 +61,15 @@ function getColorPair() {
   }
   return [color, color2];
 }
+
+// MENU FUNCTIONS // MENU FUNCTIONS // MENU FUNCTIONS // MENU FUNCTIONS //
+// MENU FUNCTIONS // MENU FUNCTIONS // MENU FUNCTIONS // MENU FUNCTIONS //
+// MENU FUNCTIONS // MENU FUNCTIONS // MENU FUNCTIONS // MENU FUNCTIONS //
+
+function openNav() {
+  document.getElementsByClassName("menu-small")[0].style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementsByClassName("menu-small")[0].style.height = "0%";
+}

@@ -12,14 +12,33 @@
 </head>
 
 <body>
-    <!-- HEADER AND FOOTER -->
+    <!-- HEADER -->
     <div class="boundary">
-        <div class="pagination-link go-left"><a href="index.html">BEA<span class="hide-medium">TRIZ</span><span class="hide-small">&nbsp;</span>CAB<span class="hide-small">RERO&nbsp;</span>DAN<span class="hide-small">IEL</span></a></div>
-        <div class="pagination-link go-right hide-medium"><a href="cv/index.html">Résumé</a></div>
+        <div class="pagination-link"><a href="index.html">BEA<span class="hide-medium">TRIZ</span><span class="hide-small">&nbsp;</span>CAB<span class="hide-small">RERO&nbsp;</span>DAN<span class="hide-small">IEL</span></a></div>
+        <div class="pagination-link go-right hide-medium dropdown-hover"><a href="index.html">About me</a>
+            <div class="dropdown-content">
+                <a href="cv/index.html">CV</a>
+                <a href="projects/index.html">Quotes and sayings</a>
+                <a href="projects/index.html">Entertainment</a>
+            </div>
+        </div>
         <div class="pagination-link go-right hide-medium"><a href="projects/index.html">Projects</a></div>
         <div class="pagination-link go-right hide-medium"><a href="resources/index.html">Resources</a></div>
-        <div class="pagination-link go-right hide-medium"><a href="index.html">Home</a></div>
-        <div class="pagination-link go-right show-medium"><a href="index.html"><i class="material-icons no-print">menu</i></a></div>
+        <div class="pagination-link go-right show-medium"><a onclick="openNav()"><i class="material-icons no-print">menu</i></a></div>
+    </div>
+    <!-- HEADER -->
+
+    <div class="menu-small">
+        <a class="menu-small-button" onclick="closeNav()"><i class="material-icons no-print">close</i></a>
+        <div class="menu-small-content">
+            <a href="index.html">Home</a>
+            <a href="resources/index.html">Resources</a>
+            <a href="projects/index.html">Projects</a>
+            <a href="index.html">About me</a>
+            <a href="cv/index.html">CV</a>
+            <a href="projects/index.html">Quotes and sayings</a>
+            <a href="projects/index.html">Entertainment</a>
+        </div>
     </div>
     <!-- HEADER -->
 
@@ -35,9 +54,6 @@
         <p>Sed et purus quam. Pellentesque vitae diam in orci tristique rutrum vitae et ex. Nam quis ligula nisi. Donec sagittis sapien aliquet augue dictum, in posuere nisi sollicitudin. Aliquam in mi sit amet elit scelerisque semper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur vel enim id neque molestie condimentum ac vitae diam. Vestibulum non sem ultrices, iaculis nisl eu, pellentesque arcu. Vestibulum nec ipsum id lacus sollicitudin vulputate.</p>
         <p>Fusce mattis in lorem id auctor. Nam non rhoncus purus. Vivamus ut est ipsum. Donec in nisi blandit, vulputate tortor ut, scelerisque magna. Integer quam purus, ornare vel ligula nec, accumsan dictum purus. Duis vulputate, ante quis sodales molestie, nulla diam porta felis, sit amet sodales augue risus ut nisl. Maecenas et leo mauris. Quisque molestie risus sit amet ex pretium, vitae mollis augue maximus. In dapibus auctor viverra. Aenean luctus libero eget eros pharetra viverra. Morbi luctus consectetur nisi et porta. Nulla eu dapibus neque.</p>
     </div>
-
-    <script>
-    </script>
 </body>
 
 </html>

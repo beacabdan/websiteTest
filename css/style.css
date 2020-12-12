@@ -28,7 +28,7 @@
 
 html, body {
   font-family: sans-serif;
-  font-size: 15px;
+  font-size: medium;
   line-height: 1.5em;
   height: 100%;
   margin: 0;
@@ -45,28 +45,90 @@ html, body {
 /* MENU */
 
 .boundary {
+  z-index: 2;
   border: 1px solid var(--debug);
-  overflow: auto;
-  padding-left: max(calc(50% - var(--content-width)*0.55), calc(var(--default-padding)*2));
-  padding-right: max(calc(50% - var(--content-width)*0.55), calc(var(--default-padding)*2));
-  padding-top: var(--default-padding);
-  padding-bottom: var(--default-padding);
+  padding-left: max(calc(50% - var(--content-width)*0.6), calc(var(--default-padding)*2));
+  padding-right: max(calc(50% - var(--content-width)*0.6), calc(var(--default-padding)*2));
+  text-transform: uppercase;
 }
 
 .pagination-link {
   border: 1px solid var(--debug);
   display: inline-block;  
-  padding: 10px;
+  padding: var(--default-padding) var(--default-padding);
+  margin: var(--default-padding) calc(var(--default-padding)*0.5);
+}
+
+.menu-small {
+  z-index: 2;
+  height: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.9);
+  overflow-y: hidden;
+}
+
+.menu-small-content {
+  text-align: center;
+  position: relative;
+  font-size: x-large;
+  top: 5em;
+}
+
+.menu-small-content > a {
+  
+  display: block;
   text-transform: uppercase;
+  padding: var(--default-padding) 0;
+}
+
+.menu-small-button {
+  position: absolute;
+  right: 0;
+  padding: var(--default-padding) var(--default-padding);
+  margin: var(--default-padding) calc(var(--default-padding)*0.5);
+  padding-right: max(calc(50% - var(--content-width)*0.6), calc(var(--default-padding)*2));
 }
 
 .go-right {
+  /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_overlay */
   float: right;
 }
 
-.go-left {
-  float: left;
+.dropdown-hover {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
   position: absolute;
+  right: 0;
+  margin-top: calc(var(--default-padding)*0.5);
+  margin-left: calc(var(--default-padding)*-1);
+  display: none;  
+  z-index: 2;  
+  background-color: var(--background);
+}
+
+.dropdown-hover:hover .dropdown-content {
+  display: block;  
+}
+
+.dropdown-content a {
+  border: 1px solid var(--debug);
+  color: var(--primary-light);
+  padding: calc(var(--default-padding) * 0.5) var(--default-padding);
+  display: block;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  color: var(--primary);
+  font-weight: bolder;  
 }
 
 /* CONTENTS */
@@ -173,7 +235,16 @@ pre {
   display: none;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
+  .pagination-link {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: calc(var(--default-padding)*0.5);
+    padding-right: calc(var(--default-padding)*0.5);
+  }
+}
+
+@media only screen and (max-width: 700px) {
   .hide-medium {
     display: none;
   }
@@ -181,7 +252,6 @@ pre {
   .show-medium {
     display: inline-block;
   }
-
 }
 
 @media only screen and (max-width: 500px), print {
@@ -195,9 +265,18 @@ pre {
     padding-right: var(--default-padding);
   }
 
+  .menu-small-button {
+    padding-left: var(--default-padding);
+    padding-right: var(--default-padding);
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .boundary > .pagination-link {
     padding-left: 0;
     padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .show-small {
