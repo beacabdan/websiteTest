@@ -10,11 +10,14 @@
   --error: #c8503f;
   --onprimary: white;
   --onsecondary: black;
-  --onbackground: grey;
-  --onsurface: black;
+  --onbackground: black;
+  --onsurface: grey;
   --onerror: white;
+  --dark-grey: #333333;
+  --default-grey: grey;
+  --light-grey: #EAEAEA;
 
-  --debug: white;  /* green */
+  --debug: white;  /* white green */
 
   --default-padding: 20px;
   --button-round: 3px;
@@ -45,8 +48,10 @@ html, body {
 /* MENU */
 
 .boundary {
-  z-index: 2;
   border: 1px solid var(--debug);
+  border-bottom: 1px solid var(--secondaryvariant);
+
+  z-index: 2;  
   padding-left: max(calc(50% - var(--content-width)*0.6), calc(var(--default-padding)*2));
   padding-right: max(calc(50% - var(--content-width)*0.6), calc(var(--default-padding)*2));
   text-transform: uppercase;
@@ -55,19 +60,71 @@ html, body {
 .pagination-link {
   border: 1px solid var(--debug);
   display: inline-block;  
-  padding: var(--default-padding) var(--default-padding);
   margin: var(--default-padding) calc(var(--default-padding)*0.5);
+  padding: calc(var(--default-padding)*0.5);
+}
+
+.dropdown-hover {
+  position: relative;
+  display: inline-block;
+
+  height: 0;
+  overflow-y: hidden;
+}
+
+.pagination-link.open > .dropdown-hover {
+  height: fit-content;
+  overflow-y: unset;
+}
+
+.pagination-link > .dropdown-hover > .dropdown-content {
+  position: absolute;  
+
+  right: 0;
+  margin-top: calc(var(--default-padding)*0.5);
+  margin-left: calc(var(--default-padding)*-1);
+  z-index: 2;  
+  background-color: var(--background);
+}
+
+.pagination-link > .dropdown-hover > .dropdown-content {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: var(--button-round);
+  
+  opacity: 0;
+  transform: scale(0.8);
+  transform-origin: 100% 0%;
+  transition: transform 0.1s, opacity 0.1s;  
+}
+
+.pagination-link.open > .dropdown-hover > .dropdown-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.dropdown-content a {
+  color: var(--primary-light);
+  padding: calc(var(--default-padding) * 0.5) var(--default-padding);
+  display: block;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  color: var(--primary);
+  background-color: var(--surface);
+  font-weight: bolder;  
 }
 
 .menu-small {
   z-index: 2;
   height: 0;
+
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   background-color: rgb(255, 255, 255);
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   overflow-y: hidden;
 }
 
@@ -75,61 +132,30 @@ html, body {
   text-align: center;
   position: relative;
   font-size: x-large;
-  top: 5em;
+  top: 50%;
+  transform:translateY(-50%);
+  width: fit-content;
+  margin: auto;
 }
 
 .menu-small-content > a {
-  
   display: block;
   text-transform: uppercase;
-  padding: var(--default-padding) 0;
+  margin-top: min(5vh, calc(var(--default-padding)*2));
 }
 
 .menu-small-button {
   position: absolute;
   right: 0;
   padding: var(--default-padding) var(--default-padding);
-  margin: var(--default-padding) calc(var(--default-padding)*0.5);
+  margin: calc(var(--default-padding)*0.5);
   padding-right: max(calc(50% - var(--content-width)*0.6), calc(var(--default-padding)*2));
 }
 
 .go-right {
-  /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_overlay */
   float: right;
 }
 
-.dropdown-hover {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  position: absolute;
-  right: 0;
-  margin-top: calc(var(--default-padding)*0.5);
-  margin-left: calc(var(--default-padding)*-1);
-  display: none;  
-  z-index: 2;  
-  background-color: var(--background);
-}
-
-.dropdown-hover:hover .dropdown-content {
-  display: block;  
-}
-
-.dropdown-content a {
-  border: 1px solid var(--debug);
-  color: var(--primary-light);
-  padding: calc(var(--default-padding) * 0.5) var(--default-padding);
-  display: block;
-  text-align: right;
-  white-space: nowrap;
-}
-
-.dropdown-content a:hover {
-  color: var(--primary);
-  font-weight: bolder;  
-}
 
 /* CONTENTS */
 
@@ -148,7 +174,7 @@ h2, h3 {
   text-transform: uppercase;
   font-size: calc(var(--font-size)*0.75);
   text-align: center;
-  color: var(--onbackground);
+  color: var(--default-grey);
 }
 
 /* BUTTONS */
@@ -158,7 +184,7 @@ p > a, li > a {
 }
 
 a {
-  font-weight: bold;
+  font-weight: bolder;
   text-decoration: none;
   color: var(--primary);
   transition: 0.3s;
@@ -201,7 +227,7 @@ button:hover {
 
 .secondaryButton {
   background-color: var(--background);
-  color: var(--onbackground);
+  color: var(--onsurface);
   padding: calc(var(--default-padding)/2);
 }
 
@@ -244,8 +270,12 @@ pre {
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 700px), (hover: none) and (pointer: coarse) {
   .hide-medium {
+    display: none;
+  }
+
+  #about-me-dropdown {
     display: none;
   }
 
@@ -432,7 +462,7 @@ pre {
   height:100%;
   position:absolute;
   transition: opacity 0.2s;
-  background-color: var(--onsurface);
+  background-color: var(--dark-grey);
   opacity: 0.1;
 }
 

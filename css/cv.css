@@ -24,13 +24,14 @@
 @media only screen and (max-width: 850px), print {
   #cv-picture {
     float: none;
-    margin: auto;
+    margin: auto auto;
     width: 100px;
   }
 
   h1 {
     text-align: center;
-    margin: 32px 0 64px 0;
+    margin-top: var(--default-padding);
+    margin-bottom: calc(var(--default-padding)*2);
   }
 }
 
@@ -44,7 +45,7 @@
     display: inline-block;
     padding: 5px 10px;
     border-radius: var(--chip-round);
-    text-shadow: 0 1px 4px var(--shadow-colour);
+    text-shadow: 0 1px 4px var(--dark-grey);
     margin-right: 5px;
     margin-top: 0;
     margin-bottom: 8px;
@@ -54,8 +55,8 @@
 @media print {
   .container {
     width: 100% !important;
-    margin: 0;
-    margin-top: 2em;
+    margin: var(--default-padding);
+    margin-top: calc(var(--default-padding)*2);
     padding: 0;
   }
 

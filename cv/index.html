@@ -15,12 +15,15 @@
 <body>
     <!-- HEADER -->
     <div class="boundary">
-        <div class="pagination-link"><a href="../index.html">BEA<span class="hide-medium">TRIZ</span><span class="hide-small">&nbsp;</span>CAB<span class="hide-small">RERO&nbsp;</span>DAN<span class="hide-small">IEL</span></a></div>
-        <div class="pagination-link go-right hide-medium dropdown-hover"><a href="../index.html">About me</a>
-            <div class="dropdown-content">
-                <a href="../cv/index.html">CV</a>
-                <a href="../projects/index.html">Quotes and sayings</a>
-                <a href="../projects/index.html">Entertainment</a>
+        <div class="pagination-link"><a href="../index.html">Bea<span class="hide-medium">triz</span><span class="hide-small">&nbsp;</span>Cab<span class="hide-small">rero&nbsp;</span>Dan<span class="hide-small">iel</span></a></div>
+        <div id="about-me-dropdown" class="pagination-link go-right hide-medium">
+            <a onclick="openDropdown()" href="#">About me</a>
+            <div class="dropdown-hover">
+                <div class="dropdown-content">
+                    <a href="../cv/index.html">CV</a>
+                    <a href="../projects/index.html">Books & more</a>
+                    <a href="../projects/index.html">Clipboard</a>
+                </div>
             </div>
         </div>
         <div class="pagination-link go-right hide-medium"><a href="../projects/index.html">Projects</a></div>
@@ -29,23 +32,23 @@
     </div>
 
     <div class="menu-small">
-        <a class="menu-small-button" onclick="closeNav()"><i class="material-icons no-print">close</i></a>
+        <a class="menu-small-button" onclick="closeNav()" href="#"><i class="material-icons no-print">close</i></a>
         <div class="menu-small-content">
             <a href="../index.html">Home</a>
             <a href="../resources/index.html">Resources</a>
             <a href="../projects/index.html">Projects</a>
             <a href="../index.html">About me</a>
             <a href="../cv/index.html">CV</a>
-            <a href="../projects/index.html">Quotes and sayings</a>
-            <a href="../projects/index.html">Entertainment</a>
+            <a href="../projects/index.html">Books & more</a>
+            <a href="../projects/index.html">Clipboard</a>
         </div>
     </div>
     <!-- HEADER -->
 
     <div class="container">
-        <img src="https://avatars0.githubusercontent.com/u/27675138?s=460&v=4" alt="A picture of Bea" id="cv-picture">
+        <img src="https://avatars0.githubusercontent.com/u/27675138?s=460&v=4" alt="A picture of Bea" id="cv-picture" >
 
-        <h1>Beatriz Cabrero Daniel <a id="download-link" download="cv-beatrizcabrerodaniel"><i class="material-icons no-print">file_download</i></a></h1>
+        <h1>Beatriz Cabrero Daniel <a id="download-link" download="cv-beatrizcabrerodaniel" onclick="window.print()"><i class="material-icons no-print">file_download</i></a></h1>
 
         <p class="no-print">Using my programming skills, Artificial Intelligence knowledge, and experience in doing research to advance the field of Crowd Simulation.</p>
 
@@ -119,10 +122,7 @@
     </div>
 
     <script>
-        includeHTML(function () {
-            styleCV1();
-            document.getElementById("download-link").onclick = function () { window.print() };
-        });
+        styleCV1();
 
         function styleCV1() {
         elem = document.getElementById("tech-skills");

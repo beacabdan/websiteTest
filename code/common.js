@@ -73,3 +73,18 @@ function openNav() {
 function closeNav() {
   document.getElementsByClassName("menu-small")[0].style.height = "0%";
 }
+
+function openDropdown(close=null) {
+  console.log("CLICK")
+  document.body.addEventListener('click', openDropdown, true);
+  document.body.addEventListener('scroll', openDropdown, true);
+  
+  if (document.getElementById("about-me-dropdown").classList.contains("open") || close) {
+    document.getElementById("about-me-dropdown").classList.remove("open");
+  }
+  else {
+    document.getElementById("about-me-dropdown").classList.add("open");
+  }    
+}
+
+
