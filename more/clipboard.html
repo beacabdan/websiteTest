@@ -6,9 +6,10 @@
     <link rel="icon" type="image/ico" href="../content/images/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/cv.css">
+
     <script type="text/javascript" src="../code/common.js"></script>
-    <title>Some projects</title>
+    <title>Bea v3</title>
 </head>
 
 <body>
@@ -45,28 +46,9 @@
     <!-- HEADER -->
 
     <div class="container">
-        <h1>Some projects</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>      
-        <div class="flexRow flexRowMargins" id="projectContainer"></div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati culpa ducimus aspernatur cupiditate recusandae magnam delectus, pariatur, rem eum reiciendis ad. Eum fugiat quos sit ut et corrupti reiciendis ex?</p>
     </div>
 
     <script>
-        var prevCols = 0;
-        initProject();
-        
-        function initProject() {
-            var palette = document.getElementById("projectContainer");
-            fetch(parentUrl+"/content/projects.json").then(response => response.json()).then(function(data){
-                for (var i = 0; i < data.length; i++) {
-                    card = data[i];
-                    if (data[i].image != undefined) {
-                        palette.insertAdjacentHTML('beforeend', '<div class="quarter"><a href="'+ data[i].url +'" style="color: white"><div class="square round" style="background-color: var(--secondary); background-image: url('+ data[i].image +'); background-position: center; background-repeat: no-repeat; background-size: cover;"><div class="dark-overlay"></div><div class="centerSquare">'+ data[i].title +'</div></div></a></div>');
-                    }
-                    else palette.insertAdjacentHTML('beforeend', '<div class="quarter"><a href="'+ data[i].url +'" style="color: white"><div class="square round" style="background-color: var(--secondary);"><div class="dark-overlay"></div><div class="centerSquare">'+ data[i].title +'</div></div></a></div>');
-                }
-            });
-        }
     </script>
 </body>
 

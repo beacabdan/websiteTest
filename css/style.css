@@ -170,7 +170,7 @@ h2, h3 {
   text-transform: uppercase;
 }
 
-.caption {
+.caption, .slide > img {
   text-transform: uppercase;
   font-size: calc(var(--font-size)*0.75);
   text-align: center;
@@ -478,4 +478,54 @@ pre {
   .dark-overlay {    
     opacity: 0.3;
   }  
+}
+
+/* SLIDER */
+
+.slider {
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slides::-webkit-scrollbar {
+  height: calc(var(--default-padding)*0.4);
+}
+
+.slides::-webkit-scrollbar-thumb {
+  background: var(--light-grey);
+  border-radius: var(--chip-round);
+}
+
+.slides .slide {
+  flex-shrink: 0;
+  width: 133px;
+  height: 200px;
+  
+  margin: 0 calc(var(--default-padding)*0.5);
+  margin-bottom: calc(var(--default-padding)*0.5);
+  
+  border-radius: var(--button-round);
+  background: var(--surface);
+
+  position: relative;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide > img {
+  object-fit: cover;
+  position: absolute;
+  border-radius: var(--button-round);
+  width: 100%;
+  height: 100%;
 }
