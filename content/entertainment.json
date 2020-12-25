@@ -26,9 +26,23 @@
             "url": "csstests.html"
         }        
     ],
-    "TV shows": [
+    "shows": [
         {
             "title": "Utopia",
+            "image": "../content/images/default-bg.jpg",
+            "url": "csstests.html"
+        }        
+    ],
+    "movies": [
+        {
+            "title": "Citizen Kane",
+            "image": "../content/images/default-bg.jpg",
+            "url": "csstests.html"
+        }        
+    ],
+    "albums": [
+        {
+            "title": "Tales of mistery and imagination",
             "image": "../content/images/default-bg.jpg",
             "url": "csstests.html"
         }        
