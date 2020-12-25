@@ -508,7 +508,7 @@ pre {
 .slides .slide {
   flex-shrink: 0;
   width: 133px;
-  height: 200px;
+  height: 133px;
   
   margin: 0 calc(var(--default-padding)*0.5);
   margin-bottom: calc(var(--default-padding)*0.5);
@@ -520,6 +520,11 @@ pre {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.slides .slide.book {
+  width: 133px;
+  height: 200px;
 }
 
 .slide > img {

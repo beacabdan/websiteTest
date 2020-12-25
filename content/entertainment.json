@@ -1,0 +1,36 @@
+{
+    "books": [
+        {
+            "title": "Jurassic Park",
+            "url": "https://www.casadellibro.com/libro-jurassic-park/9788811685852/2022917",
+            "image": "https://imagessl2.casadellibro.com/a/l/t5/52/9788811685852.jpg"
+        },
+        {
+            "title": "Moby-Dick; or, The Whale",
+            "url": "https://www.casadellibro.com/libro-moby-dick/9788492549290/1238483",
+            "image": "https://imagessl0.casadellibro.com/a/l/t5/90/9788492549290.jpg"
+        },
+        {
+            "title": "Cisnes Salvajes",
+            "image": "../content/images/default-bg.jpg",
+            "url": "csstests.html"
+        },
+        {
+            "title": "La muerte de Iván Ilich",
+            "image": "../content/images/default-bg.jpg",
+            "url": "csstests.html"
+        },
+        {
+            "title": "The Tragedy of Hamlet, Prince of Denmark",
+            "image": "../content/images/default-bg.jpg",
+            "url": "csstests.html"
+        }        
+    ],
+    "TV shows": [
+        {
+            "title": "Utopia",
+            "image": "../content/images/default-bg.jpg",
+            "url": "csstests.html"
+        }        
+    ]
+}
