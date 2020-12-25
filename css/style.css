@@ -507,8 +507,8 @@ pre {
 
 .slides .slide {
   flex-shrink: 0;
-  width: 133px;
-  height: 133px;
+  width: 160px;
+  height: 160px;
   
   margin: 0 calc(var(--default-padding)*0.5);
   margin-bottom: calc(var(--default-padding)*0.5);

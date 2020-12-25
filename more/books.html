@@ -49,35 +49,26 @@
         <h1>My references</h1>
         
         <h2>Books</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident fugit dolores quibusdam dolore, quidem molestiae quo id, doloremque velit obcaecati voluptatum est labore. Quia facere laboriosam repellendus debitis beatae enim?</p>
-        <div class="slider">
-            <div class="slides" id="book-container">
-                <a href="https://www.casadellibro.com/libro-moby-dick/9788492549290/1238483" target="_blank"><div class="slide book" style="margin-left:0;"><img src="https://imagessl0.casadellibro.com/a/l/t5/90/9788492549290.jpg" alt="Moby-Dick; or, The Whale"></div></a>
-                <a href="https://www.casadellibro.com/libro-jurassic-park/9788811685852/2022917" target="_blank"><div class="slide book"><img src="https://imagessl2.casadellibro.com/a/l/t5/52/9788811685852.jpg" alt="Jurassic Park"></div></a>
-                <a href="https://www.casadellibro.com/libro-la-muerte-de-ivan-ilich/9788495311993/864149" target="_blank"><div class="slide book"><img src="https://imagessl3.casadellibro.com/a/l/t5/93/9788495311993.jpg" alt="La muerte de Iván Ilich"></div></a>
-                <a href="https://www.casadellibro.com/libro-cisnes-salvajes/9788477652229/963065" target="_blank"><div class="slide book"><img src="https://imagessl9.casadellibro.com/a/l/t5/29/9788477652229.jpg" alt="Cisnes Salvajes"></div></a>
-                <a href="https://www.casadellibro.com/libro-hamlet/9788467033380/1799645" target="_blank"><div class="slide book"><img src="https://imagessl0.casadellibro.com/a/l/t5/80/9788467033380.jpg" alt="The Tragedy of Hamlet, Prince of Denmark"></div></a>
-                <a href="https://www.casadellibro.com/libro-alicia-en-el-pais-de-las-maravillas-edicion-ilustrada/9788415618713/5998576" target="_blank"><div class="slide book"><img src="https://imagessl3.casadellibro.com/a/l/t5/13/9788415618713.jpg" alt="Alice's Adventures in Wonderland"></div></a>
-                <a href="https://www.casadellibro.com/" target="_blank"><div class="slide book"><img src="../content/images/default-bg.jpg" alt="Default"></div></a>
-                <a href="https://www.casadellibro.com/" target="_blank"><div class="slide book"><img src="../content/images/default-bg.jpg" alt="Default"></div></a>
-                <a href="https://www.casadellibro.com/" target="_blank"><div class="slide book" style="margin-right:0;"><img src="../content/images/default-bg.jpg" alt="Default"></div></a>
-            </div>
-        </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, quas saepe vitae aperiam non voluptatum rerum a iste sint quam dolor! Voluptates, inventore? Sed perspiciatis nisi culpa deleniti eligendi ea.</p>
+        <p>Estos son algunos de los libros que me han acompañado en distintas épocas de mi vida. La selección no tiene ningún orden en concreto (¡¡no podría!!). He intentado no repetir autores ni géneros y evitar clásicos que le gustan a todo el mundo como <i>Guerra y Paz</i>.</p>
+        <div class="slider"><div class="slides" id="book-container"></div></div>
+        <p>Ya ves que no podría escoger un solo género de libros… tampoco de películas.</p>
 
-        <h2>Movies and shows</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, inventore eligendi blanditiis nisi maxime est, explicabo nihil adipisci voluptates temporibus, numquam optio sunt recusandae laborum natus aspernatur suscipit minus? Incidunt?</p>
-        <div class="slider">
-            <div class="slides" id="movie-container">
-                <a href="https://www.casadellibro.com/" target="_blank"><div class="slide book" style="margin-left:0;"></div></a>
-                <a href="https://www.casadellibro.com/" target="_blank"><div class="slide book"></div></a>
-                <a href="https://www.casadellibro.com/" target="_blank"><div class="slide book"></div></a>
-                <a href="https://www.casadellibro.com/" target="_blank"><div class="slide book"></div></a>
-                <a href="https://www.casadellibro.com/" target="_blank"><div class="slide book" style="margin-right:0;"></div></a>
-            </div>
-        </div>
+        <h2>Movies</h2>
+        <p>Me considero una persona muy cinéfila y hay pocas cosas que disfrute más que ver una película. He intentado reducir la selección, pero no podía escoger cuáles dejar fuera …y seguro que hay tantas otras que no he recordado y que han sido un antes y un después para mí.</p>
+        <p>Podéis añadir a la lista todos los musicales que se os ocurran… la mayoría los he visto en el cine y no en el teatro: <i>All that Jazz</i>, <i>Cabaret</i>, <i>Les Misérables</i>, etc.</p>
+        <div class="slider"><div class="slides" id="movie-container"></div></div>
+        <p>Una vez más, he obviado algunos clásicos pero ya sabéis lo que dicen: "<i>Il buono, il brutto, il cattivo</i> y <i>C'era una volta il west</i> una vez al año, no hacen daño".</p>
+        
+        <h3>Stranger than fiction</h3>
+        <p>Hay un lugar en mi corazón para las películas y documentales sobre hechos y personas extrañas. Os dejo aquí esta maravillosa selección:</p>
+        <div class="slider"><div class="slides" id="documentaries-container"></div></div>
 
+        <h2>Shows</h2>
+        <p>Voy a confesar: no me gusta ver series. Ahora bien, algunas son auténticas joyas por un motivo u otro.</p>
         <div class="slider"><div class="slides" id="shows-container"></div></div>
+
+        <h2>Albums</h2>
+        Y para acabar, os propongo una lista de álbumes / óperas / bandas sonoras que cuentan historias maravillosas o que reflexionan sobre algún tema en concreto. Imprescindibles.
         <div class="slider"><div class="slides" id="album-container"></div></div>
     </div>
 
@@ -89,18 +80,16 @@
             var shows = document.getElementById("shows-container");
             var books = document.getElementById("book-container");
             var albums = document.getElementById("album-container");
-            fetch(parentUrl+"/content/entertainment.json").then(response => response.json()).then(function(data){                
-                for (var i = 0; i < data.books.length; i++) {
-                    books.insertAdjacentHTML('beforeend', '<a href="' + data.books[i].url + '" target="_blank"><div class="slide book"><img src="' + data.books[i].image + '" alt="'+data.books[i].title+'"></div></a>');
-                }
-                for (var i = 0; i < data.shows.length; i++) {
-                    shows.insertAdjacentHTML('beforeend', '<a href="' + data.shows[i].url + '" target="_blank"><div class="slide book"><img src="' + data.shows[i].image + '" alt="'+data.shows[i].title+'"></div></a>');
-                }
-                for (var i = 0; i < data.movies.length; i++) {
-                    movies.insertAdjacentHTML('beforeend', '<a href="' + data.movies[i].url + '" target="_blank"><div class="slide book"><img src="' + data.movies[i].image + '" alt="'+data.movies[i].title+'"></div></a>');
-                }
-                for (var i = 0; i < data.albums.length; i++) {
-                    albums.insertAdjacentHTML('beforeend', '<a href="' + data.albums[i].url + '" target="_blank"><div class="slide book"><img src="' + data.albums[i].image + '" alt="'+data.albums[i].title+'"></div></a>');
+            var documentaries = document.getElementById("documentaries-container");
+            fetch(parentUrl+"/content/entertainment.json").then(response => response.json()).then(function(data){
+                var list = [{"container": movies, "content": data.movies, "size":"book"},{"container": shows, "content": data.shows, "size":"book"}, {"container": books, "content": data.books, "size":"book"}, {"container": documentaries, "content": data.documentaries, "size":"book"},{"container": albums, "content": data.albums, "size":""}]
+                for (var j = 0; j < list.length; j++) {
+                    for (var i = 0; i < list[j].content.length; i++) {
+                        var style=''
+                        if (i == 0) style='style="margin-left:0;"'
+                        if (i == list[j].content.length-1 && list[j].content.length > 1) style='style="margin-right:0;"'
+                        list[j].container.insertAdjacentHTML('beforeend', '<a href="' + list[j].content[i].url + '" target="_blank"><div class="slide ' + list[j].size + '" ' + style + '><img src="' + list[j].content[i].image + '" alt="' + list[j].content[i].title + '"></div></a>');
+                    }
                 }
             });
         }

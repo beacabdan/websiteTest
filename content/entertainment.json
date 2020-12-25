@@ -6,45 +6,187 @@
             "image": "https://imagessl2.casadellibro.com/a/l/t5/52/9788811685852.jpg"
         },
         {
+            "title": "Dracula",
+            "url": "https://www.casadellibro.com/libro-dracula/9788497939461/1046108",
+            "image": "https://imagessl1.casadellibro.com/a/l/t5/61/9788497939461.jpg"
+        },
+        {
             "title": "Moby-Dick; or, The Whale",
             "url": "https://www.casadellibro.com/libro-moby-dick/9788492549290/1238483",
             "image": "https://imagessl0.casadellibro.com/a/l/t5/90/9788492549290.jpg"
         },
         {
+            "title": "El señor de los anillos",
+            "url": "https://www.casadellibro.com/libro-dracula/9788497939461/1046108",
+            "image": "https://imagessl8.casadellibro.com/a/l/t5/98/9788445077498.jpg"
+        },
+        {
             "title": "Cisnes Salvajes",
-            "image": "../content/images/default-bg.jpg",
-            "url": "csstests.html"
+            "image": "https://www.casadellibro.com/libro-el-senor-de-los-anillos-i-la-comunidad-del-anillo/9788445077498/1236947",
+            "url": "https://www.casadellibro.com/libro-cisnes-salvajes/9788477652229/963065"
         },
         {
             "title": "La muerte de Iván Ilich",
-            "image": "../content/images/default-bg.jpg",
-            "url": "csstests.html"
+            "image": "https://imagessl3.casadellibro.com/a/l/t5/93/9788495311993.jpg",
+            "url": "https://www.casadellibro.com/libro-la-muerte-de-ivan-ilich/9788495311993/864149"
         },
         {
             "title": "The Tragedy of Hamlet, Prince of Denmark",
-            "image": "../content/images/default-bg.jpg",
-            "url": "csstests.html"
+            "image": "https://imagessl0.casadellibro.com/a/l/t5/80/9788467033380.jpg",
+            "url": "https://www.casadellibro.com/libro-hamlet/9788467033380/1799645"
         }        
     ],
     "shows": [
         {
             "title": "Utopia",
-            "image": "../content/images/default-bg.jpg",
-            "url": "csstests.html"
-        }        
+            "image": "https://m.media-amazon.com/images/M/MV5BMjMwMTA5NDc5M15BMl5BanBnXkFtZTgwMjQ4MTY0MjE@._V1_UY268_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt2384811/?ref_=fn_al_tt_2"
+        },
+        {
+            "title": "The Hollow Crown",
+            "image": "https://m.media-amazon.com/images/M/MV5BMjkyOTQ4MDQ5OF5BMl5BanBnXkFtZTgwNTU5NTEwMDE@._V1_UX182_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt2262456/?ref_=nv_sr_srsg_0"
+        },
+        {
+            "title": "I, Claudius",
+            "image": "https://m.media-amazon.com/images/M/MV5BZWM1MDY1MjYtYTAzZC00MDJiLTk4MjAtOGQzNDI4YWU1MWQ0XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_UY268_CR1,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt0074006/?ref_=fn_al_tt_2"
+        },
+        {
+            "title": "Ratched",
+            "image": "https://m.media-amazon.com/images/M/MV5BMDJiZGE5NzYtZGU3Zi00NDQwLWFhMjAtNTM0MDM2ZTljMjAzXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt7423538/?ref_=fn_al_tt_1"
+        },
+        {
+            "title": "Bir Baskadir",
+            "image": "https://m.media-amazon.com/images/M/MV5BZjkyMTYyMDktNjQxZC00Y2U0LThkMDYtYmU2YzY5OTlmYzcwXkEyXkFqcGdeQXVyMTI1NDEyNTM5._V1_UX182_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt11301642/"
+        },
+        {
+            "title": "Shtisel",
+            "image": "https://pics.filmaffinity.com/shtisel_tv_series-584189744-mmed.jpg",
+            "url": "https://www.filmaffinity.com/es/film949236.html"
+        },
+        {
+            "title": "Alias Grace",
+            "image": "https://m.media-amazon.com/images/M/MV5BMjI4OTI1NTkwNV5BMl5BanBnXkFtZTgwMDc0ODc0MzI@._V1_UX182_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt1034007/"
+        }
+    ],
+    "documentaries": [
+        {
+            "title": "Sour Grapes",
+            "image": "https://m.media-amazon.com/images/M/MV5BMDNhZmI1ZDUtZDg5ZS00MmE1LWIzNWYtNGZiZjVkNTU5ZTI2XkEyXkFqcGdeQXVyNjA5NDU0Njk@._V1_UY268_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt5728684/"
+        },
+        {
+            "title": "L'incredibile storia dell'Isola delle Rose",
+            "image": "https://m.media-amazon.com/images/M/MV5BYWUwZDZiZTEtNDY4MS00MTQ4LWJhYTAtNzU5YWRkOGI4YzUwXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt10287954/?ref_=fn_al_tt_1"
+        },
+        {
+            "title": "Las Hurdes (Tierra sin pan)",
+            "image": "https://pics.filmaffinity.com/las_hurdes_tierra_sin_pan-618902623-mmed.jpg",
+            "url": "https://www.filmaffinity.com/es/film595178.html"
+        },
+        {
+            "title": "El Palmar de Troya",
+            "image": "https://pics.filmaffinity.com/el_palmar_de_troya-428873102-mmed.jpg",
+            "url": "https://www.filmaffinity.com/es/film891704.html"
+        },        
+        {
+            "title": "The People v. O.J. Simpson",
+            "image": "https://pics.filmaffinity.com/american_crime_story_the_people_v_o_j_simpson-872602318-mmed.jpg",
+            "url": "https://www.filmaffinity.com/es/film652643.html"
+        }
     ],
     "movies": [
         {
+            "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+            "image": "https://m.media-amazon.com/images/M/MV5BZWI3ZTMxNjctMjdlNS00NmUwLWFiM2YtZDUyY2I3N2MxYTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX182_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt0057012/?ref_=rt_li_tt"
+        },
+        {
+            "title": "Intouchables",
+            "image": "https://m.media-amazon.com/images/M/MV5BMTYxNDA3MDQwNl5BMl5BanBnXkFtZTcwNTU4Mzc1Nw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt1675434/?ref_=rt_li_i"
+        },
+        {
+            "title": "Full Metal Jacket",
+            "image": "https://m.media-amazon.com/images/M/MV5BNzkxODk0NjEtYjc4Mi00ZDI0LTgyYjEtYzc1NDkxY2YzYTgyXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX182_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt0093058/?ref_=rt_li_i"
+        },        
+        {
+            "title": "Todo sobre mi madre",
+            "image": "https://m.media-amazon.com/images/M/MV5BZTk2ZTMzMmUtZjUyNi00YzMyLWE3NTAtNDNjNzU3MGQ1YTFjXkEyXkFqcGdeQXVyMTA0MjU0Ng@@._V1_UY268_CR9,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt0185125/?ref_=nm_flmg_wr_15"
+        },
+        {
+            "title": "Nuovo Cinema Paradiso",
+            "image": "https://m.media-amazon.com/images/M/MV5BM2FhYjEyYmYtMDI1Yy00YTdlLWI2NWQtYmEzNzAxOGY1NjY2XkEyXkFqcGdeQXVyNTA3NTIyNDg@._V1_UX182_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt0095765/?ref_=rt_li_tt"
+        },
+        {
+            "title": "Schindler's List",
+            "image": "https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt0108052/?ref_=rt_li_i"
+        },
+        {
+            "title": "Kill Bill: Vol. 1",
+            "image": "https://m.media-amazon.com/images/M/MV5BNzM3NDFhYTAtYmU5Mi00NGRmLTljYjgtMDkyODQ4MjNkMGY2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX182_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt0266697/?ref_=rt_li_tt"
+        },
+        {
             "title": "Citizen Kane",
-            "image": "../content/images/default-bg.jpg",
-            "url": "csstests.html"
-        }        
+            "image": "https://m.media-amazon.com/images/M/MV5BYjBiOTYxZWItMzdiZi00NjlkLWIzZTYtYmFhZjhiMTljOTdkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX182_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt0033467/?ref_=fn_al_tt_1"
+        },
+        {
+            "title": "Fantasia",
+            "image": "https://m.media-amazon.com/images/M/MV5BMjAxMTI1Njk3OF5BMl5BanBnXkFtZTgwNjkzODk4NTE@._V1_UX182_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt0032455/?ref_=rt_li_tt"
+        },
+        {
+            "title": "The Shining",
+            "image": "https://m.media-amazon.com/images/M/MV5BZWFlYmY2MGEtZjVkYS00YzU4LTg0YjQtYzY1ZGE3NTA5NGQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt0081505/?ref_=rt_li_tt"
+        },        
+        {
+            "title": "The Lord of the Rings",
+            "image": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_UX182_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt0120737/?ref_=rt_li_tt"
+        },
+        {
+            "title": "Life of Brian",
+            "image": "https://m.media-amazon.com/images/M/MV5BMzAwNjU1OTktYjY3Mi00NDY5LWFlZWUtZjhjNGE0OTkwZDkwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt0079470/?ref_=rt_li_tt"
+        }
     ],
     "albums": [
         {
             "title": "Tales of mistery and imagination",
-            "image": "../content/images/default-bg.jpg",
-            "url": "csstests.html"
-        }        
-    ]
+            "image": "https://i.scdn.co/image/ab67616d0000b2736be88a1b84368d892f012b89",
+            "url": "https://open.spotify.com/album/1ZsboMJilL9Udojo9Hds4J"
+        },
+        {
+            "title": "Wish You Were Here",
+            "image": "https://i.scdn.co/image/ab67616d0000b2735aa1262c4123fedc2e4b8c44",
+            "url": "https://open.spotify.com/album/6uvBKDGlJAYLH5Vy6RQVsc"
+        },
+        {
+            "title": "El Mal Querer",
+            "image": "https://i.scdn.co/image/ab67616d0000b273f4d64a6a6b7e24b6bd9f009f",
+            "url": "https://open.spotify.com/album/355bjCHzRJztCzaG5Za4gq"
+        },
+        {
+            "title": "Der Ring des Nibelungen",
+            "image": "https://i.scdn.co/image/ab67616d0000b273a9bfa66ce05cb69cb5e00905",
+            "url": "https://open.spotify.com/album/6CW9LaewE0HKN6kGUm9mUq"
+        },
+        {
+            "title": "You Want It Darker",
+            "image": "https://i.scdn.co/image/ab67616d0000b2738fc3f01275cae3d8ecb1c26b",
+            "url": "https://open.spotify.com/album/3jeTB3j3QmUs8SPIVleHtU"
+        }       
+    ]    
 }
