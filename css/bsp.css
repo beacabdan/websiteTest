@@ -1,0 +1,52 @@
+body {
+    position: relative;
+}
+
+/* CV */
+
+#cv-picture {
+    margin: 1rem 0rem 2rem 3rem; 
+    float: right; 
+    width: 200px; 
+    transform: scaleX(-1);
+}
+
+@media only screen and (max-width: 850px), print {
+    #cv-picture {
+        float: none;
+        display: block;
+        margin: 2rem auto;
+    }
+}
+
+@media print {
+    .col-print-12 { 
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    #cv div {
+        page-break-inside: avoid;
+    }
+}
+
+/* NAVBAR */
+
+.navbar-light .navbar-toggler {
+    border: none;
+}
+
+/* SCROLLSPY */
+#myScrollspy .nav-link {
+    color: var(--dark);
+    padding: 0.5rem 0;
+}
+
+#myScrollspy .nav-link.active {
+    background-color: transparent;    
+    font-weight: bolder;
+}
+
+.card-deck {
+    margin-bottom: 1rem;
+}

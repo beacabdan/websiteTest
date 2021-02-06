@@ -1,118 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/ico" href="../content/images/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
-    <script type="text/javascript" src="../code/common.js"></script>
     <title>Useful resources</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bsp.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
-<body>
-    <!-- HEADER -->
-    <div class="boundary">
-        <div class="pagination-link"><a href="../index.html">Bea<span class="hide-medium">triz</span><span class="hide-small">&nbsp;</span>Cab<span class="hide-small">rero&nbsp;</span>Dan<span class="hide-small">iel</span></a></div>
-        <div id="about-me-dropdown" class="pagination-link go-right hide-medium">
-            <a onclick="openDropdown()" href="#">About me</a>
-            <div class="dropdown-hover">
-                <div class="dropdown-content">
-                    <a href="../cv/index.html">CV</a>
-                    <a href="../more/books.html">Books & more</a>
-                    <a href="../more/index.html">Clipboard</a>
+<body data-spy="scroll" data-target="#myScrollspy">
+
+    <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
+        <div class="container">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="https://beacabdan.github.io/">BEATRIZ CABRERO DANIEL</a>
+
+            <!-- Menu button, smaller screens -->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/resources/index.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/more/index.html">Projects</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">About me</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="https://beacabdan.github.io/cv/index.html">CV</a></li>
+                            <li><a class="dropdown-item" href="https://beacabdan.github.io/more/books.html">Books & more</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="https://beacabdan.github.io/more/index.html">Clipboard</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div style="height: 1em;"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2 d-none d-md-block" id="myScrollspy">
+                <nav class="nav nav-pills flex-column sticky-top" style="top: 1em;">
+                    <a class="nav-link" href="#teaching">Teaching</a>
+                    <a class="nav-link" href="#research">Research</a>
+                    <a class="nav-link" href="#other">Other</a>
+                </nav>
+            </div>
+            <div class="col-12 col-md-10" data-bs-spy="scroll" data-bs-target="#myScrollspy">
+                <div id="teaching">
+                    <h1>Teaching materials</h1>
+                    <p>In my <a href="https://www.youtube.com/playlist?list=PLpkg5PEI-IvtrzydXhdobad5YEKnv3UBE">YouTube Channel</a> you can find videos about Computer Science, 2D videogame creation (Python + PyGame from scratch), etc. + other videos that are not Computer-Engineering-related. I am also mantaining a couple of interesting compilations/playlists that might be useful to you or your students. Feel free to take a look!</p>
+
+                    <div class="card-deck">
+                        <div class="card">
+                            <iframe src="https://www.youtube.com/embed/videoseries?list=PLpkg5PEI-IvuATijFxgE6yJDo_EZCfNT9" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="card-body"><p class="card-text">Introducció a la programació</p></div>
+                        </div>
+                        <div class="card">
+                            <iframe src="https://www.youtube.com/embed/videoseries?list=PLpkg5PEI-IvtrzydXhdobad5YEKnv3UBE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="card-body"><p class="card-text">Campus Júnior 2020</p></div>
+                        </div>
+                        <div class="card">
+                            <iframe src="https://www.youtube.com/embed/videoseries?list=PLpkg5PEI-Ivv6JCuK95P1auCgexxnW5Ve" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="card-body"><p class="card-text">Undergraduate projects</p></div>
+                        </div>
+                    </div>
+
+                    <h2>Introducció a la programació (2020)</h2>
+                    <p>This course is taught in spanish and catalan! Alguns videos estan en anglès! Teniu els vídeos d'algunes classes que vam haver de fer en directe en <a href="https://www.youtube.com/playlist?list=PLpkg5PEI-IvuATijFxgE6yJDo_EZCfNT9">aquesta playlist</a>. També he penjat algunes explicacions de classe en format vídeos de 5 minutets per si us van bé.</p>
+                    <p>El material del <a href="">curs de videojocs amb IA</a> també us pot anar bé pels estudiants de Introducció a la Programació!</p>
+
+                    <h2>Videojuegos con Inteligencia Artificial en Python (2020)</h2>
+                    <p>Este curso, parte del <a href="https://www.upf.edu/web/campus-junior/inici/-/asset_publisher/TJhM602rbA0E/content/id/232619170/maximized#.XzZJ--j7SUl">Campus Júnior 2020</a>, estaba orientado a estudiantes desde tercero de ESO hasta primero de Bachillerato y Ciclos formativos de grado medio (CFGM). ¡Eso es un gran rango de edades! Sin embargo, la mayoría estuvieron contentos porque el proyecto final, un videojuego hecho en Python que usase una IA simple, se adaptaba a los conocimientos de cada uno y todos pudieron hacer juegos increíbles (en 2D). Estoy muy contenta de los resultados aunque me hubiera gustado poder hacer el curso presencial en lugar de online...</p>
+                    <p>Código del curso (y más) en GitHub: <a href="https://github.com/beacabdan/videogamesWithAI">https://github.com/beacabdan/videogamesWithAI</a></p>
+                </div>
+                <div id="research">
+                    <h1>Current research: Crowd Simulation</h1>
+                    <p>User experiment about trajectory quality perception <a href="https://webglstudio.org/users/bea/naive/">https://webglstudio.org/users/bea/naive/</a> (feel free to help me out!).</p>
+                    <p>WebGLStudio-based visualisation of trajectories <a href="https://webglstudio.org/demos/crowd/?simulation=https://webglstudio.org/demos/crowd/guest/projects/crowd/200agents_bea.bin">https://webglstudio.org/demos/crowd/?simulation</a> by (the one, the only) <a href="https://tamats.com/">Tamats</a>.</p>
+                    
+                    <div class="card-deck">
+                        <div class="card">
+                            <iframe src="https://www.youtube.com/embed/5JkwWQeoJno" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="card-body"><p class="card-text">Generalized Microscropic Crowd Simulationusing Costs in Velocity Space (I3D '20)</p></div>
+                        </div>
+                    </div>
+
+                    <h2>Undergraduate tech projects</h2>
+                    <p>A playlist with demos of some of my undergraduate projects (Robotics, AI, IoT, Rendering).</p>
+                </div>
+                <div id="other">
+                    <h1>Other resources</h1>
+                    <p><a href="http://ai.berkeley.edu/project_overview.html">Berkeley's Pacman</a>: I strongly recommend solving this problems related to planning and other search techniques. It is based on Pacman so it is self-evident how it relates to videogames! Everything is explained in detail in each of the 5 projects / tutorials: <a href="http://ai.berkeley.edu/search.html">search</a>, <a href="http://ai.berkeley.edu/multiagent.html">multiagent systems</a>, reinforcement learning (autonomous learning), <a href="http://ai.berkeley.edu/tracking.html">tracking</a> (sensors), and classification. Just amazing!</p>
+                    <p>Development Diary of Senua's Revenge (Hellblade), strongly recommended for those who are interested in videogame development (with or without technical skills): <a href="https://www.youtube.com/watch?list=PLbpkF8TRYizaT6GfMcKBG-RoUOQ6BJRXp&v=42wG9WEl_9o">https://www.youtube.com/watch?list=PLbpkF8TRYizaT6GfMcKBG-RoUOQ6BJRXp&v=42wG9WEl_9o</a></p>
+                    <p>A concept that brings peace of mind but it's scary at the same time: <a href="https://www.youtube.com/watch?list=PLpkg5PEI-IvsvpXYanA4epLcVR4Y39s0m&v=ovJcsL7vyrk">https://www.youtube.com/watch?list=PLpkg5PEI-IvsvpXYanA4epLcVR4Y39s0m&v=ovJcsL7vyrk</a></p>
+                    <p>The best introduction to state-of-the-art rendering methods: the complete <a href="https://www.youtube.com/watch?v=pjc1QAI6zS0&list=PLujxSBD-JXgnGmsn7gEyN28P1DnRZG7qi">TU Wien Rendering Course</a> is available to watch and learn about many computer graphics algorithms.</p>
+
+                    <div class="card-deck">
+                        <div class="card">
+                            <iframe src="https://www.youtube.com/embed/videoseries?list=PLpkg5PEI-IvsvpXYanA4epLcVR4Y39s0m" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="card-body"><p>Beautiful math & nature</p></div>
+                        </div>
+                        <div class="card">
+                            <iframe src="https://www.youtube.com/embed/videoseries?list=PLpkg5PEI-IvvLqfQVi7FWkRGZUbMnbGYs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="card-body"><p>Videojuegos e Inteligencia Artificial</p></div>
+                        </div>
+                    </div>
+
+                    <h2>Tools</h2>
+                    <p>All the PDF-related tools you can ever need: <a href="https://smallpdf.com/merge-pdf">https://smallpdf.com/merge-pdf</a></p>
+                    <p>A translator that provides context (based on translation memory): <a href="https://www.linguee.com/english-spanish/search">https://www.linguee.com/english-spanish/search</a></p>
+                    <p>My colleagues from <a href="https://www.upf.edu/web/gti">UPF-GTI</a> also work on great tools and content for their students. Here are a few links to showcase their work:</p>
+                    <ul>
+                        <li>The best <a href="https://tamats.com/upf/">compilation of resources for videogame creation</a> as well as all the slides from the Computer Graphics courses at UPF taught by <a href="https://tamats.com/">Tamats</a>.</li>
+                        <li>You probably already know about <a href="https://webglstudio.org/demo/">WebGLStudio</a>, a platform to create interactive 3D scenes directly from the browser. It allows to edit the scene visually, code your behaviours, edit the shaders, and all directly from within the app. Amazing!</li>
+                        <li>Together with an HDR based photorealistic 3D renderer, the stand-alone <a href="https://webglstudio.org/users/arodriguez/projects/HDR4EU/repository/">browser for HDR environments</a> is very useful!</li>
+                        <li>Fond of avatars, Embodied Conversational Agents (ECA) and more? Take a look at <a href="https://webglstudio.org/demos/puppeteering/latest/">GTI's puppeteering project</a> (also on the web, you'll need a webcam or a gamepad).</li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="pagination-link go-right hide-medium"><a href="../more/index.html">Projects</a></div>
-        <div class="pagination-link go-right hide-medium"><a href="../resources/index.html">Resources</a></div>
-        <div class="pagination-link go-right show-medium"><a onclick="openNav()"><i class="material-icons no-print">menu</i></a></div>
-    </div>
-
-    <div class="menu-small">
-        <a class="menu-small-button" onclick="closeNav()" href="#"><i class="material-icons no-print">close</i></a>
-        <div class="menu-small-content">
-            <a href="../index.html">Home</a>
-            <a href="../resources/index.html">Resources</a>
-            <a href="../more/index.html">Projects</a>
-            <a href="../index.html">About me</a>
-            <a href="../cv/index.html">CV</a>
-            <a href="../more/books.html">Books & more</a>
-            <a href="../more/index.html">Clipboard</a>
-        </div>
-    </div>
-    <!-- HEADER -->
-
-    <div class="container">
-        <h1>Teaching materials</h1>
-        <p>In my <a href="https://www.youtube.com/playlist?list=PLpkg5PEI-IvtrzydXhdobad5YEKnv3UBE">YouTube Channel</a> you can find videos about Computer Science, 2D videogame creation (Python + PyGame from scratch), etc. + other videos that are not Computer-Engineering-related. I am also mantaining a couple of interesting compilations/playlists that might be useful to you or your students. Feel free to take a look!</p>
-
-        <div class="flexRow flexRowMargins">
-            <div class="third"><iframe width="100%" src="https://www.youtube.com/embed/videoseries?list=PLpkg5PEI-IvuATijFxgE6yJDo_EZCfNT9" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p class="caption">Introducció a la programació</p></div>
-            <div class="third"><iframe width="100%" src="https://www.youtube.com/embed/videoseries?list=PLpkg5PEI-IvtrzydXhdobad5YEKnv3UBE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p class="caption">Campus Júnior 2020</p></div>
-            <div class="third"><iframe width="100%" src="https://www.youtube.com/embed/videoseries?list=PLpkg5PEI-Ivv6JCuK95P1auCgexxnW5Ve" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p class="caption">Undergraduate projects</p></div>
-        </div>
-
-        <h3>Introducció a la programació (2020)</h3>
-        <p>This course is taught in spanish and catalan! Alguns videos estan en anglès! Teniu els vídeos d'algunes classes que vam haver de fer en directe en <a href="https://www.youtube.com/playlist?list=PLpkg5PEI-IvuATijFxgE6yJDo_EZCfNT9">aquesta playlist</a>. També he penjat algunes explicacions de classe en format vídeos de 5 minutets per si us van bé.</p>
-        <p>El material del <a href="">curs de videojocs amb IA</a> també us pot anar bé pels estudiants de Introducció a la Programació!</p>
-        
-        <h3>Videojuegos con Inteligencia Artificial en Python (2020)</h3>
-        <p>Este curso, parte del <a href="https://www.upf.edu/web/campus-junior/inici/-/asset_publisher/TJhM602rbA0E/content/id/232619170/maximized#.XzZJ--j7SUl">Campus Júnior 2020</a>, estaba orientado a estudiantes desde tercero de ESO hasta primero de Bachillerato y Ciclos formativos de grado medio (CFGM). ¡Eso es un gran rango de edades! Sin embargo, la mayoría estuvieron contentos porque el proyecto final, un videojuego hecho en Python que usase una IA simple, se adaptaba a los conocimientos de cada uno y todos pudieron hacer juegos increíbles (en 2D). Estoy muy contenta de los resultados aunque me hubiera gustado poder hacer el curso presencial en lugar de online...</p>
-        <p>Código del curso (y más) en GitHub: <a href="https://github.com/beacabdan/videogamesWithAI">https://github.com/beacabdan/videogamesWithAI</a></p>
-        
-        <h3>Undergraduate tech projects</h3>
-        <p>A playlist with demos of some of my undergraduate projects (Robotics, AI, IoT, Rendering).</p>        
-
-        <h1>Other interesting resources</h1>
-        <div class="flexRow flexRowMargins" id="projectContainer"></div>
-
-        <h3>Crowd Simulation</h3>
-        <p>User experiment about trajectory quality perception <a href="https://webglstudio.org/users/bea/naive/">https://webglstudio.org/users/bea/naive/</a> (feel free to help me out!).</p>
-        <p>WebGLStudio-based visualisation of trajectories <a href="https://webglstudio.org/demos/crowd/?simulation=https://webglstudio.org/demos/crowd/guest/projects/crowd/200agents_bea.bin">https://webglstudio.org/demos/crowd/?simulation</a> by (the one, the only) <a href="https://tamats.com/">Tamats</a>.</p>
-               
-        <h3>Educational videos</h3>
-        <p><a href="http://ai.berkeley.edu/project_overview.html">Berkeley's Pacman</a>: I strongly recommend solving this problems related to planning and other search techniques. It is based on Pacman so it is self-evident how it relates to videogames! Everything is explained in detail in each of the 5 projects / tutorials: <a href="http://ai.berkeley.edu/search.html">search</a>, <a href="http://ai.berkeley.edu/multiagent.html">multiagent systems</a>, reinforcement learning (autonomous learning), <a href="http://ai.berkeley.edu/tracking.html">tracking</a> (sensors), and classification. Just amazing!</p>
-        <p>Development Diary of Senua's Revenge (Hellblade), strongly recommended for those who are interested in videogame development (with or without technical skills): <a href="https://www.youtube.com/watch?list=PLbpkF8TRYizaT6GfMcKBG-RoUOQ6BJRXp&v=42wG9WEl_9o">https://www.youtube.com/watch?list=PLbpkF8TRYizaT6GfMcKBG-RoUOQ6BJRXp&v=42wG9WEl_9o</a></p>
-        <p>A concept that brings peace of mind but it's scary at the same time: <a href="https://www.youtube.com/watch?list=PLpkg5PEI-IvsvpXYanA4epLcVR4Y39s0m&v=ovJcsL7vyrk">https://www.youtube.com/watch?list=PLpkg5PEI-IvsvpXYanA4epLcVR4Y39s0m&v=ovJcsL7vyrk</a></p>
-        <p>The best introduction to state-of-the-art rendering methods: the complete <a href="https://www.youtube.com/watch?v=pjc1QAI6zS0&list=PLujxSBD-JXgnGmsn7gEyN28P1DnRZG7qi">TU Wien Rendering Course</a> is available to watch and learn about many computer graphics algorithms.</p>
-      
-        <div class="flexRow flexRowMargins">
-            <div class="half"><iframe width="100%" src="https://www.youtube.com/embed/videoseries?list=PLpkg5PEI-IvsvpXYanA4epLcVR4Y39s0m" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p class="caption">Beautiful math & nature</p></div>
-            <div class="half"><iframe width="100%" src="https://www.youtube.com/embed/videoseries?list=PLpkg5PEI-IvvLqfQVi7FWkRGZUbMnbGYs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p class="caption">Videojuegos e Inteligencia Artificial</p></div>
-        </div>
-
-        <h3>Tools</h3>
-        <p>All the PDF-related tools you can ever need: <a href="https://smallpdf.com/merge-pdf">https://smallpdf.com/merge-pdf</a></p>
-        <p>A translator that provides context (based on translation memory): <a href="https://www.linguee.com/english-spanish/search">https://www.linguee.com/english-spanish/search</a></p>
-        <p>My colleagues from <a href="https://www.upf.edu/web/gti">UPF-GTI</a> also work on great tools and content for their students. Here are a few links to showcase their work:</p>
-        <ul>
-            <li>The best <a href="https://tamats.com/upf/">compilation of resources for videogame creation</a> as well as all the slides from the Computer Graphics courses at UPF taught by <a href="https://tamats.com/">Tamats</a>.</li>
-            <li>You probably already know about <a href="https://webglstudio.org/demo/">WebGLStudio</a>, a platform to create interactive 3D scenes directly from the browser. It allows to edit the scene visually, code your behaviours, edit the shaders, and all directly from within the app. Amazing!</li>
-            <li>Together with an HDR based photorealistic 3D renderer, the stand-alone <a href="https://webglstudio.org/users/arodriguez/projects/HDR4EU/repository/">browser for HDR environments</a> is very useful!</li>
-            <li>Fond of avatars, Embodied Conversational Agents (ECA) and more? Take a look at <a href="https://webglstudio.org/demos/puppeteering/latest/">GTI's puppeteering project</a> (also on the web, you'll need a webcam or a gamepad).</li>
-        </ul>
-
-        
-    </div>
-
-    <script>
-        var prevCols = 0;
-        initProject();
-        
-        function initProject() {
-            var palette = document.getElementById("projectContainer");
-            fetch(parentUrl+"/content/resources.json").then(response => response.json()).then(function(data){
-                for (var i = 0; i < data.length; i++) {
-                    card = data[i];
-                    if (data[i].image != undefined) {
-                        palette.insertAdjacentHTML('beforeend', '<div class="fifth"><a href="'+ data[i].url +'" style="color: white"><div class="square round" style="bacground-color: var(--secondary); background-image: url('+ data[i].image +'); background-position: center; background-repeat: no-repeat; background-size: cover;"><div class="dark-overlay"></div><div class="centerSquare"><i class="material-icons no-print">link</i></div></div><p class="caption">'+data[i].title+'</p></a></div>');
-                    }
-                    else palette.insertAdjacentHTML('beforeend', '<div class="fifth"><a href="'+ data[i].url +'" style="color: white"><div class="square round" style="background-color: var(--secondary);"><div class="dark-overlay"></div><div class="centerSquare"><i class="material-icons no-print">link</i></div></div><p class="caption">'+data[i].title+'</p></a></div>');
-                }
-            });
-        }
-    </script>
 </body>
 
 </html>
