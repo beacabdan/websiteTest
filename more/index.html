@@ -1,54 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/ico" href="../content/images/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../code/common.js"></script>
     <title>Some projects</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bsp.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
-<body>
-    <!-- HEADER -->
-    <div class="boundary">
-        <div class="pagination-link"><a href="../index.html">Bea<span class="hide-medium">triz</span><span class="hide-small">&nbsp;</span>Cab<span class="hide-small">rero&nbsp;</span>Dan<span class="hide-small">iel</span></a></div>
-        <div id="about-me-dropdown" class="pagination-link go-right hide-medium">
-            <a onclick="openDropdown()" href="#">About me</a>
-            <div class="dropdown-hover">
-                <div class="dropdown-content">
-                    <a href="../cv/index.html">CV</a>
-                    <a href="../more/books.html">Books & more</a>
-                    <a href="../more/index.html">Clipboard</a>
-                </div>
+<body data-spy="scroll" data-target="#myScrollspy">
+
+    <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
+        <div class="container">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="https://beacabdan.github.io/">BEATRIZ CABRERO DANIEL</a>
+
+            <!-- Menu button, smaller screens -->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/resources/index.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/more/index.html">Projects</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">About me</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="https://beacabdan.github.io/cv/index.html">CV</a></li>
+                            <li><a class="dropdown-item" href="https://beacabdan.github.io/more/books.html">Books & more</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="https://beacabdan.github.io/more/index.html">Clipboard</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="pagination-link go-right hide-medium"><a href="../more/index.html">Projects</a></div>
-        <div class="pagination-link go-right hide-medium"><a href="../resources/index.html">Resources</a></div>
-        <div class="pagination-link go-right show-medium"><a onclick="openNav()"><i class="material-icons no-print">menu</i></a></div>
-    </div>
+    </nav>
 
-    <div class="menu-small">
-        <a class="menu-small-button" onclick="closeNav()" href="#"><i class="material-icons no-print">close</i></a>
-        <div class="menu-small-content">
-            <a href="../index.html">Home</a>
-            <a href="../resources/index.html">Resources</a>
-            <a href="../more/index.html">Projects</a>
-            <a href="../index.html">About me</a>
-            <a href="../cv/index.html">CV</a>
-            <a href="../more/books.html">Books & more</a>
-            <a href="../more/index.html">Clipboard</a>
-        </div>
-    </div>
-    <!-- HEADER -->
+    <div style="height: 1em;"></div>
 
     <div class="container">
         <h1>Some projects</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>      
-        <div class="flexRow flexRowMargins" id="projectContainer"></div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati culpa ducimus aspernatur cupiditate recusandae magnam delectus, pariatur, rem eum reiciendis ad. Eum fugiat quos sit ut et corrupti reiciendis ex?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+        <div id="projectContainer" class="card-deck">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                        content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -61,6 +73,7 @@
                     card = data[i];
                     if (data[i].image != undefined) {
                         palette.insertAdjacentHTML('beforeend', '<div class="quarter"><a href="'+ data[i].url +'" style="color: white"><div class="square round" style="background-color: var(--secondary); background-image: url('+ data[i].image +'); background-position: center; background-repeat: no-repeat; background-size: cover;"><div class="dark-overlay"></div><div class="centerSquare">'+ data[i].title +'</div></div></a></div>');
+                        palette.insertAdjacentHTML('beforehand', '<div class="card"><img src="'+data[i].image+'" class="card-img-top" alt="..."></div>')
                     }
                     else palette.insertAdjacentHTML('beforeend', '<div class="quarter"><a href="'+ data[i].url +'" style="color: white"><div class="square round" style="background-color: var(--secondary);"><div class="dark-overlay"></div><div class="centerSquare">'+ data[i].title +'</div></div></a></div>');
                 }
