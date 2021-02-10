@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Some projects</title>
+    <title>My references</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -11,6 +11,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../code/common.js"></script>
+    <link rel="icon" type="image/ico" href="content/images/favicon.ico">
+    <style>
+        @media (min-width: 48em) {
+            .card-columns {
+                -webkit-column-count: 7;
+                -moz-column-count: 7;
+                column-count: 7;
+            }
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-target="#myScrollspy">
@@ -88,7 +98,7 @@
                 var list = [{"container": movies, "content": data.movies, "size":"book"}, {"container": shows, "content": data.shows, "size":"book"}, {"container": books, "content": data.books, "size":"book"}, {"container": documentaries, "content": data.documentaries, "size":"book"}, {"container": albums, "content": data.albums, "size":""}]
                 for (var j = 0; j < list.length; j++) {
                     for (var i = 0; i < list[j].content.length; i++) {
-                        list[j].container.insertAdjacentHTML('beforeend', '<div class="card"><a href="' + list[j].content[i].url + '" target="_blank"><img class="card-img-top" style="width: 100%; min-height:100px; max-height: 200px; object-fit: cover;" src="' + list[j].content[i].image + '" alt="' + list[j].content[i].title + '"></a><div class="card-body">' + list[j].content[i].title + '</div></div>');
+                        list[j].container.insertAdjacentHTML('beforeend', '<div class="card"><a href="' + list[j].content[i].url + '" target="_blank"><img class="card-img-top" style="width: 100%; min-height:100px; object-fit: cover;" src="' + list[j].content[i].image + '" alt="' + list[j].content[i].title + '"></a><div class="card-body">' + list[j].content[i].title + '</div></div>');
                     }
                 }
             });
