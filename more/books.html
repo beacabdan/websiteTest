@@ -15,9 +15,9 @@
     <style>
         @media (min-width: 48em) {
             .card-columns {
-                -webkit-column-count: 7;
-                -moz-column-count: 7;
-                column-count: 7;
+                -webkit-column-count: 6;
+                -moz-column-count: 6;
+                column-count: 6;
             }
         }
     </style>
@@ -102,7 +102,7 @@
                             list[j].container.insertAdjacentHTML('beforeend', '<div class="card"><a href="' + list[j].content[i].url + '" target="_blank"><img class="card-img-top" style="width: 100%; min-height:100px; object-fit: cover;" src="' + list[j].content[i].image + '" alt="' + list[j].content[i].title + '"></a><div class="card-body"><p class="card-text">' + list[j].content[i].title + '</p></div></div>');
                         }
                         else
-                            list[j].container.insertAdjacentHTML('beforeend', '<div class="card"><a href="' + list[j].content[i].url + '" target="_blank"><img class="card-img-top" style="width: 100%; min-height:100px; object-fit: cover;" src="' + list[j].content[i].image + '" alt="' + list[j].content[i].title + '"></a><div class="card-body"><h5 class="card-title">'+ list[j].content[i].title + '</h5><p class="card-text">' + list[j].content[i].title + '</p></div></div>');
+                        list[j].container.insertAdjacentHTML('beforeend', '<div class="card"><a href="' + list[j].content[i].url + '" target="_blank"><img class="card-img-top" style="width: 100%; min-height:100px; object-fit: cover;" src="' + list[j].content[i].image + '" alt="' + list[j].content[i].title + '"></a><div class="card-body"><p class="card-text">' + list[j].content[i].title + '</p><p class="card-text"><small class="text-muted">' + list[j].content[i].comment + '</small></p></div></div>');
                     }
                 }
             });

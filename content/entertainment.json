@@ -3,7 +3,19 @@
         {
             "title": "Jurassic Park",
             "url": "https://www.casadellibro.com/libro-jurassic-park/9788811685852/2022917",
-            "image": "https://imagessl2.casadellibro.com/a/l/t5/52/9788811685852.jpg"
+            "image": "https://imagessl2.casadellibro.com/a/l/t5/52/9788811685852.jpg",
+            "comment": "¿Mejor que la (primera) película? Podemos discutirlo."
+        },        
+        {
+            "title": "La muerte de Iván Ilich",
+            "image": "https://imagessl3.casadellibro.com/a/l/t5/93/9788495311993.jpg",
+            "url": "https://www.casadellibro.com/libro-la-muerte-de-ivan-ilich/9788495311993/864149"
+        },
+        {
+            "title": "Animal Farm",
+            "url": "https://en.wikipedia.org/wiki/Animal_Farm",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Animal_Farm_-_1st_edition.jpg/220px-Animal_Farm_-_1st_edition.jpg",
+            "comment": "Puede que sea un tópico pero este libro cambió mi forma de ver las cosas e.g. a Napoleón."
         },
         {
             "title": "Dracula",
@@ -26,11 +38,6 @@
             "url": "https://www.casadellibro.com/libro-cisnes-salvajes/9788477652229/963065"
         },
         {
-            "title": "La muerte de Iván Ilich",
-            "image": "https://imagessl3.casadellibro.com/a/l/t5/93/9788495311993.jpg",
-            "url": "https://www.casadellibro.com/libro-la-muerte-de-ivan-ilich/9788495311993/864149"
-        },
-        {
             "title": "The Tragedy of Hamlet, Prince of Denmark",
             "image": "https://imagessl0.casadellibro.com/a/l/t5/80/9788467033380.jpg",
             "url": "https://www.casadellibro.com/libro-hamlet/9788467033380/1799645"
@@ -50,7 +57,8 @@
         {
             "title": "I, Claudius",
             "image": "https://m.media-amazon.com/images/M/MV5BZWM1MDY1MjYtYTAzZC00MDJiLTk4MjAtOGQzNDI4YWU1MWQ0XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_UY268_CR1,0,182,268_AL_.jpg",
-            "url": "https://www.imdb.com/title/tt0074006/?ref_=fn_al_tt_2"
+            "url": "https://www.imdb.com/title/tt0074006/?ref_=fn_al_tt_2",
+            "comment": "Cualquier adaptación de esta historia es buena. Viva Claudio, el Dios."
         },
         {
             "title": "Ratched",
@@ -74,6 +82,11 @@
         }
     ],
     "documentaries": [
+        {
+            "title": "Brothers in Blood",
+            "image": "https://m.media-amazon.com/images/M/MV5BODI2MjA0MTItNjM4ZC00NmUwLWI4ZmYtN2IyZDI2YzJhYWQ4XkEyXkFqcGdeQXVyNjgzMDY1Mzc@._V1_UY268_CR4,0,182,268_AL_.jpg",
+            "url": "https://www.imdb.com/title/tt4689268/"
+        },
         {
             "title": "Sour Grapes",
             "image": "https://m.media-amazon.com/images/M/MV5BMDNhZmI1ZDUtZDg5ZS00MmE1LWIzNWYtNGZiZjVkNTU5ZTI2XkEyXkFqcGdeQXVyNjA5NDU0Njk@._V1_UY268_CR0,0,182,268_AL_.jpg",
@@ -188,7 +201,8 @@
         {
             "title": "Der Ring des Nibelungen",
             "image": "https://i.scdn.co/image/ab67616d0000b273a9bfa66ce05cb69cb5e00905",
-            "url": "https://open.spotify.com/album/6CW9LaewE0HKN6kGUm9mUq"
+            "url": "https://open.spotify.com/album/6CW9LaewE0HKN6kGUm9mUq",
+            "comment": "Para los que les gusta la música épica. Dos tazas."
         },
         {
             "title": "You Want It Darker",
