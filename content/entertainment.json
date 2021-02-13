@@ -104,7 +104,8 @@
         {
             "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
             "image": "https://m.media-amazon.com/images/M/MV5BZWI3ZTMxNjctMjdlNS00NmUwLWFiM2YtZDUyY2I3N2MxYTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX182_CR0,0,182,268_AL_.jpg",
-            "url": "https://www.imdb.com/title/tt0057012/?ref_=rt_li_tt"
+            "url": "https://www.imdb.com/title/tt0057012/?ref_=rt_li_tt",
+            "comment": "Una de esas películas que \"una vez al año, no hace daño\"."
         },
         {
             "title": "Intouchables",
@@ -114,12 +115,14 @@
         {
             "title": "Full Metal Jacket",
             "image": "https://m.media-amazon.com/images/M/MV5BNzkxODk0NjEtYjc4Mi00ZDI0LTgyYjEtYzc1NDkxY2YzYTgyXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX182_CR0,0,182,268_AL_.jpg",
-            "url": "https://www.imdb.com/title/tt0093058/?ref_=rt_li_i"
+            "url": "https://www.imdb.com/title/tt0093058/?ref_=rt_li_i",
+            "comment": "Me encantan las películas antibélicas... ¿será la dualidad del hombre?"
         },        
         {
             "title": "Todo sobre mi madre",
             "image": "https://m.media-amazon.com/images/M/MV5BZTk2ZTMzMmUtZjUyNi00YzMyLWE3NTAtNDNjNzU3MGQ1YTFjXkEyXkFqcGdeQXVyMTA0MjU0Ng@@._V1_UY268_CR9,0,182,268_AL_.jpg",
-            "url": "https://www.imdb.com/title/tt0185125/?ref_=nm_flmg_wr_15"
+            "url": "https://www.imdb.com/title/tt0185125/?ref_=nm_flmg_wr_15",
+            "comment": "Qué maravilla es no negarse al cine español porque sí, ¿no?"
         },
         {
             "title": "Nuovo Cinema Paradiso",
@@ -132,14 +135,16 @@
             "url": "https://www.imdb.com/title/tt0108052/?ref_=rt_li_i"
         },
         {
-            "title": "Kill Bill: Vol. 1",
-            "image": "https://m.media-amazon.com/images/M/MV5BNzM3NDFhYTAtYmU5Mi00NGRmLTljYjgtMDkyODQ4MjNkMGY2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX182_CR0,0,182,268_AL_.jpg",
-            "url": "https://www.imdb.com/title/tt0266697/?ref_=rt_li_tt"
+            "title": "Reservoir Dogs",
+            "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTPwt7t2o-jpIcQRIx-6wWtPQqTcrFQmBku_q6QTfPjyN2-5sS-",
+            "url": "https://www.imdb.com/title/tt0105236/?ref_=tt_mv_close",
+            "comment": "Me gustan las películas de Tarantino y no lo puedo negar. Eso sí, algunas más que otras."
         },
         {
             "title": "Citizen Kane",
             "image": "https://m.media-amazon.com/images/M/MV5BYjBiOTYxZWItMzdiZi00NjlkLWIzZTYtYmFhZjhiMTljOTdkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX182_CR0,0,182,268_AL_.jpg",
-            "url": "https://www.imdb.com/title/tt0033467/?ref_=fn_al_tt_1"
+            "url": "https://www.imdb.com/title/tt0033467/?ref_=fn_al_tt_1",
+            "comment": "Qué planos. Qué sentimientos. Qué peliculón."
         },
         {
             "title": "Fantasia",
@@ -166,12 +171,14 @@
         {
             "title": "Tales of mistery and imagination",
             "image": "https://i.scdn.co/image/ab67616d0000b2736be88a1b84368d892f012b89",
-            "url": "https://open.spotify.com/album/1ZsboMJilL9Udojo9Hds4J"
+            "url": "https://open.spotify.com/album/1ZsboMJilL9Udojo9Hds4J",
+            "comment": "No puedo contar cuántas veces escucho este álbum. Afortunadamente, Spotify me envía el cómputo anual. Son muchas."
         },
         {
             "title": "Wish You Were Here",
             "image": "https://i.scdn.co/image/ab67616d0000b2735aa1262c4123fedc2e4b8c44",
-            "url": "https://open.spotify.com/album/6uvBKDGlJAYLH5Vy6RQVsc"
+            "url": "https://open.spotify.com/album/6uvBKDGlJAYLH5Vy6RQVsc",
+            "comment": "Sólo con \"Shine On You Crazy Diamond\" ya me gana. Y \"Welcome to the Machine\"..."
         },
         {
             "title": "El Mal Querer",
