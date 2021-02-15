@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../code/common.js"></script>
-    <link rel="icon" type="image/ico" href="content/images/favicon.ico">
+    <link rel="icon" type="image/ico" href="https://beacabdan.github.io/content/images/favicon.ico">
     <style>
         @media (min-width: 48em) {
             .card-columns {
@@ -98,11 +98,10 @@
                 var list = [{"container": movies, "content": data.movies, "size":"book"}, {"container": shows, "content": data.shows, "size":"book"}, {"container": books, "content": data.books, "size":"book"}, {"container": documentaries, "content": data.documentaries, "size":"book"}, {"container": albums, "content": data.albums, "size":""}]
                 for (var j = 0; j < list.length; j++) {
                     for (var i = 0; i < list[j].content.length; i++) {
-                        if (!list[j].content[i].hasOwnProperty("comment")) {
-                            list[j].container.insertAdjacentHTML('beforeend', '<div class="card"><a href="' + list[j].content[i].url + '" target="_blank"><img class="card-img-top" style="width: 100%; min-height:100px; object-fit: cover;" src="' + list[j].content[i].image + '" alt="' + list[j].content[i].title + '"></a><div class="card-body"><p class="card-text">' + list[j].content[i].title + '</p></div></div>');
-                        }
+                        if (!list[j].content[i].hasOwnProperty("comment"))
+                            list[j].container.insertAdjacentHTML('beforeend', '<div class="card"><a href="' + list[j].content[i].url + '" target="_blank"><img class="card-img-top" style="width: 100%; min-height:100px; object-fit: cover;" src="' + list[j].content[i].image + '" alt="' + list[j].content[i].title + '"></a><div class="card-body"><p class="card-text">' + list[j].content[i].title + '</p></div></div>');                        
                         else
-                        list[j].container.insertAdjacentHTML('beforeend', '<div class="card"><a href="' + list[j].content[i].url + '" target="_blank"><img class="card-img-top" style="width: 100%; min-height:100px; object-fit: cover;" src="' + list[j].content[i].image + '" alt="' + list[j].content[i].title + '"></a><div class="card-body"><p class="card-text">' + list[j].content[i].title + '</p><p class="card-text"><small class="text-muted">' + list[j].content[i].comment + '</small></p></div></div>');
+                            list[j].container.insertAdjacentHTML('beforeend', '<div class="card"><a href="' + list[j].content[i].url + '" target="_blank"><img class="card-img-top" style="width: 100%; min-height:100px; object-fit: cover;" src="' + list[j].content[i].image + '" alt="' + list[j].content[i].title + '"></a><div class="card-body"><p class="card-text">' + list[j].content[i].title + '</p><p class="card-text"><small class="text-muted">' + list[j].content[i].comment + '</small></p></div></div>');
                     }
                 }
             });

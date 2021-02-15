@@ -1,146 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/ico" href="../content/images/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <title>HTML, JS, CSS, etc.</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bsp.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../code/common.js"></script>
-    <title>CSS tests</title>
+    <link rel="icon" type="image/ico" href="https://beacabdan.github.io/content/images/favicon.ico">
 </head>
 
-<body>
-    <!-- HEADER -->
-    <div class="boundary">
-        <div class="pagination-link"><a href="../index.html">Bea<span class="hide-medium">triz</span><span class="hide-small">&nbsp;</span>Cab<span class="hide-small">rero&nbsp;</span>Dan<span class="hide-small">iel</span></a></div>
-        <div id="about-me-dropdown" class="pagination-link go-right hide-medium">
-            <a onclick="openDropdown()" href="#">About me</a>
-            <div class="dropdown-hover">
-                <div class="dropdown-content">
-                    <a href="../cv/index.html">CV</a>
-                    <a href="../more/books.html">Books & more</a>
-                    <a href="../more/index.html">Clipboard</a>
-                </div>
+<body data-spy="scroll" data-target="#myScrollspy">
+
+    <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
+        <div class="container">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="https://beacabdan.github.io/">BEATRIZ CABRERO DANIEL</a>
+
+            <!-- Menu button, smaller screens -->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/resources/index.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/more/index.html">Projects</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">About me</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="https://beacabdan.github.io/cv/index.html">CV</a></li>
+                            <li><a class="dropdown-item" href="https://beacabdan.github.io/more/books.html">Books & more</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="https://beacabdan.github.io/notworking.html">Clipboard</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="pagination-link go-right hide-medium"><a href="../more/index.html">Projects</a></div>
-        <div class="pagination-link go-right hide-medium"><a href="../resources/index.html">Resources</a></div>
-        <div class="pagination-link go-right show-medium"><a onclick="openNav()"><i class="material-icons no-print">menu</i></a></div>
-    </div>
+    </nav>
 
-    <div class="menu-small">
-        <a class="menu-small-button" onclick="closeNav()" href="#"><i class="material-icons no-print">close</i></a>
-        <div class="menu-small-content">
-            <a href="../index.html">Home</a>
-            <a href="../resources/index.html">Resources</a>
-            <a href="../more/index.html">Projects</a>
-            <a href="../index.html">About me</a>
-            <a href="../cv/index.html">CV</a>
-            <a href="../more/books.html">Books & more</a>
-            <a href="../more/index.html">Clipboard</a>
-        </div>
-    </div>
-    <!-- HEADER -->
+    <div style="height: 1em;"></div>
 
     <div class="container">
-        <h1>HTML and CSS tests</h1>
-        <h2>Flexible rows</h2>
-        <p>Useful to position elements side by side and automatically resize them when <code>width</code> changes. In this example, 5 columns become 3 and then 1 in smaller devices. Here's an example of this kind of container. Click the button to add another element to the palette. Resize the page to see how the elements adapt to the width of the page.</p>
-        <button onclick="addColorToPalette()">Add another element to the grid</button>
-        <button class="secondaryButton" onclick="removePalette()">Clear palette</button>
-        <div class="flexRow" id="paletteContainer">
-            <div class="fifth"><canvas style="display: block; width: 100%;" width="200" height="200"></canvas></div>
-            <div class="fifth"><canvas style="display: block; width: 100%;" width="200" height="200"></canvas></div>
-            <div class="fifth"><canvas style="display: block; width: 100%;" width="200" height="200"></canvas></div>
-        </div>
+        <h1>Tests y ejemplos de "cosas web"</h1>
+        Tengo que encontrar alguna manera de mostrar código bonito.
+        <h2>Introducción a jQuery</h2>
+        <p>Algunas notas de un curso de jQuery del Cibernarium <a href="https://cibernarium.barcelonactiva.cat/">Barcelona Activa</a>.
+            <span id="primer">Hola, soy un <b>span</b>.</span>
+            <span id="segon">Hola, soy un <u>span</u> 2.</span>
+            <span id="tercer">Hola, soy un <i>span</i> 3.</span>
+            Para ocultar el elemento con id "segon", escribimos:
+        </p>
+        <pre><code>
+$(document).ready(function(){
+    $("#segon").hide();
+});
+        </code>
+        </pre>
+        <p><span id="myBtn">Si me clicas aparece un texto aquí<span id="appears"></span>.</span> Esto se hace haciendo que el párrafo sea clicable (según su id). Podemos usar "text()" para cambiar el contenido, "html()" para cambiar el contenido con tags HTML. Si sólo queremos añadir algo al final, podemos usar "append()". También podemos eliminar el párrafo clicado usando "$(this).remove()" al detectarse un click.</p>
+        <pre>
+        <code>
+$(function () {
+    $("#myBtn").click(function () {
+        $("#appears").text("Hello World");
+    });
+});
+        </code>
+        </pre>
+        <p>Para cambiar el contenido según el botón clicado podemos usar <code>$("button").click()</code> para detectar el click y dentro usar <code>$(this).text()</code> para obtener el texto del botón. La prioridad para seleccionar un elemento es usar el id o la clase.</p>
+        <p>Los cambios se pueden concatenar mágicamente. Por ejemplo podemos hacer <code>$("#id").text("Texto").css("color", "#000")</code>. Podemos acceder también a los campos de estilo del botón clicado usando:</p>
+        <pre>
+            <code>
+$(function () {
+    $(".boton").click(function() {
+        $("#parrafo").css("color", $(this).css("color"))
+    });
+});
+            </code>
+        </pre>
 
-        <p>To do this we can use a <code>flexRow</code> container with (for instance) five columns (that will become three and then 1 when the page is rescaled):</p>
-        <pre><code>&lt;div class="flexRow" id="paletteContainer"><br>&#9;&lt;div class="fifth">&lt;/div><br>&#9;&lt;div class="fifth">&lt;/div><br>&#9;&lt;div class="fifth">&lt;/div><br>&lt;/div></code></pre>
-        <p>Note that the <code>margin</code> of the parent is overriden to avoid the overflow and <code>margin-top</code> of the children elemets is set to 0 as well. The following CSS is used for this:</p>
-        <pre><code>.flexRow {<br>&#9;display: flex;<br>&#9;flex-wrap: wrap;<br>&#9;justify-content: space-between; <br>&#9;box-sizing: border-box;<br>}<br><br>.flexRow:after {<br>&#9;content: "";<br>&#9;flex: auto;<br>}<br><br>.fifth {<br>&#9;width: 20%;<br>}</code></pre>
-
-        <p>As you can probably imagine, I created very similar code for <code>.quarter</code> and <code>.third</code> so I can have different levels. And then, for the resizing purposes (adding some margin between the sibling elements):</p>
-        <pre><code>@media only screen and (max-width: 800px) {<br>&#9;.fifth {<br>&#9;&#9;width: calc(100%/3);<br>&#9;}<br>}<br><br>@media only screen and (max-width: 600px) {<br>&#9;.fifth {<br>&#9;&#9;width: 100%;<br>&#9;&#9;padding: 0;<br>&#9;}<br><br>&#9;.flexRow > * {<br>&#9;&#9;margin-top: var(--default-padding);&#9;&#9;<br>&#9;}<br>}</code></pre>
-                    
-        <h2>Adaptive columns with margin</h2>
-        <p>Example with two columns. As you can see, it's the elements that are resized but the margin between them stays the same (not the same as using <code>space-between</code> in a <code>flex</code> container):</p>
-        <div class="flexRow flexRowMargins">
-            <div class="half"><div style="padding: var(--default-padding); background-color: var(--surface);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur quam accusamus eos, unde alias perferendis sunt delectus magni, eligendi, facere omnis atque ad? Qui, aperiam temporibus culpa repellendus omnis commodi!</div></div>
-            <div class="half"><div style="padding: var(--default-padding); background-color: var(--surface);">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae earum, pariatur exercitationem officia deleniti in eligendi ipsum vel doloribus ducimus dicta temporibus voluptates incidunt assumenda, hic aspernatur explicabo ipsa aperiam.</div></div>
-        </div>
-
-        <p>HTML to create two columns (becomes 1 in smaller screens) with a separation equal to <code>var(--default-padding)</code>:</p>
-        <pre><code>&lt;div class="flexRow flexRowMargins"><br>&#9;&lt;div class="half">&lt;div>1&lt;/div>&lt;/div><br>&#9;&lt;div class="half">&lt;div>2&lt;/div>&lt;/div><br>&lt;/div></code></pre>
-        <p>The CSS for this is:</p>
-        <pre><code>.flexRowMargins {<br>&#9;margin: calc(var(--default-padding) * -1) calc(var(--default-padding) * -0.5) 0 calc(var(--default-padding) * -0.5);<br>}<br><br>.flexRowMargins > * {<br>&#9;margin-top: var(--default-padding);<br>&#9;padding: 0 calc(var(--default-padding)*0.5);<br>&#9;box-sizing: border-box;<br>}<br><br>.half {<br>&#9;width: 50%;<br>}</code></pre>
-        <p>More columns in each row are also possible, here's an example using <code>third</code>:</p>
-
-        <div class="flexRow flexRowMargins">
-            <div class="third"><div style="padding: var(--default-padding); background-color: var(--surface);">1</div></div>
-            <div class="third"><div style="padding: var(--default-padding); background-color: var(--surface);">2</div></div>
-            <div class="third"><div style="padding: var(--default-padding); background-color: var(--surface);">3</div></div>
-        </div>
-
-        <p>And another example using <code>fifth</code> with margin (the colour palette example has no separation between elements):</p>
-
-        <div class="flexRow flexRowMargins">
-            <div class="fifth"><div style="padding: var(--default-padding); background-color: var(--surface);">1</div></div>
-            <div class="fifth"><div style="padding: var(--default-padding); background-color: var(--surface);">2</div></div>
-            <div class="fifth"><div style="padding: var(--default-padding); background-color: var(--surface);">3</div></div>
-            <div class="fifth"><div style="padding: var(--default-padding); background-color: var(--surface);">4</div></div>
-            <div class="fifth"><div style="padding: var(--default-padding); background-color: var(--surface);">5</div></div>
-        </div>
-        <p>Comparison to a simple flex with <code>space-between</code> justified contents:</p>
-        <div style="display:flex; justify-content: space-between;">
-            <div style="width: calc(20% - var(--default-padding)); box-sizing: border-box; padding: var(--default-padding); background-color: var(--surface);">1</div>
-            <div style="width: calc(20% - var(--default-padding)); box-sizing: border-box; padding: var(--default-padding); background-color: var(--surface);">2</div>
-            <div style="width: calc(20% - var(--default-padding)); box-sizing: border-box; padding: var(--default-padding); background-color: var(--surface);">3</div>
-            <div style="width: calc(20% - var(--default-padding)); box-sizing: border-box; padding: var(--default-padding); background-color: var(--surface);">4</div>
-            <div style="width: calc(20% - var(--default-padding)); box-sizing: border-box; padding: var(--default-padding); background-color: var(--surface);">5</div>
-        </div>
-
-        <p>Finally, to make it adapt to smaller screens (adding some margin between the sibling elements):</p>
-        <pre><code>@media only screen and (max-width: 600px) {<br>&#9;.flexRow > * {<br>&#9;&#9;display: block;<br>&#9;&#9;margin: 0;<br>&#9;}<br><br>&#9;.flexRowMargins {<br>&#9;&#9;margin: calc(var(--default-padding)*-1) 0 0 0;<br>&#9;}<br>}</code></pre>
-        <p>Disclaimer: I have no idea if this is the best way to do it. I just wanted to play around with CSS and do it myself, instead of using someone else's stylesheet.</p>
+        <p>Vamos a por formularios o similar. Para pedir input al usuario podemos usar una etiqueta <code>input</code> y tener un botón con <code>id="boton_input"</code> (por ejemplo). Luego podemos capturar los clicks en el botón y añadir lo que hayamos escrito usando el <code>input</code> en algún <code>span</code> (por ejemplo) usando <code>$("#algunspan").text($("#input_texto").val())</code>.</p>
     </div>
 
     <script>
-        function fillCanvas(cnv) {
-            var ctx = cnv.getContext("2d");
-            var color = getRandomColor();
-            ctx.fillStyle = color;
-            ctx.fillRect(0, 0, cnv.width, cnv.height);
-            
-            ctx.fillStyle = "#FFF";
-            ctx.textAlign = "center";
-            ctx.textBaseline = "middle";
-            ctx.font = "20px sans-serif";
-            ctx.fillText(color.toUpperCase(), 100, 100);
-        }
-
-        function initTest1Canvas() {
-            var canvases = document.getElementsByTagName("canvas");
-            for (var i = 0; i < canvases.length; i++) {
-                var cnv = canvases[i];
-                fillCanvas(cnv);
-            }
-        }
-
-        function addColorToPalette() {
-            var palette = document.getElementById("paletteContainer");
-            palette.insertAdjacentHTML('beforeend', '<div class="fifth"><canvas style="display: block; width: 100%;" width="200" height="200"></canvas></div>');
-
-            var canvases = document.getElementsByTagName("canvas");
-            fillCanvas(canvases[canvases.length-1]);
-        }
-
-        function removePalette() {
-            var palette = document.getElementById("paletteContainer");
-            palette.innerHTML = "";
-        }
-
-        initTest1Canvas();
+        $(function () {
+            $("#btn_action").click(function () {
+                $("#input1").text($("#input_texto").val())
+                $("#input2").text($("#input_texto_2").val())
+            });
+        });
     </script>
 </body>
 

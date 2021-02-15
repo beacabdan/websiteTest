@@ -15,8 +15,13 @@
         "image": "https://www.researchgate.net/profile/Ian_Mcmanus/publication/4732061/figure/fig8/AS:668901159477255@1536489872531/Schotter-Gravel-stones-Computer-generated-image-by-Georg-Nees-1968-1971-The-work-is_W640.jpg"
     },
     {
+        "title": "HTML, CSS, and JS tests",
+        "image": "https://miro.medium.com/max/18438/1*Fp43zS64ZPoWi4IAz1n3MA.jpeg",
+        "url": "https://beacabdan.github.io/resources/csstests.html"
+    },
+    {
         "title": "Graphic design assignments",
         "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-university-assets.s3.amazonaws.com/20/fd4872659d44f1b54d24778faa99e5/HEAD_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=1200",
-        "url": "https://beacabdan.github.io/portfolio/gdcalarts.html"
-    }  
+        "url": "https://beacabdan.github.io/notworking.html"
+    }
 ]
