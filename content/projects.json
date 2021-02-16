@@ -2,12 +2,19 @@
     {
         "title": "Playlist cover generator",
         "image": "https://developer.spotify.com/images/home/tile-1-alt-bg.jpg",
+        "comment": "Automatic playlists and covers? Sounds like something I'd do.",
         "url": "cover.html"
     },
     {
         "title": "ChAOS",
         "url": "https://project.inria.fr/crowdscience/project/ocsr/chaos/",
         "image": "https://project.inria.fr/crowdscience/files/2020/04/RocketBox-1.png"
+    },
+    {
+        "title": "Books, movies and music",
+        "image": "https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1453&q=80",
+        "url": "https://beacabdan.github.io/more/books.html",
+        "comment": "A selection of masterpieces."
     },
     {
         "title": "Georg Nees #inspo",
@@ -17,7 +24,8 @@
     {
         "title": "HTML, CSS, and JS tests",
         "image": "https://miro.medium.com/max/18438/1*Fp43zS64ZPoWi4IAz1n3MA.jpeg",
-        "url": "https://beacabdan.github.io/resources/csstests.html"
+        "url": "https://beacabdan.github.io/resources/csstests.html",
+        "comment": "Just some tests and examples I've compiled. Everything is very basic but it might be useful for others."
     },
     {
         "title": "Graphic design assignments",
