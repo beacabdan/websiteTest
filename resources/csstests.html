@@ -41,25 +41,33 @@
 
     <div class="container">
         <h1>Tests y ejemplos de "cosas web"</h1>
-        Tengo que encontrar alguna manera de mostrar código bonito.
+        <p>Tengo que encontrar alguna manera mejor de mostrar código y demos. Urgentemente.</p>
+
+        <p>Antes de nada, unas pruebas con posiciones absolutas y floats (porque siempre me pierdo). Esto son divs relativos y se pueden poner como <code>display:inline-block</code> para que no ocupen una "línea" cada uno:</p>
+        <div style="background:var(--red); height:50px; width: 50px; position:relative; display:inline-block; left: 0px;">1</div>
+        <div style="background:var(--green); height:50px; width: 50px; position:relative; display:inline-block;">2</div>
+        <div style="background:var(--blue); height:50px; width: 50px; position:relative; display:inline-block; right: 0px;">3</div>
+
+        <p>Entonces, las cosas absolutas son las que siempre me amargan. Lo guay es que pueden "salir" del contenedor, cosa que puede ser medio útil. Pero no afecta a lo que haya después, ¡ojo! No "ocupa" espacio, está en otra "capa"/"posición z". Sobre la alineación: en este ejemplo, la caja 1 tiene en el estilo <code>left: 0px</code> y la caja 3 tiene <code>right: 0px</code>. Ejemplo:</p>
+        <div style="background:var(--red); height:50px; width: 50px; position:absolute; left: 0px;">1</div>
+        <div style="background:var(--green); height:50px; width: 50px; position:absolute;">2</div>
+        <div style="background:var(--blue); height:50px; width: 50px; position:absolute; right: 0px;">3</div>
+
+        <p>Esto es un párrafo para que veas que se sobreescribe: Lorem ipsum dolor sit, amet consectetur adipisicing elit. At voluptas praesentium ipsum veritatis. Eligendi deleniti at nisi, iusto facilis aliquid, aliquam, eveniet cumque tenetur molestias neque commodi! Deserunt, iste quae.</p>
+
         <h2>Introducción a jQuery</h2>
-        <p>Algunas notas de un curso de jQuery del Cibernarium <a href="https://cibernarium.barcelonactiva.cat/">Barcelona Activa</a>.
-            <span id="primer">Hola, soy un <b>span</b>.</span>
-            <span id="segon">Hola, soy un <u>span</u> 2.</span>
-            <span id="tercer">Hola, soy un <i>span</i> 3.</span>
-            Para ocultar el elemento con id "segon", escribimos:
-        </p>
+        <p>Algunas notas de un curso de jQuery del Cibernarium <a href="https://cibernarium.barcelonactiva.cat/">Barcelona Activa</a>. Hay algunas demos con botones. Porque los botones, molan (no).</p>
+        <p>Para ocultar un elemento con <code>id="segon"</code>, escribimos:</p>
         <pre><code>
 $(document).ready(function(){
     $("#segon").hide();
 });
-        </code>
-        </pre>
-        <p><span id="myBtn">Si me clicas aparece un texto aquí<span id="appears"></span>.</span> Esto se hace haciendo que el párrafo sea clicable (según su id). Podemos usar "text()" para cambiar el contenido, "html()" para cambiar el contenido con tags HTML. Si sólo queremos añadir algo al final, podemos usar "append()". También podemos eliminar el párrafo clicado usando "$(this).remove()" al detectarse un click.</p>
+        </code></pre>
+        <p><span id="boton1">Si me clicas aparece un texto aquí<span id="appears"></span>.</span> Esto se hace haciendo que el párrafo sea clicable (según su id). Podemos usar <code>text()</code> para cambiar el contenido, <code>html()</code> para cambiar el contenido con tags HTML. Si sólo queremos añadir algo al final, podemos usar <code>append()</code>. También podemos eliminar el párrafo clicado usando <code>$(this).remove()</code> al detectarse un click.</p>
         <pre>
         <code>
 $(function () {
-    $("#myBtn").click(function () {
+    $("#boton1").click(function () {
         $("#appears").text("Hello World");
     });
 });
@@ -76,18 +84,50 @@ $(function () {
 });
             </code>
         </pre>
+        <p>Vamos a por formularios o similar. Para pedir input al usuario podemos usar una etiqueta <code>input</code> y tener un botón con <code>id="boton_input"</code> (por ejemplo). Luego podemos capturar los clicks en el botón y añadir lo que hayamos escrito usando el <code>input</code> en algún <code>span</code> (por ejemplo) usando <code>$("#algunspan").text($("#input_texto").val())</code>. El texto que añadas en las cajas aparecerá aquí (<i id="contenido"><span id="input3">primer campo</span> <span id="input4">segundo campo</span></i>) cuando hagas click en OK.</p>
+        <input id="input1" type="input"></input>
+        <input id="input2" type="input"></input>
+        <button id="boton2" type=button class="btn btn-primary">Dale!</button>
+        <button id="boton3" type=button class="btn btn-outline-primary">Borra</button>
+    
+        <p>Y este es un ejemplo tonto para animar cambios de CSS. El CSS cambia para el elemento. Por ejemplo, este <code>div</code> tiene estilo <code>style="background:red; height:100px; width: 100px;"</code> y queremos que, al hacer click en algún sitio (un botón o él mismo) cambie de ancho y de opacidad.</p>
+        <div id="square" style="background:var(--red); height:50px; width: 100px;">Click me!</div>
+        <p>Para animar cambios de CSS simplemente hemos de escribir qué cambios queremos que se hagan en el elemento con <code>id="square</code> tal que:</p>
+        <pre>
+        <code>
+$("#square").click(function () {
+    $("#square").animate({width:"+=50px", opacity: "0.5"}, "fast");
+});
+        </code>
+        </pre>
 
-        <p>Vamos a por formularios o similar. Para pedir input al usuario podemos usar una etiqueta <code>input</code> y tener un botón con <code>id="boton_input"</code> (por ejemplo). Luego podemos capturar los clicks en el botón y añadir lo que hayamos escrito usando el <code>input</code> en algún <code>span</code> (por ejemplo) usando <code>$("#algunspan").text($("#input_texto").val())</code>.</p>
+        <p>Hay plugins interesantes que sirven para mil y una cosa. No estoy segura de que me interese usar ninguno, de momento. Pero haberlos hay-los.</p>
     </div>
 
     <script>
         $(function () {
-            $("#btn_action").click(function () {
-                $("#input1").text($("#input_texto").val())
-                $("#input2").text($("#input_texto_2").val())
+            $("#boton1").click(function () {
+                $("#appears").html(": <i>Hello World</i>");
+            });
+
+            $("#boton2").click(function () {
+                if ($("#input1").val() == "" || $("#input2").val() == "") 
+                    alert("¡Ojo! Tienes algún campo vacío.")
+                else {
+                    $("#input3").text($("#input1").val())
+                    $("#input4").text($("#input2").val())
+                }
+            });
+
+            $("#boton3").click(function () {
+                $("#input1").val("")
+                $("#input2").val("")
+            });
+
+            $("#square").click(function () {
+                $("#square").animate({width:"+=50px"}, "slow");
             });
         });
     </script>
 </body>
-
 </html>
