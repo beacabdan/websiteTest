@@ -40,94 +40,187 @@
     <div style="height: 1em;"></div>
 
     <div class="container">
-        <h1>Tests y ejemplos de "cosas web"</h1>
-        <p>Tengo que encontrar alguna manera mejor de mostrar código y demos. Urgentemente.</p>
+        <div class="row">
+            <div class="col-2 d-none d-md-block" id="myScrollspy">
+                <nav class="nav nav-pills flex-column sticky-top" style="top: 1em;">
+                    <a class="nav-link" href="#drag">Drag/drop</a>
+                    <a class="nav-link" href="#jquery">jQuery basics</a>
+                </nav>
+            </div>
+            <div class="col-12 col-md-10" data-bs-spy="scroll" data-bs-target="#myScrollspy">
 
-        <p>Antes de nada, unas pruebas con posiciones absolutas y floats (porque siempre me pierdo). Esto son divs relativos y se pueden poner como <code>display:inline-block</code> para que no ocupen una "línea" cada uno:</p>
-        <div style="background:var(--red); height:50px; width: 50px; position:relative; display:inline-block; left: 0px;">1</div>
-        <div style="background:var(--green); height:50px; width: 50px; position:relative; display:inline-block;">2</div>
-        <div style="background:var(--blue); height:50px; width: 50px; position:relative; display:inline-block; right: 0px;">3</div>
+                <h1>Tests y ejemplos de "cosas web"</h1>
+                <p>Tengo que encontrar alguna manera mejor de mostrar código y demos. Urgentemente.</p>
 
-        <p>Entonces, las cosas absolutas son las que siempre me amargan. Lo guay es que pueden "salir" del contenedor, cosa que puede ser medio útil. Pero no afecta a lo que haya después, ¡ojo! No "ocupa" espacio, está en otra "capa"/"posición z". Sobre la alineación: en este ejemplo, la caja 1 tiene en el estilo <code>left: 0px</code> y la caja 3 tiene <code>right: 0px</code>. Ejemplo:</p>
-        <div style="background:var(--red); height:50px; width: 50px; position:absolute; left: 0px;">1</div>
-        <div style="background:var(--green); height:50px; width: 50px; position:absolute;">2</div>
-        <div style="background:var(--blue); height:50px; width: 50px; position:absolute; right: 0px;">3</div>
+                <p>Antes de nada, unas pruebas con posiciones absolutas y floats (porque siempre me pierdo). Esto son divs relativos y se pueden poner como <code>display:inline-block</code> para que no ocupen una "línea" cada uno:</p>
+                <div style="background:var(--red); height:50px; width: 50px; position:relative; display:inline-block; left: 0px;">1</div>
+                <div style="background:var(--green); height:50px; width: 50px; position:relative; display:inline-block;">2</div>
+                <div style="background:var(--blue); height:50px; width: 50px; position:relative; display:inline-block; right: 0px;">3</div>
 
-        <p>Esto es un párrafo para que veas que se sobreescribe: Lorem ipsum dolor sit, amet consectetur adipisicing elit. At voluptas praesentium ipsum veritatis. Eligendi deleniti at nisi, iusto facilis aliquid, aliquam, eveniet cumque tenetur molestias neque commodi! Deserunt, iste quae.</p>
+                <p>Entonces, las cosas absolutas son las que siempre me amargan. Lo guay es que pueden "salir" del contenedor, cosa que puede ser medio útil. Pero no afecta a lo que haya después, ¡ojo! No "ocupa" espacio, está en otra "capa"/"posición z". Sobre la alineación: en este ejemplo, la caja 1 tiene en el estilo <code>left: 0px</code> y la caja 3 tiene <code>right: 0px</code>. Ejemplo:</p>
+                <div style="background:var(--red); height:50px; width: 50px; position:absolute; left: 0px;">1</div>
+                <div style="background:var(--green); height:50px; width: 50px; position:absolute;">2</div>
+                <div style="background:var(--blue); height:50px; width: 50px; position:absolute; right: 0px;">3</div>
 
-        <h2>Introducción a jQuery</h2>
-        <p>Algunas notas de un curso de jQuery del Cibernarium <a href="https://cibernarium.barcelonactiva.cat/">Barcelona Activa</a>. Hay algunas demos con botones. Porque los botones, molan (no).</p>
-        <p>Para ocultar un elemento con <code>id="segon"</code>, escribimos:</p>
-        <pre><code>
+                <p>Esto es un párrafo para que veas que se sobreescribe: Lorem ipsum dolor sit, amet consectetur adipisicing elit. At voluptas praesentium ipsum veritatis. Eligendi deleniti at nisi, iusto facilis aliquid, aliquam, eveniet cumque tenetur molestias neque commodi! Deserunt, iste quae.</p>
+
+                <div id="drag">
+                    <h2>Drag and drop and switch</h2>
+                    <p>Puedes hacer click en las siguientes cajas y arrastrarlas hasta otra caja. Los contenidos se intercambiarán.</p>
+                    <div id="div1" style="width: 100px; border: 1px solid black; display: inline-block; padding: 5px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <div style="background:var(--red); height:50px; width: 50px; position:relative; display:inline-block;" draggable="true" ondragstart="drag(event)">1</div>
+                    </div>
+
+                    <div id="div2" style="width: 100px; border: 1px solid black; display: inline-block; padding: 5px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <div style="background:var(--green); height:50px; width: 50px; position:relative; display:inline-block;" draggable="true" ondragstart="drag(event)">2</div>
+                    </div>
+
+                    <div id="div3" style="width: 100px; border: 1px solid black; display: inline-block; padding: 5px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <div style="background:var(--blue); height:50px; width: 50px; position:relative; display:inline-block;" draggable="true" ondragstart="drag(event)">3</div>
+                    </div>
+                    <p>Los <code>div</code> de colores tienen asignado <code>draggable="true" ondragstart="drag(event)"</code>. Para que funcione, debemos tener un script con la siguiente función:</p>
+                    <pre><code>
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.path[1].id);
+}
+                    </code></pre>
+                    <p>También necesitamos dos funciones más en el script. La primera, <code>allowDrop()</code>, evita que pasen cosas raras al pasar por encima de uno de los <code>div</code> contenedores (línea negra). La segunda, <code>drop()</code>, gestiona el comportamiento <code>ondrop</code>:</p>
+                    <pre><code>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    var origin = document.getElementById(data).children[0];    
+    var name = ev.path[0].id[1] != "i" ? ev.path[1].id : ev.path[0].id
+    var target = document.getElementById(name).children[0];
+    swapElements(origin, target);
+}
+                    </code></pre>
+                    <p>No sé si es elegante ni la mejor manera. El código de <code>swapElements()</code> es de <a href="https://stackoverflow.com/questions/10716986/swap-two-html-elements-and-preserve-event-listeners-on-them">stackoverflow</a> pero podéis crear una distinta según qué queráis hacer:</p>
+                    <pre><code>
+function swapElements(obj1, obj2) {
+    var parent2 = obj2.parentNode;
+    var next2 = obj2.nextSibling;
+    if (next2 === obj1) {
+        parent2.insertBefore(obj1, obj2);
+    } else {
+        obj1.parentNode.insertBefore(obj2, obj1);
+        if (next2) {
+            parent2.insertBefore(obj1, next2);
+        } else {
+            parent2.appendChild(obj1);
+        }
+    }
+}
+                    </code></pre>
+                    <p>Para hacer que todo esto funcione, tenemos que añadiro al <code>div</code> contenedor (línea negra) los siguientes campos: <code>ondragover="allowDrop(event)"</code> y <code>ondrop="drop(event)"</code>.</p>
+
+                </div>
+                <div id="jquery">
+                    <h2>Introducción a jQuery</h2>
+                    <p>Algunas notas de un curso de jQuery del Cibernarium <a href="https://cibernarium.barcelonactiva.cat/">Barcelona Activa</a>. Hay algunas demos con botones. Porque los botones, molan (no).</p>
+                    <p>Para ocultar un elemento con <code>id="segon"</code>, escribimos:</p>
+                    <pre><code>
 $(document).ready(function(){
     $("#segon").hide();
 });
-        </code></pre>
-        <p><span id="boton1">Si me clicas aparece un texto aquí<span id="appears"></span>.</span> Esto se hace haciendo que el párrafo sea clicable (según su id). Podemos usar <code>text()</code> para cambiar el contenido, <code>html()</code> para cambiar el contenido con tags HTML. Si sólo queremos añadir algo al final, podemos usar <code>append()</code>. También podemos eliminar el párrafo clicado usando <code>$(this).remove()</code> al detectarse un click.</p>
-        <pre>
-        <code>
+                    </code></pre>
+                    <p><span id="boton1">Si me clicas aparece un texto aquí<span id="appears"></span>.</span> Esto se hace haciendo que el párrafo sea clicable (según su id). Podemos usar <code>text()</code> para cambiar el contenido, <code>html()</code> para cambiar el contenido con tags HTML. Si sólo queremos añadir algo al final, podemos usar <code>append()</code>. También podemos eliminar el párrafo clicado usando <code>$(this).remove()</code> al detectarse un click.</p>
+                    <pre><code>
 $(function () {
     $("#boton1").click(function () {
         $("#appears").text("Hello World");
     });
 });
-        </code>
-        </pre>
-        <p>Para cambiar el contenido según el botón clicado podemos usar <code>$("button").click()</code> para detectar el click y dentro usar <code>$(this).text()</code> para obtener el texto del botón. La prioridad para seleccionar un elemento es usar el id o la clase.</p>
-        <p>Los cambios se pueden concatenar mágicamente. Por ejemplo podemos hacer <code>$("#id").text("Texto").css("color", "#000")</code>. Podemos acceder también a los campos de estilo del botón clicado usando:</p>
-        <pre>
-            <code>
+                    </code></pre>
+                    <p>Para cambiar el contenido según el botón clicado podemos usar <code>$("button").click()</code> para detectar el click y dentro usar <code>$(this).text()</code> para obtener el texto del botón. La prioridad para seleccionar un elemento es usar el id o la clase.</p>
+                    <p>Los cambios se pueden concatenar mágicamente. Por ejemplo podemos hacer <code>$("#id").text("Texto").css("color", "#000")</code>. Podemos acceder también a los campos de estilo del botón clicado usando:</p>
+                    <pre><code>
 $(function () {
     $(".boton").click(function() {
         $("#parrafo").css("color", $(this).css("color"))
     });
 });
-            </code>
-        </pre>
-        <p>Vamos a por formularios o similar. Para pedir input al usuario podemos usar una etiqueta <code>input</code> y tener un botón con <code>id="boton_input"</code> (por ejemplo). Luego podemos capturar los clicks en el botón y añadir lo que hayamos escrito usando el <code>input</code> en algún <code>span</code> (por ejemplo) usando <code>$("#algunspan").text($("#input_texto").val())</code>. El texto que añadas en las cajas aparecerá aquí (<i id="contenido"><span id="input3">primer campo</span> <span id="input4">segundo campo</span></i>) cuando hagas click en OK.</p>
-        <input id="input1" type="input"></input>
-        <input id="input2" type="input"></input>
-        <button id="boton2" type=button class="btn btn-primary">Dale!</button>
-        <button id="boton3" type=button class="btn btn-outline-primary">Borra</button>
-    
-        <p>Y este es un ejemplo tonto para animar cambios de CSS. El CSS cambia para el elemento. Por ejemplo, este <code>div</code> tiene estilo <code>style="background:red; height:100px; width: 100px;"</code> y queremos que, al hacer click en algún sitio (un botón o él mismo) cambie de ancho y de opacidad.</p>
-        <div id="square" style="background:var(--red); height:50px; width: 100px;">Click me!</div>
-        <p>Para animar cambios de CSS simplemente hemos de escribir qué cambios queremos que se hagan en el elemento con <code>id="square</code> tal que:</p>
-        <pre>
-        <code>
+                    </code></pre>
+                    <p>Vamos a por formularios o similar. Para pedir input al usuario podemos usar una etiqueta <code>input</code> y tener un botón con <code>id="boton_input"</code> (por ejemplo). Luego podemos capturar los clicks en el botón y añadir lo que hayamos escrito usando el <code>input</code> en algún <code>span</code> (por ejemplo) usando <code>$("#algunspan").text($("#input_texto").val())</code>. El texto que añadas en las cajas aparecerá aquí (<i id="contenido"><span id="input3">primer campo</span> <span id="input4">segundo campo</span></i>) cuando hagas click en OK.</p>
+                    <input id="input1" type="input"></input>
+                    <input id="input2" type="input"></input>
+                    <button id="boton2" type=button class="btn btn-primary">Dale!</button>
+                    <button id="boton3" type=button class="btn btn-outline-primary">Borra</button>
+
+                    <p>Y este es un ejemplo tonto para animar cambios de CSS. El CSS cambia para el elemento. Por ejemplo, este <code>div</code> tiene estilo <code>style="background:red; height:100px; width: 100px;"</code> y queremos que, al hacer click en algún sitio (un botón o él mismo) cambie de ancho y de opacidad.</p>
+                    <div id="square" style="background:var(--red); height:50px; width: 100px;">Click me!</div>
+                    <p>Para animar cambios de CSS simplemente hemos de escribir qué cambios queremos que se hagan en el elemento con <code>id="square</code> tal que:</p>
+                    <pre><code>
 $("#square").click(function () {
     $("#square").animate({width:"+=50px", opacity: "0.5"}, "fast");
 });
-        </code>
-        </pre>
+                    </code></pre>
+                    <p>Hay plugins interesantes que sirven para mil y una cosa. No estoy segura de que me interese usar ninguno, de momento. Pero haberlos hay-los.</p>
+                </div>
+            </div>
+        </div>
 
-        <p>Hay plugins interesantes que sirven para mil y una cosa. No estoy segura de que me interese usar ninguno, de momento. Pero haberlos hay-los.</p>
-    </div>
+        <script>
+            $(function () {
+                $("#boton1").click(function () {
+                    $("#appears").html(": <i>Hello World</i>");
+                });
 
-    <script>
-        $(function () {
-            $("#boton1").click(function () {
-                $("#appears").html(": <i>Hello World</i>");
+                $("#boton2").click(function () {
+                    if ($("#input1").val() == "" || $("#input2").val() == "")
+                        alert("¡Ojo! Tienes algún campo vacío.")
+                    else {
+                        $("#input3").text($("#input1").val())
+                        $("#input4").text($("#input2").val())
+                    }
+                });
+
+                $("#boton3").click(function () {
+                    $("#input1").val("")
+                    $("#input2").val("")
+                });
+
+                $("#square").click(function () {
+                    $("#square").animate({ width: "+=50px" }, "slow");
+                });
             });
 
-            $("#boton2").click(function () {
-                if ($("#input1").val() == "" || $("#input2").val() == "") 
-                    alert("¡Ojo! Tienes algún campo vacío.")
-                else {
-                    $("#input3").text($("#input1").val())
-                    $("#input4").text($("#input2").val())
+            function allowDrop(ev) {
+                ev.preventDefault();
+            }
+
+            function drag(ev) {
+                ev.dataTransfer.setData("text", ev.path[1].id);
+            }
+
+            function swapElements(obj1, obj2) {
+                var parent2 = obj2.parentNode;
+                var next2 = obj2.nextSibling;
+                if (next2 === obj1) {
+                    parent2.insertBefore(obj1, obj2);
+                } else {
+                    obj1.parentNode.insertBefore(obj2, obj1);
+                    if (next2) {
+                        parent2.insertBefore(obj1, next2);
+                    } else {
+                        parent2.appendChild(obj1);
+                    }
                 }
-            });
+            }
 
-            $("#boton3").click(function () {
-                $("#input1").val("")
-                $("#input2").val("")
-            });
-
-            $("#square").click(function () {
-                $("#square").animate({width:"+=50px"}, "slow");
-            });
-        });
-    </script>
+            function drop(ev) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                var origin = document.getElementById(data).children[0];
+                var name = ev.path[0].id[1] != "i" ? ev.path[1].id : ev.path[0].id
+                var target = document.getElementById(name).children[0];
+                swapElements(origin, target);
+            }
+        </script>
 </body>
+
 </html>
