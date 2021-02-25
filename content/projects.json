@@ -1,5 +1,11 @@
 [
     {
+        "title": "Animated timelines",
+        "url": "https://beacabdan.github.io/more/timeline.html",
+        "comment": "Work in progress: trying to load a list of events from a file and search through it with a slider (?).",
+        "image": "https://live.staticflickr.com/4807/46176999314_d6806709b0_b.jpg"
+    },
+    {
         "title": "Playlist cover generator",
         "image": "https://developer.spotify.com/images/home/tile-1-alt-bg.jpg",
         "comment": "Automatic playlists and covers? Sounds like something I'd do.",

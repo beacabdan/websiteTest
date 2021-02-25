@@ -87,4 +87,38 @@ function openDropdown(close=null) {
   }    
 }
 
+// DRAG DROP // DRAG DROP // DRAG DROP // DRAG DROP // DRAG DROP // DRAG DROP //
+// DRAG DROP // DRAG DROP // DRAG DROP // DRAG DROP // DRAG DROP // DRAG DROP //
+// DRAG DROP // DRAG DROP // DRAG DROP // DRAG DROP // DRAG DROP // DRAG DROP //
 
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.path[1].id);
+}
+
+function swapElements(obj1, obj2) {
+  var parent2 = obj2.parentNode;
+  var next2 = obj2.nextSibling;
+  if (next2 === obj1) {
+      parent2.insertBefore(obj1, obj2);
+  } else {
+      obj1.parentNode.insertBefore(obj2, obj1);
+      if (next2) {
+          parent2.insertBefore(obj1, next2);
+      } else {
+          parent2.appendChild(obj1);
+      }
+  }
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  var origin = document.getElementById(data).children[0];
+  var name = ev.path[0].id[1] != "i" ? ev.path[1].id : ev.path[0].id
+  var target = document.getElementById(name).children[0];
+  swapElements(origin, target);
+}
