@@ -1,26 +1,26 @@
 [
     {
-        "Título": "Evento1",
-        "Fecha": "01/01/2001",
-        "Descripción": "Descripción1",
-        "Imagen": "https://beacabdan.github.io/content/images/default-bg.jpg"
+        "title": "Evento1",
+        "date": "01/01/2001",
+        "description": "description1",
+        "image": "https://beacabdan.github.io/content/images/default-bg.jpg"
     },
     {
-        "Título": "Evento2",
-        "Fecha": "02/02/2002",
-        "Descripción": "Descripción2",
-        "Imagen": "https://beacabdan.github.io/content/images/default-bg.jpg"
+        "title": "Evento2",
+        "date": "02/02/2002",
+        "description": "description2",
+        "image": "https://beacabdan.github.io/content/images/default-bg.jpg"
     },
     {
-        "Título": "Evento3",
-        "Fecha": "04/04/2004",
-        "Descripción": "Descripción3",
-        "Imagen": "https://beacabdan.github.io/content/images/default-bg.jpg"
+        "title": "Evento3",
+        "date": "04/04/2004",
+        "description": "description3",
+        "image": "https://beacabdan.github.io/content/images/default-bg.jpg"
     },
     {
-        "Título": "Evento4",
-        "Fecha": "05/05/2004",
-        "Descripción": "Descripción4",
-        "Imagen": "https://beacabdan.github.io/content/images/default-bg.jpg"
+        "title": "Evento4",
+        "date": "05/05/2004",
+        "description": "description4",
+        "image": "https://beacabdan.github.io/content/images/default-bg.jpg"
     }
 ]
