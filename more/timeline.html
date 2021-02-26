@@ -1,0 +1,98 @@
+<!-- http://jsfiddle.net/r6vbzg2a/ -->
+<!-- slider to control timeline animation -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Timeline</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bsp.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../code/common.js"></script>
+    <link rel="icon" type="image/ico" href="https://beacabdan.github.io/content/images/favicon.ico">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
+        <div class="container">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="https://beacabdan.github.io/">BEATRIZ CABRERO DANIEL</a>
+
+            <!-- Menu button, smaller screens -->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/resources/index.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/more/index.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/cv/index.html">About me</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div style="height: 1em;"></div>
+
+    <div class="container">
+        <h1>Timeline</h1>
+        <p>TO REDO. While doing this I understood why this doesn't make any sense. Use the bar below to move through the timeline.</p>
+        <div id="timelineContainer" style="overflow-x: scroll; white-space: nowrap; padding-bottom: 10px;"></div>
+    </div>
+
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+          width: 10px;
+          height: 10px;
+        }
+        
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey; 
+            border-radius: 5px;
+        }
+         
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: var(--red); 
+            border-radius: 5px;
+        }
+        
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+          background: var(--red); 
+        }
+        </style>
+
+    <script>
+        function initProject() {
+            var palette = document.getElementById("timelineContainer");
+            fetch(parentUrl + "/content/timeline.json").then(response => response.json()).then(function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    card = data[i];
+                    nextCard = i + 1 < data.length ? data[i + 1] : card
+
+                    date = new Date(card.date)
+                    nextDate = new Date(nextCard.date)
+                    date.setYear(card.date.substring(6))
+                    nextDate.setYear(card.date.substring(6))
+                    eventLenght = Math.max(Math.floor((nextDate.getTime() - date.getTime()) / 5000000), 200);
+
+                    palette.insertAdjacentHTML('beforeEnd', '<div class="align-bottom" style="display: inline-block; width: ' + eventLenght + 'px;"><div class="card m-1" style="max-width:300px;"><img src="' + card.image + '" class="card-img-top" style="width: 100%; height:100px; object-fit: cover;"><div class="card-body"><h5 class="card-title">' + card.title + '</h5><p class="card-text">' + card.description + '</p></div><div class="card-footer">' + date.getDate() + "/" + (parseInt(date.getMonth()) + 1) + "/" + date.getFullYear() + '</div></div></div>')
+                }
+            });
+        }
+
+        initProject();
+    </script>
+</body>
+
+</html>

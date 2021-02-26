@@ -44,6 +44,7 @@
             <div class="col-2 d-none d-md-block" id="myScrollspy">
                 <nav class="nav nav-pills flex-column sticky-top" style="top: 1em;">
                     <a class="nav-link" href="#drag">Drag/drop</a>
+                    <a class="nav-link" href="#timeline">Timeline</a>
                     <a class="nav-link" href="#jquery">jQuery basics</a>
                 </nav>
             </div>
@@ -119,6 +120,17 @@ function swapElements(obj1, obj2) {
                     <p>Para hacer que todo esto funcione, tenemos que añadiro al <code>div</code> contenedor (línea negra) los siguientes campos: <code>ondragover="allowDrop(event)"</code> y <code>ondrop="drop(event)"</code>.</p>
 
                 </div>
+                <div id="timeline">
+                    <h1>Timeline</h1>
+                    <p>Use the bar below to move through the timeline. This is not a great idea in many ways.</p>
+                    <p>La idea es crear un timeline a partir de un archivo JSON o CSV. El ancho de cada contenedor en la timeline depende de la distancia entre los eventos (hay una longitud mínima).</p>
+                    <div id="timelineContainer" style="overflow-x: scroll; white-space: nowrap; padding-bottom: 10px;"></div>
+                    <p>Para trabajar con fechas (porque quería poder usar años AEC) he tenido que hacer este truquillo nada elegante para forzar el año en fechas con formato dd/mm/(-)aaaa:</p>
+                    <pre><code>
+date = new Date(card.date)
+date.setYear(date.substring(6))
+                    </code></pre>
+                </div>
                 <div id="jquery">
                     <h2>Introducción a jQuery</h2>
                     <p>Algunas notas de un curso de jQuery del Cibernarium <a href="https://cibernarium.barcelonactiva.cat/">Barcelona Activa</a>. Hay algunas demos con botones. Porque los botones, molan (no).</p>
@@ -188,6 +200,26 @@ $("#square").click(function () {
                     $("#square").animate({ width: "+=50px" }, "slow");
                 });
             });
+
+            function initProject() {
+            var palette = document.getElementById("timelineContainer");
+            fetch(parentUrl + "/content/timeline.json").then(response => response.json()).then(function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    card = data[i];
+                    nextCard = i + 1 < data.length ? data[i + 1] : card
+
+                    date = new Date(card.date)
+                    nextDate = new Date(nextCard.date)
+                    date.setYear(card.date.substring(6))
+                    nextDate.setYear(card.date.substring(6))
+                    eventLenght = Math.max(Math.floor((nextDate.getTime() - date.getTime()) / 200000000), 200);
+
+                    palette.insertAdjacentHTML('beforeEnd', '<div class="align-bottom" style="display: inline-block; width: ' + eventLenght + 'px;"><div class="card m-1" style="max-width:300px;"><img src="' + card.image + '" class="card-img-top" style="width: 100%; height:100px; object-fit: cover;"><div class="card-body"><h5 class="card-title">' + card.title + '</h5><p class="card-text">' + card.description + '</p></div><div class="card-footer">' + date.getDate() + "/" + (parseInt(date.getMonth()) + 1) + "/" + date.getFullYear() + '</div></div></div>')
+                }
+            });
+        }
+
+        initProject();
         </script>
 </body>
 
