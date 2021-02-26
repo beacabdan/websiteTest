@@ -1,20 +1,20 @@
 [
     {
         "title": "Cole",
-        "date": "20/09/1997",
+        "date": "09/20/1997",
         "description": "Yo fui al colegio como persona afortunada que soy.",
         "url": "https://beacabdan.github.io/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Manresa_-_Josep_Anselm_Clav%C3%A9_i_Camps.JPG/800px-Manresa_-_Josep_Anselm_Clav%C3%A9_i_Camps.JPG"
     },
     {
         "title": "Instituto",
-        "date": "25/09/2008",
+        "date": "09/25/2008",
         "description": "También fui al instituto. Fue una época preciosa.",
         "image": "https://agora.xtec.cat/iesvplantada/wp-content/uploads/usu537/2016/09/Vplantada_capcalera_web.jpg"
     },
     {
         "title": "Batxibac",
-        "date": "22/09/2010",
+        "date": "09/22/2010",
         "description": "¿Por qué hacer un bachillerato cuando puedes hacer dos? Participé en la prueba piloto del programa Batxibac.",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/135px-Flag_of_France.svg.png"
     },
@@ -26,13 +26,13 @@
     },
     {
         "title": "Doctorado",
-        "date": "5/06/2017",
+        "date": "06/05/2017",
         "description": "Crowd simulation, suena interesante... presento el TFM y me pongo a ello.",
         "image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/Crowd_in_street.jpg/220px-Crowd_in_street.jpg"
     },
     {
         "title": "Pandemia mundial",
-        "date": "25/02/2020",
+        "date": "02/25/2020",
         "description": "Me pilla en Rennes y al volver, decretan el confinamiento.",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/04.02_%E7%B8%BD%E7%B5%B1%E8%A6%96%E5%AF%9F%E3%80%8C%E4%B8%AD%E5%A4%AE%E6%B5%81%E8%A1%8C%E7%96%AB%E6%83%85%E6%8C%87%E6%8F%AE%E4%B8%AD%E5%BF%83%E3%80%8D_49726568957_66543b616e_o.jpg/240px-04.02_%E7%B8%BD%E7%B5%B1%E8%A6%96%E5%AF%9F%E3%80%8C%E4%B8%AD%E5%A4%AE%E6%B5%81%E8%A1%8C%E7%96%AB%E6%83%85%E6%8C%87%E6%8F%AE%E4%B8%AD%E5%BF%83%E3%80%8D_49726568957_66543b616e_o.jpg"
     }
