@@ -1,11 +1,8 @@
-<!-- http://jsfiddle.net/r6vbzg2a/ -->
-<!-- slider to control timeline animation -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Timeline</title>
+    <title>Untitled</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -18,81 +15,129 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
-        <div class="container">
-            <!-- Brand/logo -->
-            <a class="navbar-brand" href="https://beacabdan.github.io/">BEATRIZ CABRERO DANIEL</a>
+    <div class="dropdown dropleft" style="margin: 10px; position: fixed; right: 0; z-index: 2;">
+        <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false" style="background-color: transparent; border-color: transparent;">
+            MENU
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="nav-link" href="https://beacabdan.github.io/">Home</a></li>
+            <li><a class="nav-link" href="https://beacabdan.github.io/resources/index.html">Resources</a></li>
+            <li><a class="nav-link" href="https://beacabdan.github.io/more/index.html">Projects</a></li>
+            <li><a class="nav-link" href="https://beacabdan.github.io/cv/index.html">About me</a></li>
+        </ul>
+    </div>
 
-            <!-- Menu button, smaller screens -->
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Links -->
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/resources/index.html">Resources</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/more/index.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/cv/index.html">About me</a></li>
-                </ul>
+    <div class="timeline1">
+        <div class="container1 left1">
+            <div class="content">
+                <h2>2017</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
             </div>
         </div>
-    </nav>
-
-    <div style="height: 1em;"></div>
-
-    <div class="container">
-        <h1>Timeline</h1>
-        <p>TO REDO. While doing this I understood why this doesn't make any sense. Use the bar below to move through the timeline.</p>
-        <div id="timelineContainer" style="overflow-x: scroll; white-space: nowrap; padding-bottom: 10px;"></div>
+        <div class="container1 right1">
+            <div class="content">
+                <h2>2016</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+            </div>
+        </div>
+        <div class="container1 left1">
+            <div class="content">
+                <h2>2015</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+            </div>
+        </div>
+        <div class="container1 right1">
+            <div class="content">
+                <h2>2012</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+            </div>
+        </div>
+        <div class="container1 left1">
+            <div class="content">
+                <h2>2011</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+            </div>
+        </div>
+        <div class="container1 right1">
+            <div class="content">
+                <h2>2007</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+            </div>
+        </div>
     </div>
 
     <style>
-        /* width */
-        ::-webkit-scrollbar {
-          width: 10px;
-          height: 10px;
-        }
-        
-        /* Track */
-        ::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 5px grey; 
-            border-radius: 5px;
-        }
-         
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: var(--red); 
-            border-radius: 5px;
-        }
-        
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-          background: var(--red); 
-        }
-        </style>
-
-    <script>
-        function initProject() {
-            var palette = document.getElementById("timelineContainer");
-            fetch(parentUrl + "/content/timeline.json").then(response => response.json()).then(function (data) {
-                for (var i = 0; i < data.length; i++) {
-                    card = data[i];
-                    nextCard = i + 1 < data.length ? data[i + 1] : card
-
-                    date = new Date(card.date)
-                    nextDate = new Date(nextCard.date)
-                    date.setYear(card.date.substring(6))
-                    nextDate.setYear(card.date.substring(6))
-                    eventLenght = Math.max(Math.floor((nextDate.getTime() - date.getTime()) / 5000000), 200);
-
-                    palette.insertAdjacentHTML('beforeEnd', '<div class="align-bottom" style="display: inline-block; width: ' + eventLenght + 'px;"><div class="card m-1" style="max-width:300px;"><img src="' + card.image + '" class="card-img-top" style="width: 100%; height:100px; object-fit: cover;"><div class="card-body"><h5 class="card-title">' + card.title + '</h5><p class="card-text">' + card.description + '</p></div><div class="card-footer">' + date.getDate() + "/" + (parseInt(date.getMonth()) + 1) + "/" + date.getFullYear() + '</div></div></div>')
-                }
-            });
+        * {
+            box-sizing: border-box;
         }
 
-        initProject();
-    </script>
+        body {
+            background-color: var(--gray-dark);
+            font-family: Helvetica, sans-serif;
+        }
+
+        /* The actual timeline1 (the vertical ruler) */
+        .timeline1 {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* The actual timeline1 (the vertical ruler) */
+        .timeline1::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: white;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        /* container1 around content */
+        .container1 {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        /* The circles on the timeline1 */
+        .container1::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 8px solid var(--gray-dark);
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Place the container1 to the left1 */
+        .left1 {
+            left: 0;
+        }
+
+        /* Place the container1 to the right1 */
+        .right1 {
+            left: 50%;
+        }
+
+        /* Fix the circle for container1s on the right1 side */
+        .right1::after {
+            left: -12px;
+        }
+
+        /* The actual content */
+        .content {
+            padding: 20px 30px;
+            background-color: var(--light);
+        }
+    </style>
 </body>
 
 </html>

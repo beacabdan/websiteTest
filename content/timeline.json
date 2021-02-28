@@ -2,6 +2,7 @@
     {
         "title": "Cole",
         "date": "09/20/1997",
+        "end": "06/25/2008",
         "description": "Yo fui al colegio como persona afortunada que soy.",
         "url": "https://beacabdan.github.io/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Manresa_-_Josep_Anselm_Clav%C3%A9_i_Camps.JPG/800px-Manresa_-_Josep_Anselm_Clav%C3%A9_i_Camps.JPG"
@@ -9,18 +10,21 @@
     {
         "title": "Instituto",
         "date": "09/25/2008",
+        "end": "06/25/2010",
         "description": "También fui al instituto. Fue una época preciosa.",
         "image": "https://agora.xtec.cat/iesvplantada/wp-content/uploads/usu537/2016/09/Vplantada_capcalera_web.jpg"
     },
     {
         "title": "Batxibac",
         "date": "09/22/2010",
+        "end": "06/25/20012",
         "description": "¿Por qué hacer un bachillerato cuando puedes hacer dos? Participé en la prueba piloto del programa Batxibac.",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/135px-Flag_of_France.svg.png"
     },
     {
-        "title": "Informática",
+        "title": "Carrera",
         "date": "10/10/2012",
+        "end": "05/25/2016",
         "description": "Descubro que me encanta programar cosas de colores.",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Pong_%2828684491143%29.jpg/220px-Pong_%2828684491143%29.jpg"
     },
