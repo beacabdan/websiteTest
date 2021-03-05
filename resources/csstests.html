@@ -43,6 +43,7 @@
         <div class="row">
             <div class="col-2 d-none d-md-block" id="myScrollspy">
                 <nav class="nav nav-pills flex-column sticky-top" style="top: 1em;">
+                    <a class="nav-link" href="#shapes">SVG paths</a>
                     <a class="nav-link" href="#drag">Drag/drop</a>
                     <a class="nav-link" href="#timeline">Timeline</a>
                     <a class="nav-link" href="#jquery">jQuery basics</a>
@@ -65,6 +66,36 @@
 
                 <p>Esto es un párrafo para que veas que se sobreescribe: Lorem ipsum dolor sit, amet consectetur adipisicing elit. At voluptas praesentium ipsum veritatis. Eligendi deleniti at nisi, iusto facilis aliquid, aliquam, eveniet cumque tenetur molestias neque commodi! Deserunt, iste quae.</p>
 
+                <div id="shapes">
+                    <h2>Animated shapes</h2>
+                    <svg viewBox="0 0 10 10" class="svg-1" style="width: 50px; height: 50px; margin-bottom: 10px; border: 1px solid black;">
+                        <path d="M2,2 L3,3 L4,4 L6,6 L7,7 L8,8" style="fill: none; stroke: var(--red); stroke-linecap: round; stroke-linejoin: round; transition: 0.5s;" />
+                    </svg>
+                    <svg viewBox="0 0 10 10" class="svg-1" style="width: 50px; height: 50px; margin-bottom: 10px; border: 1px solid black;">
+                        <path d="M2,2 L8,2 L2,5 L8,5 L2,8 L8,8" style="fill: none; stroke: var(--green); stroke-linecap: round; stroke-linejoin: round; transition: 0.5s;" />
+                    </svg>
+                    <svg id="drawSvg" viewBox="0 0 10 10" style="width: 50px; height: 50px; margin-bottom: 10px; border: 1px solid black;">
+                        <path d="M2,5 S2,-2 4,5 S7,8 8,4" style="fill: none; stroke: var(--blue); stroke-linecap: round; stroke-linejoin: round; transition: 0.5s;" />
+                    </svg>
+                    <style>
+                        .svg-1:hover path {
+                            d: path("M8,2 L7,3 L6,4 L4,6 L3,7 L2,8");
+                        }
+                        #drawSvg>path {
+                            stroke-dasharray: 16.6;
+                            stroke-dashoffset: 16.6;
+                            animation: dash 2s linear alternate infinite;
+                        }
+                        @keyframes dash {
+                        from {
+                            stroke-dashoffset: 16.6;
+                        }
+                        to {
+                            stroke-dashoffset: 0;
+                        }
+                        }
+                    </style>
+                </div>
                 <div id="drag">
                     <h2>Drag and drop and switch</h2>
                     <p>Puedes hacer click en las siguientes cajas y arrastrarlas hasta otra caja. Los contenidos se intercambiarán.</p>
@@ -136,6 +167,8 @@ date.setYear(date.substring(6))
                         <li>Eventos largos, puntuales e indefinidos.</li>
                         <li>Autoplay, retroceder, y avanzar.</li>
                     </ul>
+                    <p>En otro intento, adaptando el código de un ejemplo en w3schools, he preparado la siguiente timeline aunque tampoco cumple ninguno de los requisitos de la lista anterior.</p>
+                    <div id="timelineContainer1" class="timeline1"></div>
                 </div>
                 <div id="jquery">
                     <h2>Introducción a jQuery</h2>
@@ -208,6 +241,7 @@ $("#square").click(function () {
             });
 
             loadTimeline("timeline.json", "timelineContainer");
+            loadTimeline1("timeline.json", "timelineContainer1");
         </script>
 </body>
 

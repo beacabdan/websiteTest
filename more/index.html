@@ -54,7 +54,7 @@
             fetch(parentUrl+"/content/projects.json").then(response => response.json()).then(function(data){
                 for (var i = 0; i < data.length; i++) {
                     card = data[i];
-                    palette.insertAdjacentHTML('beforeEnd', '<div class="card"><img src="'+data[i].image+'" class="card-img-top" style="width: 100%; min-height:100px; max-height: 200px; object-fit: cover;" alt="'+ data[i].title +'"><div class="card-body"><h5 class="card-title">'+ data[i].title +'</h5>' + (data[i].hasOwnProperty("comment") ? ('<p class="card-text">'+ data[i].comment +'</p>') : '') + '<a href="' + data[i].url + '" class="card-link">Take a look</a></div></div>')
+                    palette.insertAdjacentHTML('beforeEnd', '<div class="card"><img src="'+data[i].image+'" class="card-img-top" style="width: 100%; min-height:100px; max-height: 200px; object-fit: cover;" alt="'+ data[i].title +'"><div class="card-body"><h5 class="card-title">'+ data[i].title +'</h5>' + (data[i].hasOwnProperty("comment") ? ('<p class="card-text">'+ data[i].comment +'</p>') : '') + '<a href="' + data[i].url + '" class="card-link stretched-link"">Take a look</a></div></div>')
                 }
             });
         }

@@ -2,6 +2,11 @@ body {
     position: relative;
 }
 
+.aw-25 {
+    width: 25%;
+    min-width: 100px;
+}
+
 /* CV */
 
 #cv-picture {
@@ -11,7 +16,7 @@ body {
     transform: scaleX(-1);
 }
 
-@media only screen and (max-width: 850px), print {
+@media only screen and (max-width: 768px), print {
     #cv-picture {
         float: none;
         display: block;
@@ -57,4 +62,75 @@ code, pre code {
 
 a, a:hover {
     color: var(--red);
+}
+
+/* TIMELINE */
+
+/* timeline container */
+.timeline1 {
+    position: relative;
+    --line_width: 1px;
+}
+
+/* vertical ruler */
+.timeline1::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(0,0,0,.125);
+    top: 10px;
+    bottom: 10px;
+    left: 50%;
+    width: var(--line_width);
+    margin-left: calc(var(--line_width)/-2); /*half of width to center it*/
+}
+
+/* container1 around content */
+.timeline1 .container1 {
+    padding: 10px 20px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* circles on timeline1 */
+.timeline1 .container1::after {
+    content: '';
+    position: absolute;
+    right: calc((-10px - var(--line_width))/2);
+    width: calc(10px + var(--line_width));
+    height: calc(10px + var(--line_width));
+
+    /* background-color: rgba(0,0,0,.125);
+    border: 5px solid white; */ /*discontinuity dot*/
+
+    background-color: white;
+    border: var(--line_width) solid rgba(0,0,0,.125);
+    
+    top: 10px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline1 .right1 {
+    left: 50%;
+}
+
+/* circle right1 side */
+.timeline1 .right1::after {
+    left: calc((-10px - var(--line_width))/2);
+}
+
+@media only screen and (max-width: 768px) {
+    .timeline1::after {
+        left: 10px;
+    }
+
+    .timeline1 .right1, .timeline1 .left1 {
+        left: 10px;
+        width: 100%;
+    }
+
+    .timeline1 .left1::after {
+        left: calc((-10px - var(--line_width))/2);
+    }
 }

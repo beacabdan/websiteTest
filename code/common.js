@@ -140,13 +140,41 @@ function loadTimeline(name, container) {
           nextDate.setYear(nextCard.date.substring(6));
           eventLenght = Math.max(Math.round((nextDate.getTime() - date.getTime()) / 800000000), 200);
           
-          content = '<div class="m-1" style="display: inline-block; width: ' + eventLenght + 'px;"><div class="card" style="width: ' + eventLenght + 'px"><img src="' + card.image + '" class="card-img-top" style="width: 100%; height:100px; object-fit: cover;"><div class="card-body"><h5 class="card-title">' + card.title + '</h5><p class="card-text">' + card.description + '</p></div><div class="card-footer"><small class="text-muted">'
+          content = '<div class="m-1" style="display: inline-block; width: ' + eventLenght + 'px;"><div class="card" style="width: ' + eventLenght + 'px"><img src="' + card.image + '" class="card-img-top" style="width: 100%; height:100px; object-fit: cover;"><div class="card-body"><h5 class="card-title">' + card.title + '</h5><p class="card-text">' + card.description + '</p></div><div class="card-footer"><small class="text-muted">' + date.getDate() + "/" + (parseInt(date.getMonth()) + 1) + "/" + date.getFullYear()
           if (card.hasOwnProperty("end")) {
             end = new Date(card.end);
             end.setYear(card.end.substring(6));
-            content += end.getDate() + "/" + (parseInt(end.getMonth()) + 1) + "/" + end.getFullYear() + ' - '
+            content += ' - ' + end.getDate() + "/" + (parseInt(end.getMonth()) + 1) + "/" + end.getFullYear()
           }
-          content += date.getDate() + "/" + (parseInt(date.getMonth()) + 1) + "/" + date.getFullYear() + '</small></div></div></div>'
+          content += '</small></div></div></div>'
+
+          palette.insertAdjacentHTML('beforeEnd', content)
+      }
+  });
+}
+
+function loadTimeline1(name, container) {
+  var palette = document.getElementById(container);
+  fetch(parentUrl + "/content/" + name).then(response => response.json()).then(function (data) {
+      for (var i = 0; i < data.length; i++) {
+          card = data[i];
+          nextCard = i + 1 < data.length ? data[i + 1] : card;
+
+          date = new Date(card.date);
+          nextDate = new Date(nextCard.date);
+          date.setYear(card.date.substring(6));
+          nextDate.setYear(nextCard.date.substring(6));
+          eventLenght = Math.max(Math.round((nextDate.getTime() - date.getTime()) / 800000000), 200);
+          
+          content = '<div class="container1 ' + (i%2 ? "left1" : "right1") + '"><div class="content">'
+          content += '<div class="card"><img src="' + card.image + '" class="card-img-top" style="width: 100%; height:100px; object-fit: cover;"><div class="card-body"><h5 class="card-title">' + card.title + '</h5><p class="card-text">' + card.description + '</p></div><div class="card-footer"><small class="text-muted">' + date.getDate() + "/" + (parseInt(date.getMonth()) + 1) + "/" + date.getFullYear()
+          if (card.hasOwnProperty("end")) {
+            end = new Date(card.end);
+            end.setYear(card.end.substring(6));
+            content += ' - ' + end.getDate() + "/" + (parseInt(end.getMonth()) + 1) + "/" + end.getFullYear()
+          }
+          content += '</small></div>'
+          content += '</div></div>'
 
           palette.insertAdjacentHTML('beforeEnd', content)
       }

@@ -16,7 +16,7 @@
 
 <body>
     <div class="dropdown dropleft" style="margin: 10px; position: fixed; right: 0; z-index: 2;">
-        <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false" style="background-color: transparent; border-color: transparent;">
+        <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> <!--  style="background-color: transparent; border-color: transparent;" -->
             MENU
         </button>
         <ul class="dropdown-menu">
@@ -27,117 +27,7 @@
         </ul>
     </div>
 
-    <div class="timeline1">
-        <div class="container1 left1">
-            <div class="content">
-                <h2>2017</h2>
-                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-            </div>
-        </div>
-        <div class="container1 right1">
-            <div class="content">
-                <h2>2016</h2>
-                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-            </div>
-        </div>
-        <div class="container1 left1">
-            <div class="content">
-                <h2>2015</h2>
-                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-            </div>
-        </div>
-        <div class="container1 right1">
-            <div class="content">
-                <h2>2012</h2>
-                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-            </div>
-        </div>
-        <div class="container1 left1">
-            <div class="content">
-                <h2>2011</h2>
-                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-            </div>
-        </div>
-        <div class="container1 right1">
-            <div class="content">
-                <h2>2007</h2>
-                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-            </div>
-        </div>
-    </div>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--gray-dark);
-            font-family: Helvetica, sans-serif;
-        }
-
-        /* The actual timeline1 (the vertical ruler) */
-        .timeline1 {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* The actual timeline1 (the vertical ruler) */
-        .timeline1::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: white;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-        }
-
-        /* container1 around content */
-        .container1 {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-
-        /* The circles on the timeline1 */
-        .container1::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -12px;
-            background-color: white;
-            border: 8px solid var(--gray-dark);
-            top: 25px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        /* Place the container1 to the left1 */
-        .left1 {
-            left: 0;
-        }
-
-        /* Place the container1 to the right1 */
-        .right1 {
-            left: 50%;
-        }
-
-        /* Fix the circle for container1s on the right1 side */
-        .right1::after {
-            left: -12px;
-        }
-
-        /* The actual content */
-        .content {
-            padding: 20px 30px;
-            background-color: var(--light);
-        }
-    </style>
+</div>
 </body>
 
 </html>
