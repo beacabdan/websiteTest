@@ -8,26 +8,84 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/bsp.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.32.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../code/common.js"></script>
     <link rel="icon" type="image/ico" href="https://beacabdan.github.io/content/images/favicon.ico">
 </head>
 
 <body>
-    <div class="dropdown dropleft" style="margin: 10px; position: fixed; right: 0; z-index: 2;">
-        <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> <!--  style="background-color: transparent; border-color: transparent;" -->
-            MENU
-        </button>
-        <ul class="dropdown-menu">
-            <li><a class="nav-link" href="https://beacabdan.github.io/">Home</a></li>
-            <li><a class="nav-link" href="https://beacabdan.github.io/resources/index.html">Resources</a></li>
-            <li><a class="nav-link" href="https://beacabdan.github.io/more/index.html">Projects</a></li>
-            <li><a class="nav-link" href="https://beacabdan.github.io/cv/index.html">About me</a></li>
-        </ul>
+    <div style="margin: 20px; z-index: 2;" class="position-absolute top-0 start-0">
+        <a href="https://beacabdan.github.io/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+            </svg>
+        </a>
     </div>
 
-</div>
+    <svg id="animateSvg" viewBox="0 0 32 18" stroke="var(--red)" style="width: 100%;">
+        <path d="M0,0 L32,0 L32,18 L0,18 Z"/>
+    </svg>
+    <svg id="animateSvg1" viewBox="0 0 32 18" stroke="var(--red)" style="width: 100%;">
+        <path d="M0,0 L32,0 L32,18 L0,18 Z"/>
+    </svg>
+    <svg id="animateSvg2" viewBox="0 0 32 18" stroke="var(--red)" style="width: 100%;">
+        <path d="M0,0 L32,0 L32,18 L0,18 Z"/>
+    </svg>
+    <svg id="animateSvg3" viewBox="0 0 32 18" stroke="var(--red)" style="width: 100%;">
+        <path d="M0,0 L32,0 L32,18 L0,18 Z"/>
+    </svg>
+    <svg id="animateSvg4" viewBox="0 0 32 18" stroke="var(--red)" style="width: 100%;">
+        <path d="M0,0 L32,0 L32,18 L0,18 Z"/>
+    </svg>
+    </div>
+
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        svg {
+            position:relative;
+        }
+        svg>path {
+            fill: none; 
+            stroke-linecap: round; 
+            stroke-linejoin: miter; 
+            transition: 2.5s;
+        }
+    </style>
+
+    <script>
+        window.onscroll = animateSvg;
+
+        function animateSvg() {
+            animate("animateSvg")
+            animate("animateSvg1")
+            animate("animateSvg2")
+            animate("animateSvg3")
+            animate("animateSvg4")
+        }
+        function animate(name) {
+            var factor = 2
+            var percentage = scrollPercentage(name, true);
+            var value = Math.sin(percentage * Math.PI * 2 + Math.PI/2);
+            var newPath="M"+Math.round(factor*4+factor*4*value)+","+Math.round(factor*2.25+factor*2.25*value)+" L"+Math.round(factor*12-factor*4*value)+","+Math.round(factor*2.25+factor*2.25*value)+" L"+Math.round(factor*12-factor*4*value)+","+Math.round(factor*6.75-factor*2.25*value)+" L"+Math.round(factor*4+factor*4*value)+","+Math.round(factor*6.75-factor*2.25*value)+" Z"            
+            document.getElementById(name).children[0].setAttribute("d", newPath);
+            if (percentage < 0) return;
+        }
+
+        function scrollPercentage(name, half=false) {
+            var rect = document.getElementById(name).getBoundingClientRect();
+            var scrollTop = -rect.top + (half ? rect.height / 2 : 0);
+            result = scrollTop / rect.height;
+            return Math.min(Math.max( result, 0), 1);
+        }
+    </script>
+
 </body>
 
 </html>

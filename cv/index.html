@@ -13,7 +13,7 @@
     <link rel="icon" type="image/ico" href="https://beacabdan.github.io/content/images/favicon.ico">
 </head>
 
-<body data-spy="scroll" data-target="#myScrollspy">
+<body>
 
     <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
         <div class="container">
@@ -29,7 +29,6 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/resources/index.html">Resources</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/more/index.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/cv/index.html">About me</a></li>
                 </ul>
             </div>
@@ -39,135 +38,121 @@
     <div style="height: 1em;"></div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-2 d-none d-print-none d-md-block " id="myScrollspy">
-                <nav class="nav nav-pills flex-column sticky-top" style="top: 1em;">
-                    <a class="nav-link" href="#education">Education</a>
-                    <a class="nav-link" href="#skills">Skills</a>
-                    <a class="nav-link" href="#talks">Teaching</a>
-                    <a class="nav-link" href="#positions">Positions</a>
-                    <a class="nav-link" href="#certificates">Certifications</a>
-                    <a class="nav-link" href="#workshops">Workshops</a>
-                    <a class="nav-link" href="#languages">Languages</a>
-                    <a class="nav-link" href="#contact">Contact</a>
-                </nav>
+        <div id="cv" class="col-12 col-print-12 col-md-10" data-bs-spy="scroll" data-bs-target="#myScrollspy">
+            <img id="cv-picture" src="https://avatars0.githubusercontent.com/u/27675138?s=460&v=4" class="rounded-circle mx-auto" alt="Bea's Gravatar picture">
+            <div id="education">
+                <h1>Beatriz Cabrero Daniel
+                    <a id="download-link" download="cv-beatrizcabrerodaniel" onclick="window.print()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-download text-danger d-print-none" viewBox="0 0 20 20">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                        </svg>
+                    </a>
+                </h1>
+                <p class="d-none d-md-block">Using my programming skills, Artificial Intelligence knowledge, and experience in doing research to advance the field of Crowd Simulation.</p>
+                <h2>Education</h2>
+                <p>2017 – pres. PhD in Information and Communication Technologies (Universitat Pompeu Fabra).</p>
+                <p>2016 – 2017. Master in Intelligent Interactive Systems (Universitat Pompeu Fabra).</p>
+                <p>2012 – 2016. Bachelor’s degree in Computer Science (Universitat Pompeu Fabra).</p>
+                <p>2010 – 2012. Bachibac Program. Double award Batxillerat – Baccalauréat (IES Vicenç Plantada).</p>
             </div>
-            <div id="cv" class="col-12 col-print-12 col-md-10" data-bs-spy="scroll" data-bs-target="#myScrollspy">
-                <img id="cv-picture" src="https://avatars0.githubusercontent.com/u/27675138?s=460&v=4" class="rounded-circle mx-auto" alt="Bea's Gravatar picture">
-                <div id="education">
-                    <h1>Beatriz Cabrero Daniel
-                        <a id="download-link" download="cv-beatrizcabrerodaniel" onclick="window.print()">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-download text-danger d-print-none" viewBox="0 0 20 20">
-                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
-                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
-                            </svg>
-                        </a>
-                    </h1>
-                    <p class="d-none d-md-block">Using my programming skills, Artificial Intelligence knowledge, and experience in doing research to advance the field of Crowd Simulation.</p>
-                    <h2>Education</h2>
-                    <p>2017 – pres. PhD in Information and Communication Technologies (Universitat Pompeu Fabra).</p>
-                    <p>2016 – 2017. Master in Intelligent Interactive Systems (Universitat Pompeu Fabra).</p>
-                    <p>2012 – 2016. Bachelor’s degree in Computer Science (Universitat Pompeu Fabra).</p>
-                    <p>2010 – 2012. Bachibac Program. Double award Batxillerat – Baccalauréat (IES Vicenç Plantada).</p>
+            <div id="skills">
+                <h2>Skills</h2>
+                <div class="row">
+                    <p class="col-sm-3 col-lg-2">Python</p>
+                    <p class="col-sm-3 col-lg-2">C/C++</p>
+                    <p class="col-sm-3 col-lg-2">JavaScript</p>
+                    <p class="col-sm-3 col-lg-2">HTML + CSS</p>
+                    <p class="col-sm-3 col-lg-2">Matlab</p>
+                    <p class="col-sm-3 col-lg-2">C#</p>
+                    <p class="col-sm-3 col-lg-2">Java</p>
+                    <p class="col-sm-3 col-lg-2">GLSL</p>
                 </div>
-                <div id="skills">
-                    <h2>Skills</h2>
-                    <div class="row">
-                        <p class="col-sm-3 col-lg-2">Python</p>
-                        <p class="col-sm-3 col-lg-2">C/C++</p>
-                        <p class="col-sm-3 col-lg-2">JavaScript</p>
-                        <p class="col-sm-3 col-lg-2">HTML + CSS</p>
-                        <p class="col-sm-3 col-lg-2">Matlab</p>
-                        <p class="col-sm-3 col-lg-2">C#</p>
-                        <p class="col-sm-3 col-lg-2">Java</p>
-                        <p class="col-sm-3 col-lg-2">GLSL</p>
+            </div>
+            <div id="talks">
+                <h2>Teaching and talks</h2>
+                <p>Introduction to programming. Lab sessions in Python (BSc Computer Science, and Multimedia, Mathematical, and Biomedical Engineering).</p>
+                <p>Computer Graphics seminars. Theoretical sessions about advanced Computer Graphics topics.</p>
+                <p>Advanced Visualization. Practical course with a final OpenGL-based project to create an interactive 3D scene.</p>
+                <p>Videojocs amb Intel·ligència Artificial en Python. Introduction to videogame development, machine learning and programming (Campus Júnior).</p>
+                <p>Volunteer workshop instructor and speaker for Girls in Lab (UPF Campus Poblenou), STEM amb TU ambassador (Barcelona Activa), Wisibilízalas 5ª edición (Universitat Pompeu Fabra), etc.
+            </div>
+            <div id="positions">
+                <h2>Previous positions</h2>
+                <p>Robotics instructor (American Spaces), January 2018 – June 2018.</p>
+                <p>Research assistant (Universitat Pompeu Fabra), December 2016 – September 2017.</p>
+                <p>Java Developer Intern (everis), April 2016 – September 2016.</p>
+                <p>Home tutor, January 2009 – August 2015.</p>
+                <p>Summer Intern (Teixidó SA), July 2012 – August 2012.</p>
+            </div>
+            <div id="certificates">
+                <h2>Certifications</h2>
+                <div class="card-columns">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Graphic Design Specialization</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">California Institute of the Arts</h6>
+                            <p class="card-text">Course Certificates Completed: Ideas from the History of Graphic Design, Fundamentals of Graphic Design, Introduction to Typography, Introduction to Imagemaking, and Brand New Brand.</p>
+                            <span class="d-print-none">
+                                <a href="https://www.coursera.org/specializations/graphic-design" class="card-link">Course info</a>
+                                <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/RYZREMVHJ8SG" class="card-link">Certification</a>
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div id="talks">
-                    <h2>Teaching and talks</h2>
-                    <p>Introduction to programming. Lab sessions in Python (BSc Computer Science, and Multimedia, Mathematical, and Biomedical Engineering).</p>
-                    <p>Computer Graphics seminars. Theoretical sessions about advanced Computer Graphics topics.</p>
-                    <p>Advanced Visualization. Practical course with a final OpenGL-based project to create an interactive 3D scene.</p>
-                    <p>Videojocs amb Intel·ligència Artificial en Python. Introduction to videogame development, machine learning and programming (Campus Júnior).</p>
-                    <p>Volunteer workshop instructor and speaker for Girls in Lab (UPF Campus Poblenou), STEM amb TU ambassador (Barcelona Activa), Wisibilízalas 5ª edición (Universitat Pompeu Fabra), etc.
-                </div>
-                <div id="positions">
-                    <h2>Previous positions</h2>
-                    <p>Robotics instructor (American Spaces), January 2018 – June 2018.</p>
-                    <p>Research assistant (Universitat Pompeu Fabra), December 2016 – September 2017.</p>
-                    <p>Java Developer Intern (everis), April 2016 – September 2016.</p>
-                    <p>Home tutor, January 2009 – August 2015.</p>
-                    <p>Summer Intern (Teixidó SA), July 2012 – August 2012.</p>
-                </div>
-                <div id="certificates">
-                    <h2>Certifications</h2>
-                    <div class="card-columns">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Graphic Design Specialization</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">California Institute of the Arts</h6>
-                                <p class="card-text">Course Certificates Completed: Ideas from the History of Graphic Design, Fundamentals of Graphic Design, Introduction to Typography, Introduction to Imagemaking, and Brand New Brand.</p>
-                                <span class="d-print-none">
-                                    <a href="https://www.coursera.org/specializations/graphic-design" class="card-link">Course info</a>
-                                    <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/RYZREMVHJ8SG" class="card-link">Certification</a>
-                                </span>
-                            </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Deep Learning Fundamentals with Keras</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">IBM</h6>
+                            <span class="d-print-none">
+                                <a href="https://www.edx.org/course/deep-learning-fundamentals-with-keras" class="card-link">Course info</a>
+                                <a href="https://courses.edx.org/certificates/b66e377e8d4a496ca9e3890be53d5825" class="card-link">Certification</a>
+                            </span>
                         </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Deep Learning Fundamentals with Keras</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">IBM</h6>
-                                <span class="d-print-none">
-                                    <a href="https://www.edx.org/course/deep-learning-fundamentals-with-keras" class="card-link">Course info</a>
-                                    <a href="https://courses.edx.org/certificates/b66e377e8d4a496ca9e3890be53d5825" class="card-link">Certification</a>
-                                </span>
-                            </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">AWS Fundamentals: Going Cloud-Native</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">AWS Training and Certication</h6>
+                            <span class="d-print-none">
+                                <a href="https://www.coursera.org/learn/aws-fundamentals-going-cloud-native" class="card-link">Course info</a>
+                                <a href="https://www.coursera.org/account/accomplishments/certificate/GRZR3MB9BQ2B" class="card-link">Certification</a>
+                            </span>
                         </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">AWS Fundamentals: Going Cloud-Native</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">AWS Training and Certication</h6>
-                                <span class="d-print-none">
-                                    <a href="https://www.coursera.org/learn/aws-fundamentals-going-cloud-native" class="card-link">Course info</a>
-                                    <a href="https://www.coursera.org/account/accomplishments/certificate/GRZR3MB9BQ2B" class="card-link">Certification</a>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Introduction to Classical Music</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Yale University</h6>
-                                <p class="card-text">I fought very hard for this one but I enjoyed every second of it.</p>
-                                <span class="d-print-none">
-                                    <a href="https://www.coursera.org/learn/introclassicalmusic" class="card-link">Course info</a>
-                                    <a href="https://coursera.org/share/f168b3501243368aedd3a750dd200c0d" class="card-link">Certification</a>
-                                </span>
-                            </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Introduction to Classical Music</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Yale University</h6>
+                            <p class="card-text">I fought very hard for this one but I enjoyed every second of it.</p>
+                            <span class="d-print-none">
+                                <a href="https://www.coursera.org/learn/introclassicalmusic" class="card-link">Course info</a>
+                                <a href="https://coursera.org/share/f168b3501243368aedd3a750dd200c0d" class="card-link">Certification</a>
+                            </span>
                         </div>
                     </div>
                 </div>
-                <div id="workshops">
-                    <h3>Workshops</h3>
-                    <p>Blender. Game art with Blender for iOS and Android devices (Barcelona Growth Centre).</p>
-                    <p>Power talk. Communicating with clarity, relevance and impact (Porta22).</p>
-                    <p>Management of a high-performance team. Specialization seminar (Porta22).</p>
-                    <p>Agile methodology. Summer university agilebcn (Ateneu de Fabricació de les Corts).</p>
-                    <p>3D Printing. Practical introduction for professionals and ‘pimes’ (Parc Tecnològic).</p>
-                </div>
-                <div id="languages">
-                    <h3>Languages</h3>
-                    <p>Catalan. Native or bilingual proficiency.</p>
-                    <p>Spanish. Native or bilingual proficiency.</p>
-                    <p>English. British Council, CEFR level C2.</p>
-                    <p>French. Alliance Française, DELF niveau B2.</p>
-                    <p>German. Escola Oficial d’Idiomes, CEFR A2.</p>
-                </div>
-                <div id="contact">
-                    <h2>Contact</h2>
-                    <p>Visit my Linkedin page. <a href="https://www.linkedin.com/in/beatrizcabrerodaniel/">www.linkedin.com/in/beatrizcabrerodaniel/</a></p>
-                    <p>Send me an email. <a href="mailto:beatriz.cabrero.daniel@gmail.com">beatriz.cabrero.daniel@gmail.com</a></p>
-                    <!-- <p>Check out my YouTube Channel. <a href="https://www.youtube.com/user/badumtssss/">www.youtube.com/user/badumtssss/</a></p> -->
-                </div>
+            </div>
+            <div id="workshops">
+                <h3>Workshops</h3>
+                <p>Blender. Game art with Blender for iOS and Android devices (Barcelona Growth Centre).</p>
+                <p>Power talk. Communicating with clarity, relevance and impact (Porta22).</p>
+                <p>Management of a high-performance team. Specialization seminar (Porta22).</p>
+                <p>Agile methodology. Summer university agilebcn (Ateneu de Fabricació de les Corts).</p>
+                <p>3D Printing. Practical introduction for professionals and 'pimes' (Parc Tecnològic).</p>
+            </div>
+            <div id="languages">
+                <h3>Languages</h3>
+                <p>Catalan. Native or bilingual proficiency.</p>
+                <p>Spanish. Native or bilingual proficiency.</p>
+                <p>English. British Council, CEFR level C2.</p>
+                <p>French. Alliance Française, DELF niveau B2.</p>
+                <p>German. Escola Oficial d’Idiomes, CEFR A2.</p>
+            </div>
+            <div id="contact">
+                <h2>Contact</h2>
+                <p>Visit my Linkedin page. <a href="https://www.linkedin.com/in/beatrizcabrerodaniel/">www.linkedin.com/in/beatrizcabrerodaniel/</a></p>
+                <p>Send me an email. <a href="mailto:beatriz.cabrero.daniel@gmail.com">beatriz.cabrero.daniel@gmail.com</a></p>
+                <!-- <p>Check out my YouTube Channel. <a href="https://www.youtube.com/user/badumtssss/">www.youtube.com/user/badumtssss/</a></p> -->
             </div>
         </div>
     </div>

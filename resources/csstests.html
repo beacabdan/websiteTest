@@ -30,7 +30,6 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/resources/index.html">Resources</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/more/index.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://beacabdan.github.io/cv/index.html">About me</a></li>
                 </ul>
             </div>
@@ -68,8 +67,9 @@
 
                 <div id="shapes">
                     <h2>Animated shapes</h2>
-                    <svg viewBox="0 0 10 10" class="svg-1" style="width: 50px; height: 50px; margin-bottom: 10px; border: 1px solid black;">
-                        <path d="M2,2 L3,3 L4,4 L6,6 L7,7 L8,8" style="fill: none; stroke: var(--red); stroke-linecap: round; stroke-linejoin: round; transition: 0.5s;" />
+                    <p>El primer shape cambia de forma con el scroll (JS). El segundo cambia al hacer <code>hover</code> via CSS. El tercero está animado vía <code>keyframes</code> (CSS).</p>
+                    <svg id="animateSvg" viewBox="0 0 10 10" style="width: 50px; height: 50px; margin-bottom: 10px; border: 1px solid black;">
+                        <path d="M5,1 L5,9" style="fill: none; stroke: var(--red); stroke-linecap: round; stroke-linejoin: round; transition: 0.5s;" />
                     </svg>
                     <svg viewBox="0 0 10 10" class="svg-1" style="width: 50px; height: 50px; margin-bottom: 10px; border: 1px solid black;">
                         <path d="M2,2 L8,2 L2,5 L8,5 L2,8 L8,8" style="fill: none; stroke: var(--green); stroke-linecap: round; stroke-linejoin: round; transition: 0.5s;" />
@@ -77,24 +77,8 @@
                     <svg id="drawSvg" viewBox="0 0 10 10" style="width: 50px; height: 50px; margin-bottom: 10px; border: 1px solid black;">
                         <path d="M2,5 S2,-2 4,5 S7,8 8,4" style="fill: none; stroke: var(--blue); stroke-linecap: round; stroke-linejoin: round; transition: 0.5s;" />
                     </svg>
-                    <style>
-                        .svg-1:hover path {
-                            d: path("M8,2 L7,3 L6,4 L4,6 L3,7 L2,8");
-                        }
-                        #drawSvg>path {
-                            stroke-dasharray: 16.6;
-                            stroke-dashoffset: 16.6;
-                            animation: dash 2s linear alternate infinite;
-                        }
-                        @keyframes dash {
-                        from {
-                            stroke-dashoffset: 16.6;
-                        }
-                        to {
-                            stroke-dashoffset: 0;
-                        }
-                        }
-                    </style>
+                    
+
                 </div>
                 <div id="drag">
                     <h2>Drag and drop and switch</h2>
@@ -215,7 +199,43 @@ $("#square").click(function () {
             </div>
         </div>
 
+        <style>
+            .svg-1:hover path {
+                d: path("M8,2 L7,3 L6,4 L4,6 L3,7 L2,8");
+            }
+            #drawSvg>path {
+                stroke-dasharray: 16.6;
+                stroke-dashoffset: 16.6;
+                animation: dash 2s linear alternate infinite;
+            }
+            @keyframes dash {
+            from {
+                stroke-dashoffset: 16.6;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+            }
+        </style>
         <script>
+            window.onscroll = animateSvg;
+
+            function animateSvg() {
+                var percentage = scrollPercentage("animateSvg");
+                var newPath = "M5,1 l" + Math.round( Math.sin(percentage*Math.PI*2) * 4 ) + ",8"
+                document.getElementById("animateSvg").children[0].setAttribute("d", newPath);
+                if (percentage < 0) return;
+            }
+
+            function scrollPercentage(name) {
+                // let maxScroll = document.body.offsetHeight - window.innerHeight;
+                // let currentScroll = window.scrollY;
+                
+                var rect = document.getElementById(name).getBoundingClientRect();
+                var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                return Math.max( rect.bottom / (rect.bottom + scrollTop), 0);
+            }
+
             $(function () {
                 $("#boton1").click(function () {
                     $("#appears").html(": <i>Hello World</i>");
