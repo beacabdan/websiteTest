@@ -67,7 +67,7 @@
 
                 <div id="shapes">
                     <h2>Animated shapes</h2>
-                    <p>El primer shape cambia de forma con el scroll (JS). El segundo cambia al hacer <code>hover</code> via CSS. El tercero está animado vía <code>keyframes</code> (CSS).</p>
+                    <p>El primer shape cambia de forma con el scroll (JS). El segundo cambia al hacer <code>hover</code> via CSS. El tercero está animado vía <code>keyframes</code> (CSS). El cuarto (también animado al hacer <code>hover</code>) tiene un poco más de "complejidad" y para hacerlo he usado el <a href="https://yqnn.github.io/svg-path-editor/">editor de SVG paths</a> de Yann Armelin (Yqnn).</p>
                     <svg id="animateSvg" viewBox="0 0 10 10" style="width: 50px; height: 50px; margin-bottom: 10px; border: 1px solid black;">
                         <path d="M5,1 L5,9" style="fill: none; stroke: var(--red); stroke-linecap: round; stroke-linejoin: round; transition: 0.5s;" />
                     </svg>
@@ -77,7 +77,24 @@
                     <svg id="drawSvg" viewBox="0 0 10 10" style="width: 50px; height: 50px; margin-bottom: 10px; border: 1px solid black;">
                         <path d="M2,5 S2,-2 4,5 S7,8 8,4" style="fill: none; stroke: var(--blue); stroke-linecap: round; stroke-linejoin: round; transition: 0.5s;" />
                     </svg>
-                    
+                    <svg id="logo1" viewBox="0 0 19.5 18">
+                        <path d="M 1.008 0.834 l 3.213 -0.044 l 1.453 0.308 l 1.364 0.924 l 0.176 1.365 l -0.44 1.232 l -0.88 0.704 l -1.101 0.353 m -3.799 0.119 l 3.802 -0.106 l 1.696 0.693 l 0.877 1.024 l 0.117 1.419 l -0.643 1.594 l -1.595 0.776 l -2.062 0.102 l -2.268 0 l 0.087 -10.481" id="B" />
+                        <path d="M 14.0 7.137 l -1.851 -0.445 l -2.261 0.814 l -1.495 2.31 l 0 2.673 l 1.437 3.2 l 2.718 1.617 l 2.764 -0.586 l 1.43 -1.781" id="C" />
+                        <path d="M 10.5 6.104 l -0.671 -1.804 l -0.797 -2.265 l 2.894 -0.923 l 3.021 -0.168 l 2.097 1.426 l 1.259 2.685 l -0.042 2.517 l -0.923 2.098 l -2.223 1.258 l -2.685 0.965 l -1.133 -3.692" id="D" />
+                    </svg>
+                    <svg id="logo2" viewBox="0 0 19 19">
+                            <path id="B" />
+                            <path id="C" />
+                            <path id="D" />
+                        </svg>
+
+                    <p>Para hacer esto se necesitan varias cosas:</p>
+                    <ul>
+                        <li>Un par de <a href="https://www.w3schools.com/graphics/svg_path.asp">paths SVG</a> que tengan el mismo número de puntos, del mismo tipo y del mismo orden (he intentado cambiar un <code>lineto</code> por un <code>curveto</code> y nanai).</li>
+                        <li>Un elemento <code>svg</code> con hijos <code>path</code> (yo tengo un <code>path</code> por cada letra para poder animarlas por separado pero no es necesario). Puede que haya mejores maneras de hacer esto.</li>
+                        <li>CSS para cambiar (por separado) la propiedad <code>d: path</code> de cada <code>path</code> dentro del elemento <code>svg</code>. Además se pueden añadir transiciones con <code>transition-delay</code> y lo que queramos.</li>
+                    </ul>
+                    <p>Y el quinto usa <code>@keyframes</code> porcentuales para controlar la animación (que es cíclica). La gracia es decir "del frame 0% (<code>from</code>) al 50%, usa este path; del frame 60% al 100% (<code>to</code>), usa este otro path" de manera que la transición es muy rápida y es hacia la mitad del camino de la B (que sólo usa el <code>to</code> y el <code>from</code>). Distintas maneras de controlar esto se explican súper bien en <a href=https://www.w3schools.com/css/css3_animations.asp>w3schools.com</a></p>
 
                 </div>
                 <div id="drag">
@@ -198,23 +215,107 @@ $("#square").click(function () {
                 </div>
             </div>
         </div>
-
         <style>
             .svg-1:hover path {
                 d: path("M8,2 L7,3 L6,4 L4,6 L3,7 L2,8");
             }
+
             #drawSvg>path {
                 stroke-dasharray: 16.6;
                 stroke-dashoffset: 16.6;
                 animation: dash 2s linear alternate infinite;
             }
+
             @keyframes dash {
-            from {
-                stroke-dashoffset: 16.6;
+                from {
+                    stroke-dashoffset: 16.6;
+                }
+
+                to {
+                    stroke-dashoffset: 0;
+                }
             }
-            to {
-                stroke-dashoffset: 0;
+
+            #logo1,
+            #logo2 {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 10px;
+                border: 1px solid black;
             }
+
+            #logo1>path {
+                fill: none;
+                stroke: black;
+                transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+                transition-delay: 1s;
+            }
+
+            #logo1:hover>#B {
+                transition: 2.0s;
+                d: path("M 1.508 3.334 l 3.213 -0.044 l 1.453 0.308 l 1.364 0.924 l 0.176 1.365 l -0.44 1.232 l -0.88 0.704 l -1.101 0.353 m -3.799 0.119 l 3.802 -0.106 l 1.696 0.693 l 0.877 1.024 l 0.117 1.419 l -0.643 1.594 l -1.595 0.776 l -2.062 0.102 l -2.268 0 l 0.087 -10.481");
+            }
+
+            #logo1:hover>#C {
+                d: path("M 13.1 3.5 l -2 0 l -2 0 l 0 2 l 0 3 l 0 3 l 0 2 l 2 0 l 2 0");
+            }
+
+            #logo1:hover>#D {
+                d: path("M 14.0 3.5 l 2 0 l 2 0 l 0 0.5 l 0 1 l 0 1.5 l 0 2 l 0 2 l 0 1 l 0 0.5 l 0 1.5 l -4 0");
+            }
+
+            #logo2>path {
+                fill: none;
+                stroke: black;
+            }
+
+            #logo2>#B {
+                animation: changepathB 5s alternate infinite;
+                animation-timing-function: ease-in-out;
+            }
+
+            #logo2>#C {
+                animation: changepathC 2s ease-in-out alternate infinite;
+            }
+
+            #logo2>#D {
+                animation: changepathD 2s ease-in-out alternate infinite;
+            }
+
+            @keyframes changepathB {
+                from {
+                    d: path("M 0.9 4.334 l 3.213 -0.044 l 1.453 0.308 l 1.364 0.924 l 0.176 1.365 l -0.44 1.232 l -0.88 0.704 l -1.101 0.353 m -3.799 0.119 l 3.802 -0.106 l 1.696 0.693 l 0.877 1.024 l 0.117 1.419 l -0.643 1.594 l -1.595 0.776 l -2.062 0.102 l -2.268 0 l 0.087 -10.481");
+                }
+
+                to {
+                    d: path("M 1.2 4.334 l 3.213 -0.044 l 1.453 0.308 l 1.364 0.924 l 0.176 1.365 l -0.44 1.232 l -0.88 0.704 l -1.101 0.353 m -3.799 0.119 l 3.802 -0.106 l 1.696 0.693 l 0.877 1.024 l 0.117 1.419 l -0.643 1.594 l -1.595 0.776 l -2.062 0.102 l -2.268 0 l 0.087 -10.481");
+                }
+            }
+
+            @keyframes changepathC {
+
+                0%,
+                50% {
+                    d: path("M 14.3 7.137 l -1.851 -0.445 l -2.261 0.814 l -1.495 2.31 l 0 2.673 l 1.437 3.2 l 2.718 1.617 l 2.764 -0.586 l 1.43 -1.781");
+                }
+
+                60%,
+                100% {
+                    d: path("M 13.2 4.5 l -2 0 l -2 0 l 0 2 l 0 3 l 0 3 l 0 2 l 2 0 l 2 0");
+                }
+            }
+
+            @keyframes changepathD {
+
+                0%,
+                50% {
+                    d: path("M 10.5 6.104 l -0.671 -1.804 l -0.797 -2.265 l 2.894 -0.923 l 3.021 -0.168 l 2.097 1.426 l 1.259 2.685 l -0.042 2.517 l -0.923 2.098 l -2.223 1.258 l -2.685 0.965 l -1.133 -3.692");
+                }
+
+                60%,
+                100% {
+                    d: path("M 14.0 4.5 l 2 0 l 2 0 l 0 0.5 l 0 1 l 0 1.5 l 0 2 l 0 2 l 0 1 l 0 0.5 l 0 1.5 l -4 0");
+                }
             }
         </style>
         <script>
@@ -222,7 +323,7 @@ $("#square").click(function () {
 
             function animateSvg() {
                 var percentage = scrollPercentage("animateSvg");
-                var newPath = "M5,1 l" + Math.round( Math.sin(percentage*Math.PI*2) * 4 ) + ",8"
+                var newPath = "M5,1 l" + Math.round(Math.sin(percentage * Math.PI * 2) * 4) + ",8"
                 document.getElementById("animateSvg").children[0].setAttribute("d", newPath);
                 if (percentage < 0) return;
             }
@@ -230,10 +331,10 @@ $("#square").click(function () {
             function scrollPercentage(name) {
                 // let maxScroll = document.body.offsetHeight - window.innerHeight;
                 // let currentScroll = window.scrollY;
-                
+
                 var rect = document.getElementById(name).getBoundingClientRect();
                 var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                return Math.max( rect.bottom / (rect.bottom + scrollTop), 0);
+                return Math.max(rect.bottom / (rect.bottom + scrollTop), 0);
             }
 
             $(function () {

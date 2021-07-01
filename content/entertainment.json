@@ -45,6 +45,11 @@
     ],
     "shows": [
         {
+            "title": "La joya de la corona",
+            "image": "https://static.filmin.es/images/media/31993/3/poster_0_3_1500x2250.png",
+            "url": "https://www.filmin.es/serie/la-joya-de-la-corona"
+        },
+        {
             "title": "Utopia",
             "image": "https://m.media-amazon.com/images/M/MV5BMjMwMTA5NDc5M15BMl5BanBnXkFtZTgwMjQ4MTY0MjE@._V1_UY268_CR0,0,182,268_AL_.jpg",
             "url": "https://www.imdb.com/title/tt2384811/?ref_=fn_al_tt_2"
@@ -83,6 +88,26 @@
     ],
     "documentaries": [
         {
+            "title": "El Disidente",
+            "image": "https://static.filmin.es/images/media/32814/3/poster_0_3_1500x2250.png",
+            "url": "https://www.filmin.es/pelicula/el-disidente"
+        },
+        {
+            "title": "My Mexican Bretzel",
+            "image": "https://static.filmin.es/images/media/28533/5/poster_0_3_1500x2250.png",
+            "url": "https://www.filmin.es/pelicula/my-mexican-bretzel"
+        },
+        {
+            "title": "El infiltrado",
+            "image": "https://static.filmin.es/images/media/32214/5/poster_0_3_1500x2250.png",
+            "url": "https://www.filmin.es/serie/el-infiltrado"
+        },
+        {
+            "title": "Las Cinéphilas",
+            "image": "https://static.filmin.es/images/media/29221/3/poster_0_3_1500x2250.png",
+            "url": "https://www.filmin.es/pelicula/las-cinephilas"
+        },
+        {
             "title": "Brothers in Blood",
             "image": "https://m.media-amazon.com/images/M/MV5BODI2MjA0MTItNjM4ZC00NmUwLWI4ZmYtN2IyZDI2YzJhYWQ4XkEyXkFqcGdeQXVyNjgzMDY1Mzc@._V1_UY268_CR4,0,182,268_AL_.jpg",
             "url": "https://www.imdb.com/title/tt4689268/"
@@ -119,6 +144,22 @@
             "image": "https://m.media-amazon.com/images/M/MV5BZWI3ZTMxNjctMjdlNS00NmUwLWFiM2YtZDUyY2I3N2MxYTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX182_CR0,0,182,268_AL_.jpg",
             "url": "https://www.imdb.com/title/tt0057012/?ref_=rt_li_tt",
             "comment": "Una de esas películas que \"una vez al año, no hace daño\"."
+        },
+        {
+            "title": "Josep",
+            "image": "https://static.filmin.es/images/media/29839/5/poster_0_3_1500x2250.png",
+            "url": "https://www.filmin.es/pelicula/josep"
+        },
+        {
+            "title": "The Assistant",
+            "image": "https://static.filmin.es/images/media/32205/3/poster_0_3_1500x2250.png",
+            "url": "https://www.filmin.es/pelicula/the-assistant"
+        },
+        {
+            "title": "El Último",
+            "image": "https://static.filmin.es/images/media/8421/3/poster_0_3_1500x2250.png",
+            "url": "https://www.filmin.es/pelicula/el-ultimo",
+            "comment": "Increíble la cámara y las tomas. Explican tanto sin rotulos ni diálogos..."
         },
         {
             "title": "The Apartment",
