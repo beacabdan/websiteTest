@@ -1,4 +1,4 @@
-var parentUrl = "https://beacabdan.github.io"
+var parentUrl = "https://beatrizcabdan.github.io"
 
 var primaryColour = getComputedStyle(document.documentElement).getPropertyValue('--primary');
 

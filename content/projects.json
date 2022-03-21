@@ -19,18 +19,18 @@
     {
         "title": "Books, movies and music",
         "image": "https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1453&q=80",
-        "url": "https://beacabdan.github.io/more/books.html",
+        "url": "https://beatrizcabdan.github.io/more/books.html",
         "comment": "A selection of masterpieces."
     },
     {
         "title": "HTML, CSS, and JS tests",
         "image": "https://miro.medium.com/max/18438/1*Fp43zS64ZPoWi4IAz1n3MA.jpeg",
-        "url": "https://beacabdan.github.io/more/csstests.html",
+        "url": "https://beatrizcabdan.github.io/more/csstests.html",
         "comment": "Just some tests and examples I've compiled. Everything is very basic but it might be useful for others."
     },
     {
         "title": "Animated timelines",
-        "url": "https://beacabdan.github.io/more/timeline.html",
+        "url": "https://beatrizcabdan.github.io/more/timeline.html",
         "comment": "Work in progress",
         "image": "https://live.staticflickr.com/4807/46176999314_d6806709b0_b.jpg"
     }
